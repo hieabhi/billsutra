@@ -1,7 +1,7 @@
 import express from 'express';
 import { settingsRepo } from '../repositories/settingsRepo.js';
-import { authenticate } from '../middleware/auth.js';
 import supabase from '../config/supabase.js';
+import admin from '../config/firebase-admin.js';
 
 const router = express.Router();
 
@@ -16,16 +16,35 @@ router.get('/', async (req, res) => {
 });
 
 // Update settings
-router.put('/', authenticate, async (req, res) => {
+router.put('/', async (req, res) => {
   try {
     const savedSettings = await settingsRepo.update(req.body);
     
-    // If hotel name changed, update tenant table in Supabase
-    if (req.body.hotelName && req.user?.tenantId) {
-      await supabase
-        .from('tenants')
-        .update({ name: req.body.hotelName })
-        .eq('id', req.user.tenantId);
+    // If hotel name changed and user is authenticated, update tenant table in Supabase
+    if (req.body.hotelName) {
+      const authHeader = req.headers.authorization;
+      if (authHeader && authHeader.startsWith('Bearer ')) {
+        try {
+          const token = authHeader.split('Bearer ')[1];
+          const decodedToken = await admin.auth().verifyIdToken(token);
+          
+          // Get user's tenant ID
+          const { data: user } = await supabase
+            .from('users')
+            .select('tenant_id')
+            .eq('firebase_uid', decodedToken.uid)
+            .single();
+          
+          if (user?.tenant_id) {
+            await supabase
+              .from('tenants')
+              .update({ name: req.body.hotelName })
+              .eq('id', user.tenant_id);
+          }
+        } catch (authError) {
+          console.log('Auth not available, skipping tenant update:', authError.message);
+        }
+      }
     }
     
     res.json(savedSettings);
