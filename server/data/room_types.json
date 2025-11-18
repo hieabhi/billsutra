@@ -1,0 +1,114 @@
+[
+  {
+    "_id": "roomtype-001",
+    "hotelId": "hotel-001",
+    "name": "Standard",
+    "code": "STD",
+    "defaultRate": 1500,
+    "maxOccupancy": 2,
+    "amenities": [
+      "AC",
+      "TV",
+      "WiFi"
+    ],
+    "description": "Standard room with basic amenities",
+    "createdAt": "2024-11-01T00:00:00.000Z",
+    "updatedAt": "2024-11-01T00:00:00.000Z"
+  },
+  {
+    "_id": "roomtype-002",
+    "hotelId": "hotel-001",
+    "name": "Deluxe",
+    "code": "DLX",
+    "defaultRate": 2500,
+    "maxOccupancy": 3,
+    "amenities": [
+      "AC",
+      "TV",
+      "WiFi",
+      "Mini Fridge"
+    ],
+    "description": "Deluxe room with additional amenities",
+    "createdAt": "2024-11-01T00:00:00.000Z",
+    "updatedAt": "2024-11-01T00:00:00.000Z"
+  },
+  {
+    "_id": "roomtype-003",
+    "hotelId": "hotel-001",
+    "name": "Suite",
+    "code": "STE",
+    "defaultRate": 5000,
+    "maxOccupancy": 4,
+    "amenities": [
+      "AC",
+      "TV",
+      "WiFi",
+      "Mini Fridge",
+      "Jacuzzi",
+      "Living Room"
+    ],
+    "description": "Luxury suite with premium amenities",
+    "createdAt": "2024-11-01T00:00:00.000Z",
+    "updatedAt": "2024-11-01T00:00:00.000Z"
+  },
+  {
+    "_id": "813b48e8-ef35-44f7-b338-fbf5d7414347",
+    "hotelId": "hotel-001",
+    "name": "Executive",
+    "code": "EXE",
+    "description": "Executive room for business travelers",
+    "baseRate": 3500,
+    "maxOccupancy": 3,
+    "defaultAmenities": [
+      "AC",
+      "TV",
+      "WiFi",
+      "Mini Fridge",
+      "Work Desk"
+    ],
+    "images": [],
+    "active": true,
+    "displayOrder": 0,
+    "cgst": 2.5,
+    "sgst": 2.5,
+    "igst": 0,
+    "createdAt": "2025-11-15T07:34:05.076Z",
+    "updatedAt": "2025-11-15T07:34:05.076Z"
+  },
+  {
+    "_id": "8c282d51-a819-4208-b32a-29e567f1d4a0",
+    "hotelId": "hotel-001",
+    "name": "Different Name",
+    "code": "QTS",
+    "description": "",
+    "baseRate": 5000,
+    "maxOccupancy": 2,
+    "defaultAmenities": [],
+    "images": [],
+    "active": true,
+    "displayOrder": 0,
+    "cgst": 2.5,
+    "sgst": 2.5,
+    "igst": 0,
+    "createdAt": "2025-11-15T07:46:57.869Z",
+    "updatedAt": "2025-11-15T07:46:57.869Z"
+  },
+  {
+    "_id": "1b553c49-57ac-47e7-b7de-56750ed54fe6",
+    "hotelId": "hotel-001",
+    "name": "Unique Name For Code Test",
+    "code": "QTS",
+    "description": "",
+    "baseRate": 5000,
+    "maxOccupancy": 2,
+    "defaultAmenities": [],
+    "images": [],
+    "active": true,
+    "displayOrder": 0,
+    "cgst": 2.5,
+    "sgst": 2.5,
+    "igst": 0,
+    "createdAt": "2025-11-15T07:48:44.164Z",
+    "updatedAt": "2025-11-15T07:48:44.164Z"
+  }
+]

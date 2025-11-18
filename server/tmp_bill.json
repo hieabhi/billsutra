@@ -1,0 +1,1 @@
+{"customer":{"name":"Test Guest","phone":"1234567890"},"items":[{"name":"Room Rent","hsn":"9963","quantity":1,"rate":1000,"cgst":2.5,"sgst":2.5,"igst":0}],"paymentMethod":"Cash","notes":"Test bill","status":"Paid"}

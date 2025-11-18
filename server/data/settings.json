@@ -1,0 +1,17 @@
+{
+  "hotelName": "Bruj Khalifa",
+  "invoicePrefix": "INV",
+  "nextBillNumber": 53,
+  "address": "SH 228, Dubai",
+  "phone": "9998989899",
+  "email": "bruj@info.com",
+  "gstNumber": "98909868789",
+  "logo": "",
+  "bankDetails": {
+    "bankName": "",
+    "accountNumber": "",
+    "ifscCode": "",
+    "branch": ""
+  },
+  "terms": ""
+}

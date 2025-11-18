@@ -1,0 +1,71 @@
+[
+  {
+    "_id": "item-001",
+    "hotelId": "hotel-001",
+    "name": "Breakfast Buffet",
+    "category": "Food",
+    "price": 350,
+    "unit": "per person",
+    "taxRate": 5,
+    "description": "Continental breakfast buffet",
+    "isActive": true
+  },
+  {
+    "_id": "item-002",
+    "hotelId": "hotel-001",
+    "name": "Laundry Service",
+    "category": "Service",
+    "price": 200,
+    "unit": "per kg",
+    "taxRate": 18,
+    "description": "Wash and iron service",
+    "isActive": true
+  },
+  {
+    "_id": "item-003",
+    "hotelId": "hotel-001",
+    "name": "Airport Pickup",
+    "category": "Transport",
+    "price": 1500,
+    "unit": "per trip",
+    "taxRate": 5,
+    "description": "One-way airport transfer",
+    "isActive": true
+  },
+  {
+    "_id": "item-004",
+    "hotelId": "hotel-001",
+    "name": "Mini Bar Soft Drink",
+    "category": "Minibar",
+    "price": 80,
+    "unit": "per bottle",
+    "taxRate": 12,
+    "description": "Assorted soft drinks",
+    "isActive": true
+  },
+  {
+    "_id": "item-005",
+    "hotelId": "hotel-001",
+    "name": "Room Service",
+    "category": "Service",
+    "price": 100,
+    "unit": "per order",
+    "taxRate": 5,
+    "description": "Room service delivery charge",
+    "isActive": true
+  },
+  {
+    "_id": "0c968610-a880-4259-9d93-b1a2149ea64b",
+    "name": "Paneer Masala",
+    "category": "Food",
+    "hsn": "",
+    "rate": 290,
+    "cgst": 2.5,
+    "sgst": 2.5,
+    "igst": 0,
+    "description": "",
+    "isActive": true,
+    "createdAt": "2025-11-15T10:03:07.716Z",
+    "updatedAt": "2025-11-15T10:03:07.716Z"
+  }
+]

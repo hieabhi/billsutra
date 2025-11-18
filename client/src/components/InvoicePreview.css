@@ -1,0 +1,276 @@
+.invoice-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.invoice-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.invoice {
+  background: white;
+  padding: 48px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.company-details h1 {
+  font-size: 28px;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.company-details p {
+  margin: 4px 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.invoice-meta {
+  text-align: right;
+}
+
+.invoice-meta h2 {
+  font-size: 24px;
+  color: #4f46e5;
+  margin-bottom: 12px;
+}
+
+.invoice-meta p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.invoice-divider {
+  height: 3px;
+  background: linear-gradient(90deg, #4f46e5 0%, #764ba2 100%);
+  margin: 24px 0;
+}
+
+.invoice-customer {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+}
+
+.invoice-customer h3 {
+  font-size: 16px;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.invoice-customer p {
+  margin: 4px 0;
+  color: #374151;
+  font-size: 14px;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+.invoice-table th,
+.invoice-table td {
+  padding: 12px 8px;
+  text-align: left;
+  border: 1px solid #e5e7eb;
+}
+
+.invoice-table th {
+  background: #1f2937;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+}
+
+.invoice-table td {
+  color: #374151;
+}
+
+.invoice-table tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.invoice-table tfoot tr {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+.grand-total-row {
+  background: #1f2937 !important;
+  color: white !important;
+}
+
+.grand-total-row td {
+  color: white !important;
+  font-size: 16px;
+}
+
+.invoice-amount-words {
+  background: #fef3c7;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  border-left: 4px solid #f59e0b;
+}
+
+.invoice-notes {
+  background: #dbeafe;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  border-left: 4px solid #3b82f6;
+}
+
+.invoice-payment {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 6px;
+}
+
+.invoice-payment p {
+  font-size: 14px;
+}
+
+.status-paid {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.invoice-bank {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.invoice-bank h4 {
+  font-size: 16px;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.invoice-bank p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #374151;
+}
+
+.invoice-terms {
+  background: #fef2f2;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+  border-left: 4px solid #ef4444;
+}
+
+.invoice-terms h4 {
+  font-size: 16px;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.invoice-terms p {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.invoice-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 2px solid #e5e7eb;
+}
+
+.invoice-signature {
+  text-align: center;
+}
+
+.invoice-signature p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.invoice-thank-you {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.invoice-thank-you p {
+  font-size: 16px;
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+@media print {
+  .invoice {
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .invoice-actions {
+    display: none;
+  }
+
+  .invoice-table {
+    font-size: 11px;
+  }
+
+  .invoice-table th,
+  .invoice-table td {
+    padding: 8px 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .invoice {
+    padding: 24px 16px;
+  }
+
+  .invoice-header {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .invoice-meta {
+    text-align: left;
+  }
+
+  .invoice-table {
+    font-size: 11px;
+  }
+
+  .invoice-table th,
+  .invoice-table td {
+    padding: 8px 4px;
+  }
+
+  .invoice-footer {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
