@@ -23,9 +23,24 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5051;
 
+// CORS Configuration - Updated for production
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  'https://billsutra-hms.web.app',
+  'https://billsutra-hms.firebaseapp.com'
+];
+
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      return callback(new Error('CORS not allowed'), false);
+    }
+    return callback(null, true);
+  },
   credentials: true
 }));
 app.use(express.json());
