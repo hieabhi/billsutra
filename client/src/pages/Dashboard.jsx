@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { billsAPI, statsAPI, bookingsAPI } from '../api';
 import { TrendingUp, TrendingDown, FileText, DollarSign, Calendar, Users, Home, AlertCircle, CheckCircle, Clock, Percent, Activity, Info, ArrowUp, ArrowDown, Minus } from 'lucide-react';
 import { formatCurrency, formatDate } from '../utils';
-import AuthTest from '../components/AuthTest';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -252,9 +251,6 @@ const Dashboard = () => {
         <h1>Dashboard</h1>
         <p>Real-time overview of your hotel operations</p>
       </div>
-
-      {/* Authentication Test Component */}
-      <AuthTest />
 
       {/* Tooltip Modal Overlay */}
       {activeTooltip && (

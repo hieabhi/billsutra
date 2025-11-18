@@ -61,9 +61,12 @@ function App() {
     return () => unsubscribe();
   }, []);
 
-  const handleLoginSuccess = async (firebaseUser, token) => {
-    console.log('Login successful:', firebaseUser);
-    // User state will be updated by onAuthStateChanged listener
+  const handleLogout = () => {
+    auth.signOut();
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('user');
+    setUser(null);
+    setUserData(null);
   };
 
   if (loading) {
@@ -87,7 +90,7 @@ function App() {
 
   return (
     <Router>
-      <Layout onLogout={() => setIsAuthenticated(false)}>
+      <Layout onLogout={handleLogout} user={userData}>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/rooms" element={<Rooms />} />
