@@ -80,6 +80,20 @@ const Settings = () => {
     try {
       await settingsAPI.update(formData);
       alert('Settings saved successfully!');
+      
+      // Refresh user data to update hotel name in sidebar
+      const token = localStorage.getItem('authToken');
+      if (token) {
+        const response = await fetch('http://localhost:5051/api/auth/me', {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (response.ok) {
+          const data = await response.json();
+          localStorage.setItem('user', JSON.stringify(data.user));
+          // Reload page to update sidebar
+          window.location.reload();
+        }
+      }
     } catch (error) {
       console.error('Error saving settings:', error);
       alert('Error saving settings. Please try again.');

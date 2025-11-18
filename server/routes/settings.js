@@ -1,5 +1,7 @@
 import express from 'express';
 import { settingsRepo } from '../repositories/settingsRepo.js';
+import { authenticate } from '../middleware/auth.js';
+import supabase from '../config/supabase.js';
 
 const router = express.Router();
 
@@ -14,9 +16,18 @@ router.get('/', async (req, res) => {
 });
 
 // Update settings
-router.put('/', async (req, res) => {
+router.put('/', authenticate, async (req, res) => {
   try {
     const savedSettings = await settingsRepo.update(req.body);
+    
+    // If hotel name changed, update tenant table in Supabase
+    if (req.body.hotelName && req.user?.tenantId) {
+      await supabase
+        .from('tenants')
+        .update({ name: req.body.hotelName })
+        .eq('id', req.user.tenantId);
+    }
+    
     res.json(savedSettings);
   } catch (error) {
     res.status(400).json({ message: error.message });
