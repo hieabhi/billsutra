@@ -1,10 +1,14 @@
 // Environment configuration
+const getApiUrl = () => {
+  return import.meta.env.VITE_API_URL || 'http://localhost:5051';
+};
+
 const ENV = {
   development: {
-    API_URL: 'http://localhost:5051'
+    API_URL: getApiUrl()
   },
   production: {
-    API_URL: 'https://your-backend-url.run.app' // Will be updated after Cloud Run deployment
+    API_URL: getApiUrl()
   }
 };
 

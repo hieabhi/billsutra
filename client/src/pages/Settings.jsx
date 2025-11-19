@@ -48,7 +48,8 @@ const Settings = () => {
       // Refresh user data to update hotel name in sidebar
       const token = localStorage.getItem('authToken');
       if (token) {
-        const response = await fetch('http://localhost:5051/api/auth/me', {
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5051';
+        const response = await fetch(`${apiUrl}/api/auth/me`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         if (response.ok) {

@@ -17,7 +17,8 @@ const AuthTest = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:5051/api/auth/me', {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5051';
+      const response = await fetch(`${apiUrl}/api/auth/me`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
