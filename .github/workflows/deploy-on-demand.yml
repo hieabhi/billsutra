@@ -106,14 +106,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: client/package-lock.json
       
       - name: Install dependencies
         working-directory: ./client
         run: |
           echo "📦 Installing frontend dependencies..."
-          npm ci
+          npm install
       
       - name: Get Backend URL
         id: backend-url
