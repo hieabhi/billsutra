@@ -48,6 +48,10 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.deploy_target == 'all' || github.event.inputs.deploy_target == 'backend' }}
     needs: [deploy-database]
+    # Allow backend to run even if database job is skipped
+    if: |
+      always() &&
+      (github.event.inputs.deploy_target == 'all' || github.event.inputs.deploy_target == 'backend')
     
     steps:
       - name: Checkout code
@@ -89,8 +93,11 @@ jobs:
   deploy-frontend:
     name: Deploy Frontend to Firebase Hosting
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.deploy_target == 'all' || github.event.inputs.deploy_target == 'frontend' }}
     needs: [deploy-backend]
+    # Allow frontend to run even if backend job is skipped
+    if: |
+      always() &&
+      (github.event.inputs.deploy_target == 'all' || github.event.inputs.deploy_target == 'frontend')
     
     steps:
       - name: Checkout code
