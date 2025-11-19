@@ -67,7 +67,7 @@ jobs:
       - name: Build and push Docker image
         run: |
           echo "🐳 Building backend Docker image..."
-          gcloud builds submit --tag gcr.io/billsutra-hms/billsutra-backend
+          gcloud builds submit --tag gcr.io/billsutra-hms/billsutra-backend .
           echo "✅ Docker image built"
       
       - name: Deploy to Cloud Run
