@@ -71,16 +71,29 @@ jobs:
           echo "✅ Docker image built"
       
       - name: Deploy to Cloud Run
+        env:
+          FIREBASE_SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         run: |
           echo "☁️ Deploying to Cloud Run..."
+          
+          # Write Firebase service account to a temporary file
+          echo "$FIREBASE_SA" > /tmp/firebase-sa.json
+          
+          # Base64 encode the JSON to safely pass as env var
+          FIREBASE_SA_BASE64=$(base64 -w 0 /tmp/firebase-sa.json)
+          
           gcloud run deploy billsutra-backend \
             --image gcr.io/billsutra-hms/billsutra-backend \
             --platform managed \
             --region us-central1 \
             --allow-unauthenticated \
             --port 8080 \
-            --set-env-vars "SUPABASE_URL=${{ secrets.SUPABASE_URL }},SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }},SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }},NODE_ENV=${{ github.event.inputs.environment }},FIREBASE_SERVICE_ACCOUNT_JSON=${{ secrets.FIREBASE_SERVICE_ACCOUNT }},FIREBASE_PROJECT_ID=${{ secrets.FIREBASE_PROJECT_ID }}"
+            --set-env-vars "SUPABASE_URL=${{ secrets.SUPABASE_URL }},SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }},SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }},NODE_ENV=${{ github.event.inputs.environment }},FIREBASE_PROJECT_ID=${{ secrets.FIREBASE_PROJECT_ID }},FIREBASE_SERVICE_ACCOUNT_BASE64=${FIREBASE_SA_BASE64}"
+          
           echo "✅ Backend deployed to Cloud Run"
+          
+          # Clean up
+          rm /tmp/firebase-sa.json
       
       - name: Get Backend URL
         id: get-url
