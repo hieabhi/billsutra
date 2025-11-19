@@ -7,11 +7,29 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
 // Initialize Firebase Admin SDK
-// For development, we'll use the Firebase config
-// In production, use a service account key file
-admin.initializeApp({
-  credential: admin.credential.applicationDefault(),
-  projectId: process.env.FIREBASE_PROJECT_ID
-});
+try {
+  let credential;
+  
+  // Check if Firebase service account JSON is provided in environment variable
+  if (process.env.FIREBASE_SERVICE_ACCOUNT_JSON) {
+    const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
+    credential = admin.credential.cert(serviceAccount);
+    console.log('✅ Using Firebase service account from environment variable');
+  } else {
+    // Fallback to application default credentials (for local development)
+    credential = admin.credential.applicationDefault();
+    console.log('✅ Using Firebase application default credentials');
+  }
+
+  admin.initializeApp({
+    credential: credential,
+    projectId: process.env.FIREBASE_PROJECT_ID || 'billsutra-hms'
+  });
+  
+  console.log('✅ Firebase Admin initialized successfully');
+} catch (error) {
+  console.error('❌ Error initializing Firebase Admin:', error);
+  throw error;
+}
 
 export default admin;
