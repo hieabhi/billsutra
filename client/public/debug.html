@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BillSutra Debug</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #1a1a1a; color: #0f0; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid #0f0; }
+        .error { color: #f00; }
+        .success { color: #0f0; }
+        button { padding: 10px 20px; margin: 5px; background: #0f0; color: #000; border: none; cursor: pointer; }
+        pre { background: #000; padding: 10px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🔍 BillSutra Diagnostic Tool</h1>
+    
+    <div class="section">
+        <h2>1. Environment Variables</h2>
+        <pre id="env-vars"></pre>
+    </div>
+    
+    <div class="section">
+        <h2>2. Local Storage</h2>
+        <pre id="local-storage"></pre>
+    </div>
+    
+    <div class="section">
+        <h2>3. Test API Connection</h2>
+        <button onclick="testBackend()">Test Backend</button>
+        <button onclick="testWithAuth()">Test With Token</button>
+        <button onclick="clearStorage()">Clear Storage & Reload</button>
+        <pre id="api-result"></pre>
+    </div>
+    
+    <script type="module">
+        // Display environment variables
+        const envVars = {
+            VITE_API_URL: import.meta.env.VITE_API_URL,
+            VITE_SUPABASE_URL: import.meta.env.VITE_SUPABASE_URL,
+            VITE_FIREBASE_PROJECT_ID: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+            VITE_FIREBASE_AUTH_DOMAIN: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+            MODE: import.meta.env.MODE,
+            DEV: import.meta.env.DEV,
+            PROD: import.meta.env.PROD
+        };
+        document.getElementById('env-vars').textContent = JSON.stringify(envVars, null, 2);
+        
+        // Display local storage
+        const storage = {};
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            const value = localStorage.getItem(key);
+            if (key === 'authToken') {
+                storage[key] = value ? value.substring(0, 30) + '...' : null;
+            } else {
+                storage[key] = value;
+            }
+        }
+        document.getElementById('local-storage').textContent = JSON.stringify(storage, null, 2);
+        
+        // Test functions
+        window.testBackend = async () => {
+            const result = document.getElementById('api-result');
+            result.textContent = 'Testing...';
+            
+            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5051';
+            
+            try {
+                const response = await fetch(`${apiUrl}/api/rooms`);
+                const data = await response.json();
+                result.textContent = `Status: ${response.status}\n${JSON.stringify(data, null, 2)}`;
+                result.className = response.ok ? 'success' : 'error';
+            } catch (error) {
+                result.textContent = `Error: ${error.message}`;
+                result.className = 'error';
+            }
+        };
+        
+        window.testWithAuth = async () => {
+            const result = document.getElementById('api-result');
+            result.textContent = 'Testing with auth token...';
+            
+            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5051';
+            const token = localStorage.getItem('authToken');
+            
+            if (!token) {
+                result.textContent = 'No auth token found in localStorage!';
+                result.className = 'error';
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${apiUrl}/api/rooms`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                const data = await response.json();
+                result.textContent = `Status: ${response.status}\n${JSON.stringify(data, null, 2)}`;
+                result.className = response.ok ? 'success' : 'error';
+            } catch (error) {
+                result.textContent = `Error: ${error.message}`;
+                result.className = 'error';
+            }
+        };
+        
+        window.clearStorage = () => {
+            localStorage.clear();
+            location.reload();
+        };
+    </script>
+</body>
+</html>
