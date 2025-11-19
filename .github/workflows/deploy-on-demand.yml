@@ -120,10 +120,12 @@ jobs:
           sudo apt-get install -y jq
           echo "url=${{ secrets.BACKEND_URL }}" >> $GITHUB_OUTPUT
       
-      - name: Create production environment file
+      - name: Create environment file
         working-directory: ./client
         run: |
-          echo "⚙️ Creating production .env file..."
+          echo "📝 Creating production environment file..."
+          # Remove .env.local if it exists (it overrides .env.production)
+          rm -f .env.local
           cat > .env.production << EOF
           VITE_SUPABASE_URL=${{ secrets.SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
@@ -136,7 +138,9 @@ jobs:
           VITE_FIREBASE_APP_ID=${{ secrets.FIREBASE_APP_ID }}
           VITE_FIREBASE_MEASUREMENT_ID=${{ secrets.FIREBASE_MEASUREMENT_ID }}
           EOF
-          echo "✅ Environment file created"
+          echo "✅ Production environment file created"
+          echo "📄 Verifying .env.production contents:"
+          cat .env.production
       
       - name: Build frontend
         working-directory: ./client
