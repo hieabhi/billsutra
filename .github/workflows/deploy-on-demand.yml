@@ -46,7 +46,6 @@ jobs:
   deploy-backend:
     name: Deploy Backend to Cloud Run
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.deploy_target == 'all' || github.event.inputs.deploy_target == 'backend' }}
     needs: [deploy-database]
     # Allow backend to run even if database job is skipped
     if: |
