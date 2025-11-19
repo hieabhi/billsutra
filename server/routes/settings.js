@@ -2,8 +2,12 @@ import express from 'express';
 import { settingsRepo } from '../repositories/settingsRepo.js';
 import supabase from '../config/supabase.js';
 import admin from '../config/firebase-admin.js';
+import { authMiddleware } from '../middleware/auth.js';
 
 const router = express.Router();
+
+// Apply auth middleware to all routes
+router.use(authMiddleware);
 
 // Get settings
 router.get('/', async (req, res) => {

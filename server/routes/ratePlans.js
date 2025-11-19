@@ -70,7 +70,7 @@ router.get('/:id', async (req,res)=>{
 });
 
 // Create rate plan (requires admin role)
-router.post('/', requireRole('hotelAdmin', 'accounts'), async (req,res)=>{
+router.post('/', requireRole('hotelAdmin', 'accounts', 'frontDesk'), async (req,res)=>{
   try {
     const planData = { ...req.body, hotelId: req.user.hotelId };
     const plan = await ratePlansRepo.create(planData);
@@ -79,7 +79,7 @@ router.post('/', requireRole('hotelAdmin', 'accounts'), async (req,res)=>{
 });
 
 // Update rate plan (requires admin role)
-router.put('/:id', requireRole('hotelAdmin', 'accounts'), async (req,res)=>{
+router.put('/:id', requireRole('hotelAdmin', 'accounts', 'frontDesk'), async (req,res)=>{
   try {
     const plan = await ratePlansRepo.update(req.params.id, req.body, req.user.hotelId);
     if (!plan) return res.status(404).json({message:'Rate plan not found'});
@@ -88,7 +88,7 @@ router.put('/:id', requireRole('hotelAdmin', 'accounts'), async (req,res)=>{
 });
 
 // Delete rate plan (requires admin role)
-router.delete('/:id', requireRole('hotelAdmin', 'accounts'), async (req,res)=>{
+router.delete('/:id', requireRole('hotelAdmin', 'accounts', 'frontDesk'), async (req,res)=>{
   try {
     const plan = await ratePlansRepo.remove(req.params.id, req.user.hotelId);
     if (!plan) return res.status(404).json({message:'Rate plan not found'});

@@ -14,7 +14,7 @@ import FirebaseLogin from './components/Auth/Login';
 import Rooms from './pages/Rooms';
 import Bookings from './pages/Bookings';
 import Housekeeping from './pages/Housekeeping';
-import RoomTypes from './pages/RoomTypes';
+import RoomManagement from './pages/RoomManagement';
 import RateCalendar from './pages/RateCalendar';
 import RoomDetail from './pages/RoomDetail';
 
@@ -69,6 +69,33 @@ function App() {
     setUserData(null);
   };
 
+  const handleLoginSuccess = async (firebaseUser) => {
+    setUser(firebaseUser);
+    
+    // Get Firebase ID token
+    const token = await firebaseUser.getIdToken();
+    localStorage.setItem('authToken', token);
+    
+    // Fetch user data from backend
+    try {
+      const response = await fetch('http://localhost:5051/api/auth/me', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        setUserData(data.user);
+        localStorage.setItem('user', JSON.stringify(data.user));
+      }
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+    
+    setLoading(false);
+  };
+
   if (loading) {
     return (
       <div style={{ 
@@ -95,7 +122,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/rooms/:id" element={<RoomDetail />} />
-          <Route path="/room-types" element={<RoomTypes />} />
+                          <Route path="/room-management" element={<RoomManagement />} />
           <Route path="/rate-calendar" element={<RateCalendar />} />
           <Route path="/bookings" element={<Bookings />} />
           <Route path="/housekeeping" element={<Housekeeping />} />

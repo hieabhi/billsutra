@@ -23,6 +23,8 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+server/logs/
+logs/
 
 # Test data (don't commit to production)
 server/data/rooms.json
@@ -30,10 +32,26 @@ server/data/bookings.json
 server/data/customers.json
 server/data/housekeeping.json
 server/data/bills.json
+server/data/items.json
+server/data/room_types.json
+server/data/rate_plans.json
+server/data/settings.json
+server/data/*.json
+
+# Security - Never commit these!
+*.pem
+*.key
+*.cert
+*.p12
+.env
+.env.*
+!.env.example
 
 # Firebase
 .firebase/
 firebase-debug.log
+serviceAccountKey.json
+firebase-adminsdk*.json
 
 # Temporary files
 *.tmp

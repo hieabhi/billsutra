@@ -78,13 +78,13 @@ const Customers = () => {
 
   return (
     <div className="customers-page">
-      <div className="page-header">
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
         <div>
-          <h1>Customers</h1>
-          <p>Manage your customer database</p>
+          <h1 style={{ margin: '0 0 4px 0' }}>Customers</h1>
+          <p style={{ margin: 0, color: '#6b7280', fontSize: '14px' }}>Manage your customer database</p>
         </div>
-        <button onClick={() => setShowModal(true)} className="btn btn-primary">
-          <Plus size={16} /> Add Customer
+        <button onClick={() => setShowModal(true)} className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <Plus size={18} /> Add Customer
         </button>
       </div>
 

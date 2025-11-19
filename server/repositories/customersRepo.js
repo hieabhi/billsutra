@@ -1,58 +1,106 @@
-import mongoose from 'mongoose';
-import { v4 as uuidv4 } from 'uuid';
-import Customer from '../models/Customer.js';
-import { readJSON, writeJSON } from '../utils/fileStore.js';
+import supabase, { mapCustomerFromDB } from '../config/supabase.js';
 
-const FILE = 'customers.json';
+console.log('🚀 LOADING SUPABASE CUSTOMERSREPO');
 
-function isMongoConnected(){
-  return mongoose.connection?.readyState === 1 && !!mongoose.connection?.db;
+function getTenantId(hotelId) {
+  return hotelId;
 }
 
-function readAll(){ return readJSON(FILE, []);} 
-function saveAll(d){ writeJSON(FILE, d);} 
-
 export const customersRepo = {
-  async list(){
-    if (isMongoConnected()) {
-      return await Customer.find().sort({ createdAt: -1 });
-    }
-    return readAll().sort((a,b)=> new Date(b.createdAt) - new Date(a.createdAt));
+  async list(query = {}) {
+    const tenantId = getTenantId(query.hotelId);
+    
+    const { data, error } = await supabase
+      .from('customers')
+      .select('*')
+      .eq('tenant_id', tenantId)
+      .order('created_at', { ascending: false });
+    
+    if (error) throw error;
+    return (data || []).map(mapCustomerFromDB);
   },
-  async getById(id){
-    if (isMongoConnected()) return await Customer.findById(id);
-    return readAll().find(c=>c._id===id);
-  },
-  async create(data){
-    if (isMongoConnected()) {
-      const c = new Customer(data); return await c.save();
+
+  async getById(id) {
+    const { data, error } = await supabase
+      .from('customers')
+      .select('*')
+      .eq('id', id)
+      .single();
+    
+    if (error) {
+      if (error.code === 'PGRST116') return null;
+      throw error;
     }
-    const list = readAll();
+    
+    return mapCustomerFromDB(data);
+  },
+
+  async create(data) {
+    const tenantId = getTenantId(data.hotelId);
     const now = new Date().toISOString();
-    const c = {
-      _id: uuidv4(),
-      name: String(data.name||'').trim(),
+    
+    const customer = {
+      tenant_id: tenantId,
+      name: String(data.name || '').trim(),
       phone: data.phone || '',
       email: data.email || '',
       address: data.address || '',
-      gstNumber: data.gstNumber || '',
-      type: data.type || 'Walk-in',
-      createdAt: now,
-      updatedAt: now
+      gstin: data.gstNumber || '',
+      id_proof_type: data.idProofType || null,
+      id_proof_number: data.idProofNumber || null,
+      created_at: now,
+      updated_at: now
     };
-    list.push(c); saveAll(list); return c;
+    
+    const { data: created, error } = await supabase
+      .from('customers')
+      .insert(customer)
+      .select()
+      .single();
+    
+    if (error) throw error;
+    return mapCustomerFromDB(created);
   },
-  async update(id, data){
-    if (isMongoConnected()) return await Customer.findByIdAndUpdate(id, data, { new: true });
-    const list = readAll();
-    const idx = list.findIndex(c=>c._id===id); if (idx===-1) return null;
-    list[idx] = { ...list[idx], ...data, updatedAt: new Date().toISOString() };
-    saveAll(list); return list[idx];
+
+  async update(id, data) {
+    const updates = { updated_at: new Date().toISOString() };
+    
+    if (data.name !== undefined) updates.name = String(data.name).trim();
+    if (data.phone !== undefined) updates.phone = data.phone;
+    if (data.email !== undefined) updates.email = data.email;
+    if (data.address !== undefined) updates.address = data.address;
+    if (data.gstNumber !== undefined) updates.gstin = data.gstNumber;
+    if (data.idProofType !== undefined) updates.id_proof_type = data.idProofType;
+    if (data.idProofNumber !== undefined) updates.id_proof_number = data.idProofNumber;
+    
+    const { data: updated, error } = await supabase
+      .from('customers')
+      .update(updates)
+      .eq('id', id)
+      .select()
+      .single();
+    
+    if (error) {
+      if (error.code === 'PGRST116') return null;
+      throw error;
+    }
+    
+    return mapCustomerFromDB(updated);
   },
-  async remove(id){
-    if (isMongoConnected()) return await Customer.findByIdAndDelete(id);
-    const list = readAll();
-    const idx = list.findIndex(c=>c._id===id); if (idx===-1) return null;
-    const [removed] = list.splice(idx,1); saveAll(list); return removed;
+
+  async remove(id) {
+    const { data, error } = await supabase
+      .from('customers')
+      .delete()
+      .eq('id', id)
+      .select()
+      .single();
+    
+    if (error) {
+      if (error.code === 'PGRST116') return null;
+      throw error;
+    }
+    
+    return mapCustomerFromDB(data);
   }
 };

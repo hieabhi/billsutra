@@ -205,24 +205,27 @@ const Rooms = () => {
 
   return (
     <div className="card">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-        <div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '12px' }}>
+        <div style={{ flex: '1 1 auto' }}>
           <h1 style={{ margin: '0 0 4px 0' }}>🏨 Rooms ({filteredAndSortedRooms.length}/{rooms.length})</h1>
-          <p style={{ margin: 0, color: '#6b7280', fontSize: '14px' }}>
-            {statusSummary.AVAILABLE} Available · {statusSummary.OCCUPIED} Occupied · {statusSummary.RESERVED} Reserved · {statusSummary.DIRTY} Dirty
+          <p style={{ margin: 0, color: '#6b7280', fontSize: '14px', display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <span style={{ display: 'inline-block', minWidth: '80px' }}>{statusSummary.AVAILABLE} Available</span> ·
+            <span style={{ display: 'inline-block', minWidth: '80px' }}>{statusSummary.OCCUPIED} Occupied</span> ·
+            <span style={{ display: 'inline-block', minWidth: '80px' }}>{statusSummary.RESERVED} Reserved</span> ·
+            <span style={{ display: 'inline-block', minWidth: '60px' }}>{statusSummary.DIRTY} Dirty</span>
           </p>
         </div>
-        <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'stretch', flexShrink: 0 }}>
           <button 
-            onClick={() => navigate('/settings')}
+            onClick={() => navigate('/room-management')}
             className="btn btn-secondary"
-            style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+            style={{ display: 'flex', alignItems: 'center', gap: '6px', whiteSpace: 'nowrap', padding: '8px 16px', height: '38px' }}
           >
-            ⚙️ Manage Rooms
+            ⚙️ Manage
           </button>
-          <div className="view-toggle">
-            <button className={`btn ${view==='board'?'btn-primary':''}`} onClick={()=>setView('board')}>Board</button>
-            <button className={`btn ${view==='table'?'btn-primary':''}`} onClick={()=>setView('table')}>Table</button>
+          <div className="view-toggle" style={{ display: 'flex', gap: '4px' }}>
+            <button className={`btn ${view==='board'?'btn-primary':''}`} onClick={()=>setView('board')} style={{ padding: '8px 16px', height: '38px', display: 'flex', alignItems: 'center' }}>Board</button>
+            <button className={`btn ${view==='table'?'btn-primary':''}`} onClick={()=>setView('table')} style={{ padding: '8px 16px', height: '38px', display: 'flex', alignItems: 'center' }}>Table</button>
           </div>
         </div>
       </div>

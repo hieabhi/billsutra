@@ -3,8 +3,12 @@ import { roomsRepo } from '../repositories/roomsRepo.js';
 import { bookingsRepo } from '../repositories/bookingsRepo.js';
 import { housekeepingRepo } from '../repositories/housekeepingRepo.js';
 import { billsRepo } from '../repositories/billsRepo.js';
+import { authMiddleware } from '../middleware/auth.js';
 
 const router = express.Router();
+
+// Apply auth middleware to all routes
+router.use(authMiddleware);
 
 // Root stats endpoint - returns same as dashboard for convenience
 router.get('/', async (req, res) => {

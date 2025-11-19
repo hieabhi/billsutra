@@ -60,13 +60,15 @@ export const roomTypesRepo = {
     }
 
     const now = new Date().toISOString();
+    const rate = Number(data.baseRate || data.defaultRate || 0);
     const t = {
       _id: uuidv4(),
       hotelId: data.hotelId || null,
       name: String(data.name||'').trim(),
       code: data.code || String(data.name||'').toUpperCase().replace(/\s+/g, '_').substring(0, 10),
       description: data.description || '',
-      baseRate: Number(data.baseRate || data.defaultRate||0),
+      baseRate: rate,
+      defaultRate: rate,
       maxOccupancy: Number(data.maxOccupancy || 2),
       defaultAmenities: data.defaultAmenities || data.amenities || [],
       images: data.images || [],
@@ -131,13 +133,14 @@ export const roomTypesRepo = {
       }
     }
 
+    const rate = Number(data.defaultRate ?? data.baseRate ?? types[idx].defaultRate ?? types[idx].baseRate);
     types[idx] = {
       ...types[idx],
       ...data,
       hotelId: types[idx].hotelId, // Prevent changing hotel
       _id: types[idx]._id,
-      defaultRate: Number(data.defaultRate ?? types[idx].defaultRate ?? types[idx].baseRate),
-      baseRate: Number(data.baseRate ?? data.defaultRate ?? types[idx].baseRate),
+      defaultRate: rate,
+      baseRate: rate,
       cgst: Number(data.cgst ?? types[idx].cgst ?? 2.5),
       sgst: Number(data.sgst ?? types[idx].sgst ?? 2.5),
       igst: Number(data.igst ?? types[idx].igst ?? 0),

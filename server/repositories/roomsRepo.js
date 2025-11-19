@@ -1,19 +1,30 @@
 import { v4 as uuidv4 } from 'uuid';
-import { readJSON, writeJSON } from '../utils/fileStore.js';
+import supabase, { mapRoomFromDB } from '../config/supabase.js';
 import { Room, ROOM_STATUS, ROOM_STATUS_TRANSITIONS } from '../models/Room.js';
 
-const FILE = 'rooms.json';
+console.log('🚀 LOADING SUPABASE ROOMSREPO - NOT JSON VERSION!');
 
-function readAll() { return readJSON(FILE, []); }
-function saveAll(data) { writeJSON(FILE, data); }
+// hotelId is actually the tenant_id from req.user.hotelId
+function getTenantId(hotelId) {
+  return hotelId; // Already is tenant_id
+}
 
 export const roomsRepo = {
   // Get all rooms for a hotel
   async getAll(hotelId) {
-    const rooms = readAll();
-    if (!hotelId) return rooms;
-    return rooms.filter(r => r.hotelId === hotelId)
-      .sort((a, b) => (a.number || '').localeCompare(b.number || ''));
+    const tenantId = getTenantId(hotelId);
+    console.log('🔍 RoomsRepo.getAll - hotelId:', hotelId, 'tenantId:', tenantId);
+    if (!tenantId) return [];
+    
+    const { data, error } = await supabase
+      .from('rooms')
+      .select('*')
+      .eq('tenant_id', tenantId)
+      .order('room_number');
+    
+    console.log('📦 Supabase response - data:', data?.length, 'error:', error?.message);
+    if (error) throw error;
+    return (data || []).map(mapRoomFromDB);
   },
 
   // Legacy method for backward compatibility
@@ -22,26 +33,62 @@ export const roomsRepo = {
   },
 
   async getById(id, hotelId = null) {
-    const rooms = readAll();
-    const room = rooms.find(r => r._id === id);
-    if (room && hotelId && room.hotelId !== hotelId) return null;
-    return room;
+    const { data, error } = await supabase
+      .from('rooms')
+      .select('*')
+      .eq('id', id)
+      .single();
+    
+    if (error) return null;
+    if (hotelId) {
+      const tenantId = getTenantId(hotelId);
+      if (data.tenant_id !== tenantId) return null;
+    }
+    return mapRoomFromDB(data);
   },
 
   async getByNumber(number, hotelId) {
-    const rooms = readAll();
-    return rooms.find(r => r.number === number && r.hotelId === hotelId);
+    const tenantId = getTenantId(hotelId);
+    if (!tenantId) return null;
+    
+    const { data, error } = await supabase
+      .from('rooms')
+      .select('*')
+      .eq('tenant_id', tenantId)
+      .eq('room_number', String(number))
+      .single();
+    
+    if (error) return null;
+    return mapRoomFromDB(data);
   },
 
   async getByFloor(floorId, hotelId) {
-    const rooms = readAll();
-    return rooms.filter(r => r.floorId === floorId && r.hotelId === hotelId)
-      .sort((a, b) => (a.number || '').localeCompare(b.number || ''));
+    const tenantId = getTenantId(hotelId);
+    if (!tenantId) return [];
+    
+    const { data, error } = await supabase
+      .from('rooms')
+      .select('*')
+      .eq('tenant_id', tenantId)
+      .eq('floor', floorId)
+      .order('room_number');
+    
+    if (error) throw error;
+    return (data || []).map(mapRoomFromDB);
   },
 
   async getByStatus(status, hotelId) {
-    const rooms = readAll();
-    return rooms.filter(r => r.status === status && r.hotelId === hotelId);
+    const tenantId = getTenantId(hotelId);
+    if (!tenantId) return [];
+    
+    const { data, error } = await supabase
+      .from('rooms')
+      .select('*')
+      .eq('tenant_id', tenantId)
+      .eq('status', status);
+    
+    if (error) throw error;
+    return (data || []).map(mapRoomFromDB);
   },
 
   async getAvailable(hotelId, checkInDate, checkOutDate) {
@@ -83,65 +130,41 @@ export const roomsRepo = {
   },
 
   async create(data) {
-    const rooms = readAll();
+    const tenantId = getTenantId(data.hotelId);
+    if (!tenantId) throw new Error('Hotel ID is required');
     
     // Check for duplicate room number in same hotel
-    const existing = rooms.find(r => 
-      r.number === data.number && r.hotelId === data.hotelId
-    );
+    const existing = await this.getByNumber(data.number, data.hotelId);
     if (existing) {
       throw new Error(`Room number ${data.number} already exists in this hotel`);
     }
 
-    const now = new Date().toISOString();
-    const room = {
-      _id: uuidv4(),
-      hotelId: data.hotelId,
-      floorId: data.floorId || null,
-      number: String(data.number || '').trim(),
-      name: data.name || String(data.number || '').trim(),
-      
-      // Support both old 'type' (string) and new 'roomTypeId'/'typeId' (UUID)
-      // If 'type' is provided as a string name, store it in both fields for backward compatibility
-      roomTypeId: data.roomTypeId || data.typeId || null,
-      type: data.type || null, // Legacy field for backward compatibility
-      
+    const roomData = {
+      id: uuidv4(),
+      tenant_id: tenantId,
+      room_number: String(data.number || '').trim(),
+      type: data.roomTypeId || data.typeId || data.type || null,
       status: data.status || ROOM_STATUS.AVAILABLE,
-      housekeepingStatus: data.housekeepingStatus || 'CLEAN',
-      maxOccupancy: Number(data.maxOccupancy || 2),
-      
-      // Support both old 'rate' and new 'baseRate'
-      baseRate: Number(data.baseRate || data.rate || 0),
-      rate: Number(data.rate || data.baseRate || 0), // Legacy field
-      
-      description: data.description || '',
+      housekeeping_status: data.housekeepingStatus || 'CLEAN',
+      rate: Number(data.baseRate || data.rate || 0),
+      floor: data.floor || null,
       amenities: data.amenities || [],
-      features: data.features || data.amenities || [], // Legacy field
-      floor: data.floor || null, // Legacy string floor field
-      blockedUntil: data.blockedUntil || null,
-      blockReason: data.blockReason || '',
-      isBlocked: data.isBlocked || false, // Legacy field
-      housekeepingNotes: data.housekeepingNotes || data.notes || '',
-      notes: data.notes || data.housekeepingNotes || '', // Legacy field
-      history: data.history || [],
-      createdAt: now,
-      updatedAt: now,
+      notes: data.housekeepingNotes || data.notes || ''
     };
 
-    // Validate: require either roomTypeId or type (legacy)
-    if (!room.roomTypeId && !room.type) {
-      throw new Error('Room type is required (roomTypeId or type field)');
-    }
-    if (!room.number || room.number.trim() === '') {
+    // Validate
+    if (!roomData.room_number || roomData.room_number.trim() === '') {
       throw new Error('Room number is required');
     }
-    if (!room.hotelId) {
-      throw new Error('Hotel ID is required');
-    }
 
-    rooms.push(room);
-    saveAll(rooms);
-    return room;
+    const { data: created, error } = await supabase
+      .from('rooms')
+      .insert([roomData])
+      .select()
+      .single();
+
+    if (error) throw error;
+    return mapRoomFromDB(created);
   },
 
   async createMultiple(roomsData, hotelId) {
@@ -154,36 +177,49 @@ export const roomsRepo = {
   },
 
   async update(id, data, hotelId = null) {
-    const rooms = readAll();
-    const idx = rooms.findIndex(r => r._id === id);
-    if (idx === -1) return null;
+    // Get existing room
+    const room = await this.getById(id, hotelId);
+    if (!room) return null;
+
+    const oldStatus = room.status;
     
-    // Verify hotel ownership
-    if (hotelId && rooms[idx].hotelId !== hotelId) return null;
-
-    const oldStatus = rooms[idx].status;
-    const now = new Date().toISOString();
-    const updated = {
-      ...rooms[idx],
-      ...data,
-      hotelId: rooms[idx].hotelId, // Prevent changing hotel
-      _id: rooms[idx]._id, // Prevent changing ID
-      updatedAt: now
+    const updateData = {
+      room_number: data.number !== undefined ? String(data.number) : undefined,
+      type: data.roomTypeId || data.typeId || data.type || undefined,
+      status: data.status,
+      housekeeping_status: data.housekeepingStatus,
+      rate: data.baseRate !== undefined ? Number(data.baseRate) : data.rate !== undefined ? Number(data.rate) : undefined,
+      floor: data.floor,
+      amenities: data.amenities,
+      notes: data.housekeepingNotes || data.notes
     };
+    
+    // Remove undefined values
+    Object.keys(updateData).forEach(key => 
+      updateData[key] === undefined && delete updateData[key]
+    );
 
-    rooms[idx] = updated;
-    saveAll(rooms);
+    const { data: updated, error } = await supabase
+      .from('rooms')
+      .update(updateData)
+      .eq('id', id)
+      .select()
+      .single();
+
+    if (error) throw error;
+    
+    const mappedRoom = mapRoomFromDB(updated);
     
     // AUTO-SYNC: Create housekeeping task when room needs attention
-    const newStatus = updated.status;
+    const newStatus = mappedRoom.status;
     
     // If room changed to DIRTY, create cleaning task
     if (oldStatus !== ROOM_STATUS.DIRTY && newStatus === ROOM_STATUS.DIRTY) {
       const { housekeepingRepo } = await import('./housekeepingRepo.js');
       await housekeepingRepo.createFromRoomStatus(
-        updated._id,
-        updated.number,
-        updated.hotelId,
+        mappedRoom._id,
+        mappedRoom.number,
+        hotelId,
         'CLEANING',
         'Room needs cleaning'
       );
@@ -193,28 +229,28 @@ export const roomsRepo = {
     if (oldStatus !== ROOM_STATUS.MAINTENANCE && newStatus === ROOM_STATUS.MAINTENANCE) {
       const { housekeepingRepo } = await import('./housekeepingRepo.js');
       await housekeepingRepo.createFromRoomStatus(
-        updated._id,
-        updated.number,
-        updated.hotelId,
+        mappedRoom._id,
+        mappedRoom.number,
+        hotelId,
         'MAINTENANCE',
         data.blockReason || 'Room under maintenance - needs inspection after completion'
       );
     }
     
-    return updated;
+    return mappedRoom;
   },
 
   async remove(id, hotelId = null) {
-    const rooms = readAll();
-    const idx = rooms.findIndex(r => r._id === id);
-    if (idx === -1) return null;
-    
-    // Verify hotel ownership
-    if (hotelId && rooms[idx].hotelId !== hotelId) return null;
+    const room = await this.getById(id, hotelId);
+    if (!room) return null;
 
-    const [removed] = rooms.splice(idx, 1);
-    saveAll(rooms);
-    return removed;
+    const { error } = await supabase
+      .from('rooms')
+      .delete()
+      .eq('id', id);
+
+    if (error) throw error;
+    return room;
   },
 
   async setStatus(id, newStatus, hotelId = null) {
@@ -263,10 +299,4 @@ export const roomsRepo = {
     }
     return updates;
   }
-
-  // REMOVED: addHistory(), getHistory(), clearOldHistory() methods
-  // Industry standard: No separate room.history array
-  // Checkout history is queried from bookings table (status='CheckedOut')
-  // This follows best practices from Opera PMS, Maestro, Cloudbeds, Hotelogix, Airbnb
-  // Benefits: Single source of truth, no sync issues, simpler codebase
 };

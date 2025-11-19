@@ -317,7 +317,12 @@ const RoomTypes = () => {
                     <div style={{ marginBottom: '8px' }}>
                       <div style={{ fontSize: '12px', color: '#6b7280', marginBottom: '4px' }}>Amenities</div>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                        {type.amenities.split(',').map((amenity, idx) => (
+                        {(typeof type.amenities === 'string' 
+                          ? type.amenities.split(',') 
+                          : Array.isArray(type.amenities) 
+                            ? type.amenities 
+                            : []
+                        ).map((amenity, idx) => (
                           <span key={idx} style={{
                             padding: '4px 10px',
                             background: '#f3f4f6',
@@ -325,7 +330,7 @@ const RoomTypes = () => {
                             borderRadius: '6px',
                             fontSize: '12px'
                           }}>
-                            {amenity.trim()}
+                            {typeof amenity === 'string' ? amenity.trim() : amenity}
                           </span>
                         ))}
                       </div>
@@ -399,36 +404,6 @@ const RoomTypes = () => {
           )}
         </div>
       </div>
-    </div>
-  );
-};
-
-export default RoomTypes;
-        <input type="number" placeholder="CGST %" value={form.cgst} onChange={e=>setForm({...form, cgst: parseFloat(e.target.value)||0})} />
-        <input type="number" placeholder="SGST %" value={form.sgst} onChange={e=>setForm({...form, sgst: parseFloat(e.target.value)||0})} />
-        <input type="number" placeholder="IGST %" value={form.igst} onChange={e=>setForm({...form, igst: parseFloat(e.target.value)||0})} />
-        <button className="btn btn-primary" type="submit">{editing ? 'Update' : 'Add'} Type</button>
-        {editing && <button type="button" className="btn" onClick={()=>{ setEditing(null); setForm({ name: '', defaultRate: 0, cgst: 2.5, sgst: 2.5, igst: 0 }); }}>Cancel</button>}
-      </form>
-
-      <table className="table">
-        <thead><tr><th>Name</th><th>Default Rate</th><th>CGST</th><th>SGST</th><th>IGST</th><th>Actions</th></tr></thead>
-        <tbody>
-          {types.map(t => (
-            <tr key={t._id}>
-              <td>{t.name}</td>
-              <td>{t.defaultRate}</td>
-              <td>{t.cgst ?? '-'}</td>
-              <td>{t.sgst ?? '-'}</td>
-              <td>{t.igst ?? '-'}</td>
-              <td style={{ display:'flex', gap:8 }}>
-                <button className="btn btn-secondary" onClick={()=>edit(t)}>Edit</button>
-                <button className="btn btn-danger" onClick={()=>remove(t._id)}>Delete</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
     </div>
   );
 };

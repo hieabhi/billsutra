@@ -76,9 +76,9 @@ const Layout = ({ children, onLogout, user }) => {
       id: 'configuration',
       label: 'Configuration',
       items: [
-        { path: '/room-types', icon: Settings, label: 'Room Types' },
+        { path: '/room-management', icon: Hotel, label: 'Room Management' },
         { path: '/rate-calendar', icon: Calendar, label: 'Rate Calendar' },
-        { path: '/settings', icon: Settings, label: 'Settings' }
+        { path: '/settings', icon: Settings, label: 'General Settings' }
       ]
     }
   ];

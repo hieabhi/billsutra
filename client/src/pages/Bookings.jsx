@@ -13,7 +13,7 @@ const Bookings = () => {
   const [folioBookingId, setFolioBookingId] = useState(null);
   const [error, setError] = useState('');
   const [isInitialLoad, setIsInitialLoad] = useState(true);
-  const [statusFilter, setStatusFilter] = useState('ARRIVING'); // ARRIVING, IN_HOUSE, DEPARTING, UPCOMING, ALL, PAST
+  const [statusFilter, setStatusFilter] = useState('ARRIVING'); // ARRIVING, IN_HOUSE, DEPARTING, DEPARTED_TODAY, UPCOMING, HISTORY
   // INDUSTRY STANDARD: Initialize form with FUNCTION to get fresh dates (Opera PMS, Mews, Cloudbeds)
   // This ensures dates update when component re-renders or refreshes
   const getInitialFormState = () => ({
@@ -284,10 +284,24 @@ const Bookings = () => {
         return bookings.filter(b => b.status === 'CheckedIn');
       
       case 'DEPARTING':
-        // Departing today - CheckedIn status with check-out date = today
+        // Departing today - CheckedIn status with SCHEDULED check-out date = today
         return bookings.filter(b => 
           b.status === 'CheckedIn' && b.checkOutDate === today
         );
+      
+      case 'DEPARTED_TODAY':
+        // Departed today - CheckedOut status with ACTUAL checkout date = today
+        return bookings.filter(b => {
+          if (b.status !== 'CheckedOut') return false;
+          const actualCheckout = b.actualCheckOutDate || b.updatedAt;
+          if (!actualCheckout) return false;
+          const checkoutDate = new Date(actualCheckout).toISOString().slice(0, 10);
+          return checkoutDate === today;
+        }).sort((a,b) => {
+          const dateA = new Date(a.actualCheckOutDate || a.updatedAt);
+          const dateB = new Date(b.actualCheckOutDate || b.updatedAt);
+          return dateB - dateA; // Most recent first
+        });
       
       case 'UPCOMING':
         // Future reservations - Reserved status with check-in date > today
@@ -295,8 +309,8 @@ const Bookings = () => {
           b.status === 'Reserved' && b.checkInDate > today
         );
       
-      case 'PAST':
-        // Checked out - sorted by most recent departures first
+      case 'HISTORY':
+        // Past stays - All checked out guests sorted by most recent departures first
         return bookings.filter(b => b.status === 'CheckedOut')
           .sort((a,b) => {
             const dateA = new Date(a.actualCheckOutDate || a.updatedAt || a.checkOutDate);
@@ -306,7 +320,16 @@ const Bookings = () => {
       
       case 'ALL':
       default:
-        return bookings;
+        // Show all bookings with active ones first
+        return bookings.sort((a,b) => {
+          // Priority: Arriving > In-House > Departing > Upcoming > History
+          const statusPriority = {
+            'Reserved': b.checkInDate === today ? 1 : (b.checkInDate > today ? 4 : 6),
+            'CheckedIn': b.checkOutDate === today ? 2 : 3,
+            'CheckedOut': 5
+          };
+          return (statusPriority[a.status] || 99) - (statusPriority[b.status] || 99);
+        });
     }
   };
 
@@ -341,6 +364,17 @@ const Bookings = () => {
             {bookings.filter(b => b.status === 'CheckedIn' && b.checkOutDate === new Date().toISOString().slice(0, 10)).length}
           </div>
           <div style={{fontSize:13, color:'#b45309', fontWeight:500}}>Departing Today</div>
+        </div>
+        <div style={{padding:16, background:'#fee2e2', borderRadius:8, borderLeft:'4px solid #dc2626'}}>
+          <div style={{fontSize:24, fontWeight:600, color:'#991b1b'}}>
+            {bookings.filter(b => {
+              if (b.status !== 'CheckedOut') return false;
+              const actualCheckout = b.actualCheckOutDate || b.updatedAt;
+              if (!actualCheckout) return false;
+              return new Date(actualCheckout).toISOString().slice(0, 10) === new Date().toISOString().slice(0, 10);
+            }).length}
+          </div>
+          <div style={{fontSize:13, color:'#991b1b', fontWeight:500}}>Departed Today</div>
         </div>
         <div style={{padding:16, background:'#e9d5ff', borderRadius:8, borderLeft:'4px solid #8b5cf6'}}>
           <div style={{fontSize:24, fontWeight:600, color:'#6b21a8'}}>
@@ -580,39 +614,41 @@ const Bookings = () => {
       </form>
 
       {/* Status Filter Tabs - Industry Standard (Opera PMS, Maestro, Cloudbeds) */}
-      <div style={{display:'flex', gap:8, marginBottom:16, marginTop:24, borderBottom:'2px solid #e5e7eb', flexWrap:'wrap'}}>
+      <div style={{display:'flex', gap:6, marginBottom:16, marginTop:24, borderBottom:'2px solid #e5e7eb'}}>
         <button
           type="button"
           onClick={() => setStatusFilter('ARRIVING')}
           style={{
-            padding:'10px 16px',
+            padding:'8px 12px',
             background: statusFilter === 'ARRIVING' ? '#3b82f6' : 'transparent',
             color: statusFilter === 'ARRIVING' ? 'white' : '#6b7280',
             border:'none',
             borderBottom: statusFilter === 'ARRIVING' ? '3px solid #3b82f6' : 'none',
             cursor:'pointer',
             fontWeight: statusFilter === 'ARRIVING' ? 600 : 400,
-            fontSize:'14px',
+            fontSize:'13px',
             marginBottom:'-2px',
-            transition:'all 0.2s'
+            transition:'all 0.2s',
+            whiteSpace:'nowrap'
           }}
         >
-          🔵 Arriving Today ({bookings.filter(b => b.status === 'Reserved' && b.checkInDate === new Date().toISOString().slice(0, 10)).length})
+          🔵 Arriving ({bookings.filter(b => b.status === 'Reserved' && b.checkInDate === new Date().toISOString().slice(0, 10)).length})
         </button>
         <button
           type="button"
           onClick={() => setStatusFilter('IN_HOUSE')}
           style={{
-            padding:'10px 16px',
+            padding:'8px 12px',
             background: statusFilter === 'IN_HOUSE' ? '#10b981' : 'transparent',
             color: statusFilter === 'IN_HOUSE' ? 'white' : '#6b7280',
             border:'none',
             borderBottom: statusFilter === 'IN_HOUSE' ? '3px solid #10b981' : 'none',
             cursor:'pointer',
             fontWeight: statusFilter === 'IN_HOUSE' ? 600 : 400,
-            fontSize:'14px',
+            fontSize:'13px',
             marginBottom:'-2px',
-            transition:'all 0.2s'
+            transition:'all 0.2s',
+            whiteSpace:'nowrap'
           }}
         >
           🟢 In-House ({bookings.filter(b => b.status === 'CheckedIn').length})
@@ -621,89 +657,98 @@ const Bookings = () => {
           type="button"
           onClick={() => setStatusFilter('DEPARTING')}
           style={{
-            padding:'10px 16px',
+            padding:'8px 12px',
             background: statusFilter === 'DEPARTING' ? '#f59e0b' : 'transparent',
             color: statusFilter === 'DEPARTING' ? 'white' : '#6b7280',
             border:'none',
             borderBottom: statusFilter === 'DEPARTING' ? '3px solid #f59e0b' : 'none',
             cursor:'pointer',
             fontWeight: statusFilter === 'DEPARTING' ? 600 : 400,
-            fontSize:'14px',
+            fontSize:'13px',
             marginBottom:'-2px',
-            transition:'all 0.2s'
+            transition:'all 0.2s',
+            whiteSpace:'nowrap'
           }}
         >
-          🟡 Departing Today ({bookings.filter(b => b.status === 'CheckedIn' && b.checkOutDate === new Date().toISOString().slice(0, 10)).length})
+          🔶 Departing ({bookings.filter(b => b.status === 'CheckedIn' && b.checkOutDate === new Date().toISOString().slice(0, 10)).length})
+        </button>
+        <button
+          type="button"
+          onClick={() => setStatusFilter('DEPARTED_TODAY')}
+          style={{
+            padding:'8px 12px',
+            background: statusFilter === 'DEPARTED_TODAY' ? '#dc2626' : 'transparent',
+            color: statusFilter === 'DEPARTED_TODAY' ? 'white' : '#6b7280',
+            border:'none',
+            borderBottom: statusFilter === 'DEPARTED_TODAY' ? '3px solid #dc2626' : 'none',
+            cursor:'pointer',
+            fontWeight: statusFilter === 'DEPARTED_TODAY' ? 600 : 400,
+            fontSize:'13px',
+            marginBottom:'-2px',
+            transition:'all 0.2s',
+            whiteSpace:'nowrap'
+          }}
+        >
+          ✈️ Departed ({bookings.filter(b => {
+            if (b.status !== 'CheckedOut') return false;
+            const actualCheckout = b.actualCheckOutDate || b.updatedAt;
+            if (!actualCheckout) return false;
+            return new Date(actualCheckout).toISOString().slice(0, 10) === new Date().toISOString().slice(0, 10);
+          }).length})
         </button>
         <button
           type="button"
           onClick={() => setStatusFilter('UPCOMING')}
           style={{
-            padding:'10px 16px',
+            padding:'8px 12px',
             background: statusFilter === 'UPCOMING' ? '#8b5cf6' : 'transparent',
             color: statusFilter === 'UPCOMING' ? 'white' : '#6b7280',
             border:'none',
             borderBottom: statusFilter === 'UPCOMING' ? '3px solid #8b5cf6' : 'none',
             cursor:'pointer',
             fontWeight: statusFilter === 'UPCOMING' ? 600 : 400,
-            fontSize:'14px',
+            fontSize:'13px',
             marginBottom:'-2px',
-            transition:'all 0.2s'
+            transition:'all 0.2s',
+            whiteSpace:'nowrap'
           }}
         >
           🟣 Upcoming ({bookings.filter(b => b.status === 'Reserved' && b.checkInDate > new Date().toISOString().slice(0, 10)).length})
         </button>
         <button
           type="button"
-          onClick={() => setStatusFilter('ALL')}
+          onClick={() => setStatusFilter('HISTORY')}
           style={{
-            padding:'10px 16px',
-            background: statusFilter === 'ALL' ? '#6b7280' : 'transparent',
-            color: statusFilter === 'ALL' ? 'white' : '#6b7280',
+            padding:'8px 12px',
+            background: statusFilter === 'HISTORY' ? '#64748b' : 'transparent',
+            color: statusFilter === 'HISTORY' ? 'white' : '#6b7280',
             border:'none',
-            borderBottom: statusFilter === 'ALL' ? '3px solid #6b7280' : 'none',
+            borderBottom: statusFilter === 'HISTORY' ? '3px solid #64748b' : 'none',
             cursor:'pointer',
-            fontWeight: statusFilter === 'ALL' ? 600 : 400,
-            fontSize:'14px',
+            fontWeight: statusFilter === 'HISTORY' ? 600 : 400,
+            fontSize:'13px',
             marginBottom:'-2px',
-            transition:'all 0.2s'
+            transition:'all 0.2s',
+            whiteSpace:'nowrap'
           }}
         >
-          📋 All ({bookings.length})
-        </button>
-        <button
-          type="button"
-          onClick={() => setStatusFilter('PAST')}
-          style={{
-            padding:'10px 16px',
-            background: statusFilter === 'PAST' ? '#64748b' : 'transparent',
-            color: statusFilter === 'PAST' ? 'white' : '#6b7280',
-            border:'none',
-            borderBottom: statusFilter === 'PAST' ? '3px solid #64748b' : 'none',
-            cursor:'pointer',
-            fontWeight: statusFilter === 'PAST' ? 600 : 400,
-            fontSize:'14px',
-            marginBottom:'-2px',
-            transition:'all 0.2s'
-          }}
-        >
-          ✈️ Departed ({bookings.filter(b => b.status === 'CheckedOut').length})
+          📜 History ({bookings.filter(b => b.status === 'CheckedOut').length})
         </button>
       </div>
 
-      <div style={{overflowX: 'auto', marginTop: '20px', marginLeft: '-32px'}}>
-        <table className="table" style={{fontSize: '0.9rem', minWidth: '100%'}}>
+      <div style={{marginTop: '20px'}}>
+        <table className="table" style={{fontSize: '0.9rem', width: '100%', tableLayout: 'fixed'}}>
           <thead>
             <tr>
-              <th style={{minWidth: '90px'}}>Res No</th>
-              <th style={{minWidth: '160px'}}>Guest & Contact</th>
-              <th style={{minWidth: '60px', textAlign: 'center'}}>Pax</th>
-              <th style={{minWidth: '50px', textAlign: 'center'}}>Room</th>
-              <th style={{minWidth: '140px'}}>Check-in / Out</th>
-              <th style={{minWidth: '70px'}}>Source</th>
-              <th style={{minWidth: '90px'}}>Status</th>
-              <th style={{minWidth: '90px', textAlign: 'right'}}>Amount</th>
-              <th style={{minWidth: '240px', position: 'sticky', right: 0, background: '#fff', boxShadow: '-2px 0 4px rgba(0,0,0,0.05)', paddingLeft: '12px'}}>Actions</th>
+              <th style={{width: '9%'}}>Res No</th>
+              <th style={{width: '21%'}}>Guest & Contact</th>
+              <th style={{width: '6%', textAlign: 'center'}}>Pax</th>
+              <th style={{width: '5%', textAlign: 'center'}}>Room</th>
+              <th style={{width: '16%'}}>Check-in / Out</th>
+              <th style={{width: '8%'}}>Source</th>
+              <th style={{width: '9%'}}>Status</th>
+              <th style={{width: '11%', textAlign: 'right'}}>Amount</th>
+              <th style={{width: '15%'}}>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -712,9 +757,10 @@ const Bookings = () => {
                 <td colSpan="9" style={{textAlign:'center', padding:'40px', color:'#999'}}>
                   {statusFilter === 'ARRIVING' && 'No arrivals today'}
                   {statusFilter === 'IN_HOUSE' && 'No guests currently in-house'}
-                  {statusFilter === 'DEPARTING' && 'No departures today'}
+                  {statusFilter === 'DEPARTING' && 'No departures scheduled for today'}
+                  {statusFilter === 'DEPARTED_TODAY' && 'No departures yet today'}
                   {statusFilter === 'UPCOMING' && 'No upcoming reservations'}
-                  {statusFilter === 'PAST' && 'No past bookings'}
+                  {statusFilter === 'HISTORY' && 'No past stays'}
                   {statusFilter === 'ALL' && 'No bookings yet'}
                 </td>
               </tr>
@@ -800,42 +846,73 @@ const Bookings = () => {
                     <div style={{fontSize: '0.7rem', color: '#28a745'}}>✓ Paid</div>
                   )}
                 </td>
-                <td style={{position: 'sticky', right: 0, background: '#fff', boxShadow: '-2px 0 4px rgba(0,0,0,0.05)', paddingLeft: '12px'}}>
-                  <div style={{display: 'flex', gap: '6px', flexWrap: 'wrap', paddingRight: '8px'}}>
+                <td>
+                  <div style={{display: 'flex', gap: '4px', justifyContent: 'flex-start'}}>
                     {b.status === 'Reserved' && !isOverdue && (
-                      <button className="btn btn-secondary" onClick={() => checkIn(b._id)} style={{padding: '5px 10px', fontSize: '0.75rem', whiteSpace: 'nowrap'}}>
-                        Check-in
+                      <button 
+                        className="btn btn-secondary" 
+                        onClick={() => checkIn(b._id)} 
+                        title="Check-in Guest"
+                        style={{padding: '8px', fontSize: '0.85rem', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                      >
+                        ✓
                       </button>
                     )}
                     {b.status === 'Reserved' && isOverdue && (
                       <>
-                        <button className="btn btn-secondary" onClick={() => checkIn(b._id)} style={{padding: '5px 10px', fontSize: '0.75rem', whiteSpace: 'nowrap', background: '#ffc107', border: '1px solid #e0a800'}}>
-                          Late Check-in
+                        <button 
+                          className="btn btn-secondary" 
+                          onClick={() => checkIn(b._id)} 
+                          title="Late Check-in"
+                          style={{padding: '8px', fontSize: '0.85rem', width: '36px', height: '36px', background: '#ffc107', border: '1px solid #e0a800', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                        >
+                          ⚠
                         </button>
-                        <button className="btn btn-danger" onClick={() => markNoShow(b._id)} style={{padding: '5px 10px', fontSize: '0.75rem', whiteSpace: 'nowrap'}}>
-                          No-Show
+                        <button 
+                          className="btn btn-danger" 
+                          onClick={() => markNoShow(b._id)} 
+                          title="Mark as No-Show"
+                          style={{padding: '8px', fontSize: '0.85rem', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                        >
+                          ✕
                         </button>
                       </>
                     )}
                     {b.status === 'CheckedIn' && (
-                      <button className="btn btn-secondary" onClick={() => checkOut(b._id)} style={{padding: '5px 10px', fontSize: '0.75rem', whiteSpace: 'nowrap'}}>
-                        Check-out
+                      <button 
+                        className="btn btn-secondary" 
+                        onClick={() => checkOut(b._id)} 
+                        title="Check-out Guest"
+                        style={{padding: '8px', fontSize: '0.85rem', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                      >
+                        →
                       </button>
                     )}
-                    <button className="btn" onClick={() => setFolioBookingId(b._id)} style={{padding: '5px 10px', fontSize: '0.75rem', whiteSpace: 'nowrap'}}>
-                      Folio
+                    <button 
+                      className="btn" 
+                      onClick={() => setFolioBookingId(b._id)} 
+                      title="View Folio"
+                      style={{padding: '8px', fontSize: '0.85rem', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                    >
+                      📋
                     </button>
                     {b.billId && (
                       <button 
                         className="btn btn-primary" 
                         onClick={async () => { const resp = await billsAPI.getById(b.billId); setSelectedBill(resp.data); }}
-                        style={{padding: '5px 10px', fontSize: '0.75rem', whiteSpace: 'nowrap'}}
+                        title="View Invoice"
+                        style={{padding: '8px', fontSize: '0.85rem', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
                       >
-                        Invoice
+                        📄
                       </button>
                     )}
-                    <button className="btn btn-danger" onClick={() => remove(b._id)} style={{padding: '5px 10px', fontSize: '0.75rem'}}>
-                      ×
+                    <button 
+                      className="btn btn-danger" 
+                      onClick={() => remove(b._id)} 
+                      title="Delete Reservation"
+                      style={{padding: '8px', fontSize: '0.85rem', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+                    >
+                      🗑
                     </button>
                   </div>
                 </td>

@@ -1,13 +1,17 @@
 import express from 'express';
 import { billsRepo } from '../repositories/billsRepo.js';
+import { authMiddleware } from '../middleware/auth.js';
 
 const router = express.Router();
+
+// Apply auth middleware to all routes
+router.use(authMiddleware);
 
 // Get all bills
 router.get('/', async (req, res) => {
   try {
     const { startDate, endDate, status } = req.query;
-    const bills = await billsRepo.list({ startDate, endDate, status });
+    const bills = await billsRepo.list({ startDate, endDate, status, hotelId: req.user?.hotelId });
     res.json(bills);
   } catch (error) {
     res.status(500).json({ message: error.message });

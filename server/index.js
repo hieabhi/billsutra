@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
 import billRoutes from './routes/bills.js';
 import customerRoutes from './routes/customers.js';
 import itemRoutes from './routes/items.js';
@@ -43,7 +45,40 @@ app.use(cors({
   },
   credentials: true
 }));
-app.use(express.json());
+
+// SECURITY: HTTP security headers
+app.use(helmet({
+  contentSecurityPolicy: false, // Disable for development
+  crossOriginEmbedderPolicy: false
+}));
+
+// SECURITY: Rate limiting to prevent DDoS
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  message: 'Too many requests from this IP, please try again later',
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5, // Limit login attempts
+  message: 'Too many login attempts, please try again later',
+  skipSuccessfulRequests: true
+});
+
+app.use('/api/', limiter);
+app.use('/api/auth/', authLimiter);
+
+// SECURITY: Request logging
+app.use((req, res, next) => {
+  const timestamp = new Date().toISOString();
+  console.log(`[${timestamp}] ${req.method} ${req.path} - IP: ${req.ip}`);
+  next();
+});
+
+app.use(express.json({ limit: '10mb' })); // Limit payload size
 
 // Optional MongoDB Connection (skip if no URI provided)
 const MONGO_URI = process.env.MONGODB_URI;

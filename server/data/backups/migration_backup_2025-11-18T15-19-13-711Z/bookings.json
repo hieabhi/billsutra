@@ -1,0 +1,176 @@
+[
+  {
+    "_id": "45ae8565-a76e-407b-b87a-f3f8a546f088",
+    "reservationNumber": "RES00083",
+    "guest": {
+      "name": "Sairam",
+      "phone": "9899098789",
+      "email": "omsairam@navts.com",
+      "idProof": "AADHAR",
+      "address": "Shirdi"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "7d1c3da2-d425-4d44-b662-a5480a33d105",
+    "roomNumber": "101",
+    "rate": 999,
+    "checkInDate": "2025-11-18",
+    "checkOutDate": "2025-11-19",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 999,
+    "balance": 102,
+    "advancePayment": 897,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "5x92wrgl6cc",
+          "date": "2025-11-18T11:16:06.211Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Thali",
+          "itemId": "25bd70a8-1ced-4be1-b08c-3c6dedf76b0e",
+          "quantity": 1,
+          "rate": 299,
+          "amount": 299,
+          "taxRate": 5,
+          "cgst": 7.47,
+          "sgst": 7.47,
+          "igst": 0,
+          "totalAmount": 313.95,
+          "postedBy": "system",
+          "remarks": ""
+        }
+      ],
+      "payments": [],
+      "total": 1312.95,
+      "balance": 102
+    },
+    "createdAt": "2025-11-18T11:13:13.867Z",
+    "updatedAt": "2025-11-18T11:17:11.583Z",
+    "actualCheckOutDate": "2025-11-18T11:17:11.516Z",
+    "actualCheckOutTime": "2025-11-18T11:17:11.516Z",
+    "billId": "6258ea69-91fc-442f-921c-148d425a9204",
+    "billNumber": "INV00053"
+  },
+  {
+    "_id": "d7bff7bb-eb21-4337-aaed-2216f4db72b3",
+    "reservationNumber": "RES00084",
+    "guest": {
+      "name": "Sairam",
+      "phone": "9899098789",
+      "email": "omsairam@navts.com",
+      "idProof": "AADHAR",
+      "address": "Shirdi"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "73a58554-f6fc-4cb3-84b8-538c1f9992e4",
+    "roomNumber": "201",
+    "rate": 1499,
+    "checkInDate": "2025-11-18",
+    "checkOutDate": "2025-11-19",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 1499,
+    "balance": 602,
+    "advancePayment": 897,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "794sbe2fk8s",
+          "date": "2025-11-18T11:33:02.240Z",
+          "category": "FOOD",
+          "description": "Thali",
+          "itemId": "25bd70a8-1ced-4be1-b08c-3c6dedf76b0e",
+          "quantity": 1,
+          "rate": 299,
+          "amount": 299,
+          "taxRate": 5,
+          "cgst": 7.47,
+          "sgst": 7.47,
+          "igst": 0,
+          "totalAmount": 313.95,
+          "postedBy": "system",
+          "remarks": ""
+        }
+      ],
+      "payments": [],
+      "total": 1812.95,
+      "balance": 602
+    },
+    "createdAt": "2025-11-18T11:32:26.116Z",
+    "updatedAt": "2025-11-18T11:33:22.038Z",
+    "actualCheckOutDate": "2025-11-18T11:33:22.002Z",
+    "actualCheckOutTime": "2025-11-18T11:33:22.002Z",
+    "billId": "d4d09607-7b7b-4aac-a8c6-e780dd5e2a0a",
+    "billNumber": "INV00054"
+  },
+  {
+    "_id": "c0f227fd-1765-4651-af3c-2abb80fa40a8",
+    "reservationNumber": "RES00085",
+    "guest": {
+      "name": "Sairam",
+      "phone": "9899098789",
+      "email": "omsairam@navts.com",
+      "idProof": "AADHAR",
+      "address": "Shirdi"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "67b11026-b4f3-4428-a3b9-f229fb817eeb",
+    "roomNumber": "103",
+    "rate": 1299,
+    "checkInDate": "2025-11-18",
+    "checkOutDate": "2025-11-19",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 1299,
+    "balance": 402,
+    "advancePayment": 897,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 1299,
+      "balance": 402
+    },
+    "createdAt": "2025-11-18T11:40:43.221Z",
+    "updatedAt": "2025-11-18T11:40:52.095Z",
+    "actualCheckOutDate": "2025-11-18T11:40:52.028Z",
+    "actualCheckOutTime": "2025-11-18T11:40:52.028Z",
+    "billId": "d76ab4c2-c0bc-4d03-8590-82518be5dca9",
+    "billNumber": "INV00055"
+  }
+]

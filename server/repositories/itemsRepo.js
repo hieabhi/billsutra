@@ -1,99 +1,119 @@
-import mongoose from 'mongoose';
-import { v4 as uuidv4 } from 'uuid';
-import Item from '../models/Item.js';
-import { readJSON, writeJSON } from '../utils/fileStore.js';
+import supabase, { mapItemFromDB } from '../config/supabase.js';
 
-const FILE_NAME = 'items.json';
+console.log('🚀 LOADING SUPABASE ITEMSREPO');
 
-function isMongoConnected() {
-  // Be strict: require an active DB handle to avoid buffered ops/timeouts
-  return mongoose.connection?.readyState === 1 && !!mongoose.connection?.db;
-}
-
-// File-store helpers
-function readAll() {
-  return readJSON(FILE_NAME, []);
-}
-
-function saveAll(items) {
-  writeJSON(FILE_NAME, items);
+function getTenantId(hotelId) {
+  return hotelId;
 }
 
 export const itemsRepo = {
   async list(query = {}) {
-    if (isMongoConnected()) {
-      const mongoQuery = {};
-      if (query.category) mongoQuery.category = query.category;
-      if (typeof query.isActive === 'boolean') mongoQuery.isActive = query.isActive;
-      return await Item.find(mongoQuery).sort({ name: 1 });
-    }
-
-    // file store
-    let items = readAll();
-    console.log('[DEBUG] ItemsRepo - Total items in file:', items.length);
-    console.log('[DEBUG] ItemsRepo - Query:', JSON.stringify(query));
-    if (query.category) items = items.filter(i => i.category === query.category);
-    if (typeof query.isActive === 'boolean') items = items.filter(i => !!i.isActive === query.isActive);
-    console.log('[DEBUG] ItemsRepo - Items after filtering:', items.length);
-    return items.sort((a, b) => a.name.localeCompare(b.name));
+    const tenantId = getTenantId(query.hotelId);
+    
+    let supaQuery = supabase
+      .from('items')
+      .select('*')
+      .eq('tenant_id', tenantId);
+    
+    if (query.category) supaQuery = supaQuery.eq('category', query.category);
+    if (typeof query.isActive === 'boolean') supaQuery = supaQuery.eq('is_active', query.isActive);
+    
+    supaQuery = supaQuery.order('name');
+    
+    const { data, error } = await supaQuery;
+    if (error) throw error;
+    
+    return (data || []).map(mapItemFromDB);
   },
 
   async getById(id) {
-    if (isMongoConnected()) {
-      return await Item.findById(id);
+    const { data, error } = await supabase
+      .from('items')
+      .select('*')
+      .eq('id', id)
+      .single();
+    
+    if (error) {
+      if (error.code === 'PGRST116') return null;
+      throw error;
     }
-    const items = readAll();
-    return items.find(i => i._id === id);
+    
+    return mapItemFromDB(data);
   },
 
   async create(data) {
-    if (isMongoConnected()) {
-      const doc = new Item(data);
-      return await doc.save();
-    }
-    const items = readAll();
+    const tenantId = getTenantId(data.hotelId);
     const now = new Date().toISOString();
+    
     const item = {
-      _id: uuidv4(),
+      tenant_id: tenantId,
       name: data.name,
       category: data.category || 'Food',
       hsn: data.hsn || '',
-      rate: Number(data.rate),
+      price: Number(data.rate || data.price),
       cgst: Number(data.cgst ?? 2.5),
       sgst: Number(data.sgst ?? 2.5),
       igst: Number(data.igst ?? 0),
       description: data.description || '',
-      isActive: data.isActive !== false,
-      createdAt: now,
-      updatedAt: now,
+      is_active: data.isActive !== false,
+      created_at: now,
+      updated_at: now,
     };
-    items.push(item);
-    saveAll(items);
-    return item;
+    
+    const { data: created, error } = await supabase
+      .from('items')
+      .insert(item)
+      .select()
+      .single();
+    
+    if (error) throw error;
+    return mapItemFromDB(created);
   },
 
   async update(id, data) {
-    if (isMongoConnected()) {
-      return await Item.findByIdAndUpdate(id, data, { new: true });
+    const updates = {
+      updated_at: new Date().toISOString()
+    };
+    
+    if (data.name !== undefined) updates.name = data.name;
+    if (data.category !== undefined) updates.category = data.category;
+    if (data.hsn !== undefined) updates.hsn = data.hsn;
+    if (data.rate !== undefined) updates.price = Number(data.rate);
+    if (data.price !== undefined) updates.price = Number(data.price);
+    if (data.cgst !== undefined) updates.cgst = Number(data.cgst);
+    if (data.sgst !== undefined) updates.sgst = Number(data.sgst);
+    if (data.igst !== undefined) updates.igst = Number(data.igst);
+    if (data.description !== undefined) updates.description = data.description;
+    if (data.isActive !== undefined) updates.is_active = data.isActive;
+    
+    const { data: updated, error } = await supabase
+      .from('items')
+      .update(updates)
+      .eq('id', id)
+      .select()
+      .single();
+    
+    if (error) {
+      if (error.code === 'PGRST116') return null;
+      throw error;
     }
-    const items = readAll();
-    const idx = items.findIndex(i => i._id === id);
-    if (idx === -1) return null;
-    const now = new Date().toISOString();
-    items[idx] = { ...items[idx], ...data, rate: Number(data.rate ?? items[idx].rate), updatedAt: now };
-    saveAll(items);
-    return items[idx];
+    
+    return mapItemFromDB(updated);
   },
 
   async remove(id) {
-    if (isMongoConnected()) {
-      return await Item.findByIdAndDelete(id);
+    const { data, error } = await supabase
+      .from('items')
+      .delete()
+      .eq('id', id)
+      .select()
+      .single();
+    
+    if (error) {
+      if (error.code === 'PGRST116') return null;
+      throw error;
     }
-    const items = readAll();
-    const idx = items.findIndex(i => i._id === id);
-    if (idx === -1) return null;
-    const [removed] = items.splice(idx, 1);
-    saveAll(items);
-    return removed;
+    
+    return mapItemFromDB(data);
   }
 };

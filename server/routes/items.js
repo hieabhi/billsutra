@@ -1,7 +1,11 @@
 import express from 'express';
 import { itemsRepo } from '../repositories/itemsRepo.js';
+import { authMiddleware } from '../middleware/auth.js';
 
 const router = express.Router();
+
+// Apply auth middleware to all routes
+router.use(authMiddleware);
 
 // DEBUG endpoint
 router.get('/debug', async (req, res) => {
@@ -15,7 +19,9 @@ router.get('/', async (req, res) => {
   try {
     const { category, isActive } = req.query;
     
-    const query = {};
+    const query = {
+      hotelId: req.user?.hotelId
+    };
     if (category) {
       query.category = category;
     }
@@ -49,7 +55,8 @@ router.get('/:id', async (req, res) => {
 // Create item
 router.post('/', async (req, res) => {
   try {
-  const savedItem = await itemsRepo.create(req.body);
+    const itemData = { ...req.body, hotelId: req.user?.hotelId };
+    const savedItem = await itemsRepo.create(itemData);
     res.status(201).json(savedItem);
   } catch (error) {
     res.status(400).json({ message: error.message });
@@ -59,7 +66,8 @@ router.post('/', async (req, res) => {
 // Update item
 router.put('/:id', async (req, res) => {
   try {
-    const item = await itemsRepo.update(req.params.id, req.body);
+    const itemData = { ...req.body, hotelId: req.user?.hotelId };
+    const item = await itemsRepo.update(req.params.id, itemData);
     if (!item) {
       return res.status(404).json({ message: 'Item not found' });
     }

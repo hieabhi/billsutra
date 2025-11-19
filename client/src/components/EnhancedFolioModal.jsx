@@ -117,13 +117,15 @@ const EnhancedFolioModal = ({ bookingId, onClose, onChanged }) => {
     
     const item = items.find(i => i._id === itemId);
     if (item) {
+      // Calculate total tax rate (CGST + SGST + IGST)
+      const totalTaxRate = (Number(item.cgst || 0) + Number(item.sgst || 0) + Number(item.igst || 0));
       setChargeForm({
         ...chargeForm,
         itemId: item._id,
         description: item.name,
-        rate: item.price,
-        taxRate: item.taxRate || 5,
-        category: item.category?.toUpperCase().replace(' ', '_') || 'MISC'
+        rate: Number(item.rate || 0),
+        taxRate: totalTaxRate || 5,
+        category: item.category?.toUpperCase().replace(/\s+/g, '_') || 'FOOD_BEVERAGE'
       });
     }
   };
@@ -331,7 +333,7 @@ const EnhancedFolioModal = ({ bookingId, onClose, onChanged }) => {
                     <option value="">-- Select from Item Master --</option>
                     {items.map(item => (
                       <option key={item._id} value={item._id}>
-                        {item.name} - ₹{item.price} ({item.category})
+                        {item.name} - ₹{item.rate || 0} ({item.category})
                       </option>
                     ))}
                   </select>

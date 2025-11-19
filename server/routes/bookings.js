@@ -1,10 +1,19 @@
 import express from 'express';
 import { bookingsRepo } from '../repositories/bookingsRepo.js';
+import { validateBookingInput } from '../middleware/validation.js';
+import { authMiddleware } from '../middleware/auth.js';
 
 const router = express.Router();
 
+// Apply auth middleware to all routes
+router.use(authMiddleware);
+
 router.get('/', async (req,res)=>{
-  try { const { status, date, roomId } = req.query; const list = await bookingsRepo.list({ status, date, roomId }); res.json(list);} 
+  try { 
+    const { status, date, roomId } = req.query; 
+    const list = await bookingsRepo.list({ status, date, roomId, hotelId: req.user?.hotelId }); 
+    res.json(list);
+  } 
   catch (e){ res.status(500).json({message:e.message}); }
 });
 
@@ -13,7 +22,7 @@ router.get('/:id', async (req,res)=>{
   catch (e){ res.status(500).json({message:e.message}); }
 });
 
-router.post('/', async (req,res)=>{
+router.post('/', validateBookingInput, async (req,res)=>{
   try { const saved = await bookingsRepo.create(req.body); res.status(201).json(saved);} 
   catch (e){ res.status(400).json({message:e.message}); }
 });
