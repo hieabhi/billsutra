@@ -52,6 +52,10 @@ const Bookings = () => {
         bookingsAPI.getAll({}),
         roomsAPI.getAll()
       ]);
+      console.log('📊 Fetched bookings:', b.data?.length, 'bookings');
+      console.log('📋 Sample booking object:', b.data?.[0]);
+      console.log('🔑 First booking keys:', b.data?.[0] ? Object.keys(b.data[0]) : 'No bookings');
+      
       setBookings(b.data);
       setRooms(r.data);
       
@@ -251,22 +255,32 @@ const Bookings = () => {
   };
   
   const remove = async (id) => { 
+    console.log('🗑️ Delete clicked - Raw booking object:', bookings.find(b => b._id === id || b.id === id));
+    console.log('🗑️ Attempting to delete booking with ID:', id);
+    console.log('🗑️ ID type:', typeof id, 'Value:', id);
+    
+    if (!id || id === 'undefined') {
+      alert('❌ Cannot delete: Booking ID is missing!\n\nThis is a data mapping issue. Check console for booking object.');
+      console.error('❌ Booking objects:', bookings);
+      return;
+    }
+    
     if (confirm('Delete booking?')) {
       // OPTIMISTIC UPDATE: Remove from UI immediately
       const previousBookings = [...bookings];
-      setBookings(bookings.filter(b => b._id !== id));
+      setBookings(bookings.filter(b => b._id !== id && b.id !== id));
       
       try {
-        console.log('Deleting booking with ID:', id);
+        console.log('📤 Sending DELETE request for booking ID:', id);
         const response = await bookingsAPI.delete(id);
-        console.log('Delete response:', response);
+        console.log('✅ Delete response:', response);
         // Refresh after 50ms to sync room status changes
         setTimeout(refresh, 50);
       } catch (err) {
         // Revert on error
         setBookings(previousBookings);
         const errorMsg = err.response?.data?.message || err.message || 'Failed to delete booking';
-        console.error('Delete error:', err);
+        console.error('❌ Delete error:', err);
         setError(errorMsg);
         alert(`Error deleting booking: ${errorMsg}`);
       }
