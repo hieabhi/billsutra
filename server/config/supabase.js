@@ -11,10 +11,10 @@ import path from 'path';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
-// Use ANON_KEY - RLS configured to be permissive for authenticated users
+// Use SERVICE_KEY to bypass RLS since backend handles its own auth/tenant isolation
 const supabase = createClient(
   process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY
+  process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_ANON_KEY
 );
 
 export default supabase;
