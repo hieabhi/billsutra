@@ -26,12 +26,21 @@ import { runDualStatusSync, startPeriodicDualStatusSync } from './utils/dualStat
 // PRODUCTION SAFETY: Environment validation
 import { validateEnvironment } from './utils/validateEnv.js';
 
+// ERROR TRACKING: Sentry integration
+import { initSentry, sentryErrorHandler } from './config/sentry.js';
+
+// PERFORMANCE: Caching layer
+import { getCacheStats } from './utils/cache.js';
+
 dotenv.config();
 
 // Validate environment variables before proceeding
 validateEnvironment();
 
 const app = express();
+
+// Initialize Sentry BEFORE other middleware
+const Sentry = initSentry(app);
 const PORT = process.env.PORT || 5051;
 
 // CORS Configuration - Production-ready with strict origin control
@@ -159,6 +168,13 @@ app.use('/api/stats', statsRoutes);
 app.use('/api/room-types', roomTypesRoutes);
 app.use('/api/rate-plans', ratePlansRoutes);
 
+// Cache statistics endpoint (development only)
+if (process.env.NODE_ENV !== 'production') {
+  app.get('/api/debug/cache-stats', (req, res) => {
+    res.json(getCacheStats());
+  });
+}
+
 app.get('/', (req, res) => {
   res.json({ message: 'BillSutra Multi-Tenant Hotel Management API' });
 });
@@ -222,6 +238,19 @@ app.get('/api/public-health-check', async (req, res) => {
       timestamp: new Date().toISOString()
     });
   }
+});
+
+// Sentry error handler (must be AFTER all routes but BEFORE other error handlers)
+if (Sentry) {
+  app.use(sentryErrorHandler());
+}
+
+// Global error handler
+app.use((err, req, res, next) => {
+  console.error('💥 Global error handler:', err);
+  res.status(err.status || 500).json({
+    error: process.env.NODE_ENV === 'production' ? 'Internal server error' : err.message,
+  });
 });
 
 app.listen(PORT, async () => {

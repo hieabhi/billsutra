@@ -34,7 +34,7 @@ jobs:
             --platform managed \
             --region us-central1 \
             --allow-unauthenticated \
-            --set-env-vars "SUPABASE_URL=${{ secrets.SUPABASE_URL }},SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }},SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }},NODE_ENV=production"
+            --set-env-vars "SUPABASE_URL=${{ secrets.SUPABASE_URL }},SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }},SUPABASE_SERVICE_KEY=${{ secrets.SUPABASE_SERVICE_KEY }},NODE_ENV=production,SENTRY_DSN=${{ secrets.SENTRY_DSN }}"
 
   deploy-frontend:
     name: Deploy Frontend to Firebase Hosting

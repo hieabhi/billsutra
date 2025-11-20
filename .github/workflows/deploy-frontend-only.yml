@@ -30,6 +30,8 @@ jobs:
           echo "VITE_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}" >> .env.production
           echo "VITE_FIREBASE_APP_ID=${{ secrets.FIREBASE_APP_ID }}" >> .env.production
           echo "VITE_FIREBASE_MEASUREMENT_ID=${{ secrets.FIREBASE_MEASUREMENT_ID }}" >> .env.production
+          echo "VITE_SENTRY_DSN=${{ secrets.VITE_SENTRY_DSN }}" >> .env.production
+          echo "VITE_APP_VERSION=1.0.0" >> .env.production
           echo "=== Generated .env.production ==="
           cat .env.production
           echo "================================="
