@@ -40,7 +40,12 @@ jobs:
       
       - name: Build frontend
         working-directory: ./client
-        run: npm run build
+        run: |
+          rm -rf dist node_modules/.vite
+          npm run build
+          echo "=== Checking build output for API URL ==="
+          grep -r "127.0.0.1" dist/ || echo "No localhost found in build"
+          grep -r "billsutra-backend" dist/ || echo "Backend URL not found in build"
       
       - name: List dist contents
         working-directory: ./client
