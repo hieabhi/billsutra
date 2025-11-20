@@ -173,24 +173,47 @@ export const mapBookingToDB = (booking) => ({
   notes: booking.notes || (booking.guestName ? `Guest: ${booking.guestName}` : '')
 });
 
-export const mapBookingFromDBComplete = (booking) => ({
-  _id: booking.id,
-  hotelId: booking.tenant_id,
-  roomId: booking.room_id,
-  guestId: booking.guest_id,
-  guestName: booking.notes?.replace('Guest: ', '') || '',
-  checkInDate: booking.check_in_date,
-  checkOutDate: booking.check_out_date,
-  status: booking.status,
-  adults: booking.adults || 1,
-  children: booking.children || 0,
-  totalAmount: booking.total_amount || 0,
-  paidAmount: booking.paid_amount || 0,
-  balance: (booking.total_amount || 0) - (booking.paid_amount || 0),
-  notes: booking.notes || '',
-  createdAt: booking.created_at,
-  updatedAt: booking.updated_at
-});
+export const mapBookingFromDBComplete = (booking) => {
+  if (!booking) return null;
+  
+  return {
+    _id: booking.id,
+    id: booking.id, // Keep both for compatibility
+    hotelId: booking.tenant_id,
+    roomId: booking.room_id,
+    roomNumber: booking.room_number,
+    guestId: booking.guest_id,
+    guestName: booking.guest_name || booking.notes?.replace('Guest: ', '') || '',
+    guestPhone: booking.guest_phone,
+    guestEmail: booking.guest_email,
+    checkInDate: booking.check_in_date,
+    checkOutDate: booking.check_out_date,
+    actualCheckInDate: booking.actual_check_in_date,
+    actualCheckOutDate: booking.actual_check_out_date,
+    status: booking.status,
+    reservationNumber: booking.reservation_number,
+    nights: booking.nights,
+    amount: booking.amount,
+    advancePayment: booking.advance_payment,
+    adults: booking.guest_counts?.adults || 1,
+    children: booking.guest_counts?.children || 0,
+    infants: booking.guest_counts?.infants || 0,
+    guestCounts: booking.guest_counts,
+    additionalGuests: booking.additional_guests || [],
+    totalAmount: booking.amount || 0,
+    paidAmount: booking.advance_payment || 0,
+    balance: (booking.amount || 0) - (booking.advance_payment || 0),
+    paymentMethod: booking.payment_method,
+    bookingSource: booking.booking_source,
+    specialRequests: booking.special_requests,
+    folio: booking.folio,
+    billId: booking.bill_id,
+    billNumber: booking.bill_number,
+    notes: booking.notes || '',
+    createdAt: booking.created_at,
+    updatedAt: booking.updated_at
+  };
+};
 
 export const mapBillToDB = (bill) => ({
   id: bill._id,

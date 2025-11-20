@@ -913,7 +913,7 @@ const Bookings = () => {
                     )}
                     <button 
                       className="btn btn-danger" 
-                      onClick={() => remove(b._id)} 
+                      onClick={() => remove(b._id || b.id)} 
                       title="Delete Reservation"
                       style={{padding: '8px', fontSize: '0.85rem', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}
                     >
