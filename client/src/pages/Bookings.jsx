@@ -257,13 +257,18 @@ const Bookings = () => {
       setBookings(bookings.filter(b => b._id !== id));
       
       try {
-        await bookingsAPI.delete(id);
+        console.log('Deleting booking with ID:', id);
+        const response = await bookingsAPI.delete(id);
+        console.log('Delete response:', response);
         // Refresh after 50ms to sync room status changes
         setTimeout(refresh, 50);
       } catch (err) {
         // Revert on error
         setBookings(previousBookings);
-        setError(err.response?.data?.message || 'Failed to delete booking');
+        const errorMsg = err.response?.data?.message || err.message || 'Failed to delete booking';
+        console.error('Delete error:', err);
+        setError(errorMsg);
+        alert(`Error deleting booking: ${errorMsg}`);
       }
     } 
   };
