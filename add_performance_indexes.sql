@@ -26,7 +26,7 @@ WHERE status IN ('CONFIRMED', 'CHECKED_IN');
 
 -- Index for room availability queries
 CREATE INDEX IF NOT EXISTS idx_rooms_status_type 
-ON rooms(status, type, tenant_id);
+ON rooms(status, room_type, tenant_id);
 
 -- Index for housekeeping status
 CREATE INDEX IF NOT EXISTS idx_rooms_housekeeping 
@@ -35,7 +35,7 @@ WHERE housekeeping_status = 'DIRTY';
 
 -- Index for room number lookups (exact match)
 CREATE INDEX IF NOT EXISTS idx_rooms_number 
-ON rooms(tenant_id, number);
+ON rooms(tenant_id, room_number);
 
 -- =====================================================
 -- HOUSEKEEPING_TASKS TABLE INDEXES
@@ -54,14 +54,6 @@ ON housekeeping_tasks(room_id, status);
 CREATE INDEX IF NOT EXISTS idx_housekeeping_priority 
 ON housekeeping_tasks(priority, status, tenant_id) 
 WHERE status != 'COMPLETED';
-
--- =====================================================
--- RATE_PLANS TABLE INDEXES
--- =====================================================
-
--- Index for room type lookups
-CREATE INDEX IF NOT EXISTS idx_rate_plans_room_type 
-ON rate_plans(room_type, tenant_id);
 
 -- =====================================================
 -- ITEMS TABLE INDEXES
