@@ -12,18 +12,13 @@ ON bookings(status, tenant_id)
 WHERE status IS NOT NULL;
 
 -- Index for date range queries (arrivals, departures)
-CREATE INDEX IF NOT EXISTS idx_bookings_dates 
-ON bookings(check_in_date, check_out_date, tenant_id);
-
--- Index for guest lookups (tenant + phone combination for faster searches)
-CREATE INDEX IF NOT EXISTS idx_bookings_tenant_guest_phone 
-ON bookings(tenant_id, guest_phone) 
-WHERE guest_phone IS NOT NULL;
+CREATE INDEX IF NOT EXISTS idx_bookings_date_range 
+ON bookings(tenant_id, check_in, check_out);
 
 -- Composite index for dashboard queries
 CREATE INDEX IF NOT EXISTS idx_bookings_dashboard 
-ON bookings(tenant_id, status, check_in_date) 
-WHERE status IN ('Reserved', 'CheckedIn');
+ON bookings(tenant_id, status, check_in) 
+WHERE status IN ('CONFIRMED', 'CHECKED_IN');
 
 -- =====================================================
 -- ROOMS TABLE INDEXES
@@ -43,40 +38,22 @@ CREATE INDEX IF NOT EXISTS idx_rooms_number
 ON rooms(tenant_id, number);
 
 -- =====================================================
--- HOUSEKEEPING TABLE INDEXES
+-- HOUSEKEEPING_TASKS TABLE INDEXES
 -- =====================================================
 
 -- Index for active tasks
 CREATE INDEX IF NOT EXISTS idx_housekeeping_active 
-ON housekeeping(status, tenant_id) 
-WHERE status IN ('Pending', 'In Progress');
+ON housekeeping_tasks(status, tenant_id) 
+WHERE status IN ('PENDING', 'IN_PROGRESS');
 
 -- Index for room-based queries
 CREATE INDEX IF NOT EXISTS idx_housekeeping_room_status 
-ON housekeeping(room_id, status);
+ON housekeeping_tasks(room_id, status);
 
 -- Index for priority tasks
 CREATE INDEX IF NOT EXISTS idx_housekeeping_priority 
-ON housekeeping(priority, status, tenant_id) 
-WHERE status != 'Completed';
-
--- =====================================================
--- BILLS TABLE INDEXES
--- =====================================================
-
--- Index for date range reports
-CREATE INDEX IF NOT EXISTS idx_bills_date_range 
-ON bills(tenant_id, date) 
-WHERE date IS NOT NULL;
-
--- Index for customer phone lookups (finding customer bills)
-CREATE INDEX IF NOT EXISTS idx_bills_customer_phone 
-ON bills(tenant_id, customer_phone) 
-WHERE customer_phone IS NOT NULL;
-
--- Index for bill number lookups
-CREATE INDEX IF NOT EXISTS idx_bills_number 
-ON bills(tenant_id, bill_number);
+ON housekeeping_tasks(priority, status, tenant_id) 
+WHERE status != 'COMPLETED';
 
 -- =====================================================
 -- RATE_PLANS TABLE INDEXES
