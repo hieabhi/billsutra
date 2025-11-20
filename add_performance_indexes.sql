@@ -34,10 +34,6 @@ CREATE INDEX IF NOT EXISTS idx_rooms_housekeeping
 ON rooms(housekeeping_status, tenant_id) 
 WHERE housekeeping_status = 'DIRTY';
 
--- Index for room number lookups (exact match)
-CREATE INDEX IF NOT EXISTS idx_rooms_number 
-ON rooms(tenant_id, number);
-
 -- =====================================================
 -- HOUSEKEEPING TABLE INDEXES
 -- =====================================================
