@@ -2,11 +2,19 @@ import axios from 'axios';
 
 // Resolve API base URL for both dev (Vite proxy) and static preview/production
 function resolveApiBase() {
-  const envApi = import.meta?.env?.VITE_API_URL;
-  if (envApi) return `${envApi.replace(/\/$/, '')}/api`;
+  // CRITICAL: Check environment variable FIRST before any other logic
+  const envApi = import.meta.env.VITE_API_URL;
+  if (envApi) {
+    console.log('✅ Using VITE_API_URL from env:', envApi);
+    return `${envApi.replace(/\/$/, '')}/api`;
+  }
   // In dev, Vite proxy serves /api
-  if (import.meta?.env?.DEV) return '/api';
-  // In preview/static (no proxy), default to local backend
+  if (import.meta.env.DEV) {
+    console.log('🔧 DEV mode: Using Vite proxy /api');
+    return '/api';
+  }
+  // Fallback for local preview (should never reach here in production)
+  console.warn('⚠️ No VITE_API_URL found, falling back to localhost');
   return 'http://127.0.0.1:5051/api';
 }
 
