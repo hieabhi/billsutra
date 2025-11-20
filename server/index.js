@@ -16,6 +16,8 @@ import statsRoutes from './routes/stats.js';
 import roomTypesRoutes from './routes/roomTypes.js';
 import ratePlansRoutes from './routes/ratePlans.js';
 import hotelRoutes from './routes/hotels.js';
+import { authenticate } from './middleware/auth.js';
+import { createClient } from '@supabase/supabase-js';
 
 // INDUSTRY STANDARD: Dual-Status Sync (Opera PMS, Maestro, Cloudbeds, Mews)
 import { runDualStatusSync, startPeriodicDualStatusSync } from './utils/dualStatusSync.js';
@@ -106,8 +108,7 @@ app.get('/', (req, res) => {
   res.json({ message: 'BillSutra Multi-Tenant Hotel Management API' });
 });
 
-app.get('/api/debug/status', require('./middleware/auth'), async (req, res) => {
-  const { createClient } = require('@supabase/supabase-js');
+app.get('/api/debug/status', authenticate, async (req, res) => {
   const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_KEY);
   
   // Try to fetch 1 room just to check connection
@@ -130,7 +131,6 @@ app.get('/api/debug/status', require('./middleware/auth'), async (req, res) => {
 // Public health check with DB connectivity test
 app.get('/api/public-health-check', async (req, res) => {
   try {
-    const { createClient } = require('@supabase/supabase-js');
     const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_KEY);
     
     // Try to fetch 1 room just to check connection
