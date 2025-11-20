@@ -34,15 +34,13 @@ const allowedOrigins = [
 ];
 
 // Middleware
+app.use((req, res, next) => {
+  console.log(`📨 ${req.method} ${req.path} - Origin: ${req.headers.origin}`);
+  next();
+});
+
 app.use(cors({
-  origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) === -1) {
-      return callback(new Error('CORS not allowed'), false);
-    }
-    return callback(null, true);
-  },
+  origin: true, // Allow all origins
   credentials: true
 }));
 
@@ -103,6 +101,38 @@ app.use('/api/housekeeping', housekeepingRoutes);
 app.use('/api/stats', statsRoutes);
 app.use('/api/room-types', roomTypesRoutes);
 app.use('/api/rate-plans', ratePlansRoutes);
+app.use('/api/guests', require('./routes/guests'));
+
+// Debug route to check auth and db access
+app.get('/api/debug/status', require('./middleware/auth'), async (req, res) => {
+  try {
+    const { createClient } = require('@supabase/supabase-js');
+    const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_KEY);
+    
+    const { data: rooms, error: roomsError } = await supabase
+      .from('rooms')
+      .select('count')
+      .eq('tenant_id', req.user.hotelId);
+
+    res.json({
+      status: 'ok',
+      user: {
+        email: req.user.email,
+        tenant_id: req.user.hotelId,
+        firebase_uid: req.user.firebaseUid
+      },
+      db_check: {
+        rooms_count: rooms ? rooms.length : 0,
+        error: roomsError
+      },
+      env: {
+        has_service_key: !!process.env.SUPABASE_SERVICE_KEY
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message, stack: error.stack });
+  }
+});
 
 app.get('/', (req, res) => {
   res.json({ message: 'BillSutra Multi-Tenant Hotel Management API' });
