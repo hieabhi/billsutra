@@ -13,12 +13,12 @@ WHERE status IS NOT NULL;
 
 -- Index for date range queries (arrivals, departures)
 CREATE INDEX IF NOT EXISTS idx_bookings_date_range 
-ON bookings(tenant_id, check_in, check_out);
+ON bookings(tenant_id, check_in_date, check_out_date);
 
 -- Composite index for dashboard queries
 CREATE INDEX IF NOT EXISTS idx_bookings_dashboard 
-ON bookings(tenant_id, status, check_in) 
-WHERE status IN ('CONFIRMED', 'CHECKED_IN');
+ON bookings(tenant_id, status, check_in_date) 
+WHERE status IN ('Reserved', 'CheckedIn');
 
 -- =====================================================
 -- ROOMS TABLE INDEXES
@@ -26,7 +26,7 @@ WHERE status IN ('CONFIRMED', 'CHECKED_IN');
 
 -- Index for room availability queries
 CREATE INDEX IF NOT EXISTS idx_rooms_status_type 
-ON rooms(status, room_type, tenant_id);
+ON rooms(status, type, tenant_id);
 
 -- Index for housekeeping status
 CREATE INDEX IF NOT EXISTS idx_rooms_housekeeping 
@@ -35,25 +35,25 @@ WHERE housekeeping_status = 'DIRTY';
 
 -- Index for room number lookups (exact match)
 CREATE INDEX IF NOT EXISTS idx_rooms_number 
-ON rooms(tenant_id, room_number);
+ON rooms(tenant_id, number);
 
 -- =====================================================
--- HOUSEKEEPING_TASKS TABLE INDEXES
+-- HOUSEKEEPING TABLE INDEXES
 -- =====================================================
 
 -- Index for active tasks
 CREATE INDEX IF NOT EXISTS idx_housekeeping_active 
-ON housekeeping_tasks(status, tenant_id) 
-WHERE status IN ('PENDING', 'IN_PROGRESS');
+ON housekeeping(status, tenant_id) 
+WHERE status IN ('Pending', 'In Progress');
 
 -- Index for room-based queries
 CREATE INDEX IF NOT EXISTS idx_housekeeping_room_status 
-ON housekeeping_tasks(room_id, status);
+ON housekeeping(room_id, status);
 
 -- Index for priority tasks
 CREATE INDEX IF NOT EXISTS idx_housekeeping_priority 
-ON housekeeping_tasks(priority, status, tenant_id) 
-WHERE status != 'COMPLETED';
+ON housekeeping(priority, status, tenant_id) 
+WHERE status != 'Completed';
 
 -- =====================================================
 -- ITEMS TABLE INDEXES
