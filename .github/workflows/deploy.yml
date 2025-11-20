@@ -74,12 +74,6 @@ jobs:
         working-directory: ./client
         run: npm run build
       
-      - name: Prepare Firebase deployment
-        run: |
-          cp firebase.json client/
-          cd client
-          sed -i 's/"public": "client\/dist"/"public": "dist"/' firebase.json
-      
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
