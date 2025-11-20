@@ -17,10 +17,6 @@ jobs:
         with:
           node-version: '18'
       
-      - name: Install dependencies
-        working-directory: ./client
-        run: npm install
-      
       - name: Create production .env
         working-directory: ./client
         run: |
@@ -37,6 +33,10 @@ jobs:
           echo "=== Generated .env.production ==="
           cat .env.production
           echo "================================="
+      
+      - name: Install dependencies
+        working-directory: ./client
+        run: npm install
       
       - name: Build frontend
         working-directory: ./client
