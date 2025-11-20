@@ -199,9 +199,17 @@ export const bookingsRepo = {
   async remove(id, hotelId) {
     try {
       const tenantId = getTenantId(hotelId);
+      console.log(`[DELETE] Attempting to delete booking ${id} for tenant ${tenantId}`);
       
       // Get booking first to sync room status
       const booking = await this.getById(id);
+      
+      if (!booking) {
+        console.log(`[DELETE] Booking ${id} not found`);
+        return null;
+      }
+      
+      console.log(`[DELETE] Found booking:`, { id: booking.id, status: booking.status, roomId: booking.roomId });
       
       const { error } = await supabase
         .from('bookings')
@@ -209,13 +217,20 @@ export const bookingsRepo = {
         .eq('id', id)
         .eq('tenant_id', tenantId);
       
-      if (error) throw error;
-      
-      // Update room status if booking was active
-      if (booking && booking.roomId && booking.status !== 'Cancelled') {
-        await syncRoomStatusWithBooking(booking.roomId, 'Available');
+      if (error) {
+        console.error(`[DELETE ERROR] Supabase delete failed:`, error);
+        throw error;
       }
       
+      console.log(`[DELETE] Successfully deleted booking ${id} from database`);
+      
+      // Update room status if booking was active
+      if (booking.roomId && booking.status !== 'Cancelled' && booking.status !== 'CheckedOut') {
+        console.log(`[DELETE] Updating room ${booking.roomId} status to AVAILABLE`);
+        await syncRoomStatusWithBooking(booking.roomId, 'AVAILABLE');
+      }
+      
+      console.log(`[DELETE] Delete operation completed successfully`);
       return booking;
     } catch (error) {
       console.error('[ERROR] Delete booking:', error);
