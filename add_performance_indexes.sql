@@ -70,9 +70,8 @@ SELECT
     schemaname,
     tablename,
     indexname,
-    pg_size_pretty(pg_relation_size(indexrelid)) as index_size
+    pg_size_pretty(pg_relation_size(quote_ident(schemaname) || '.' || quote_ident(indexname))) as index_size
 FROM pg_indexes 
-JOIN pg_class ON indexname = relname
 WHERE schemaname = 'public' 
   AND indexname LIKE 'idx_%'
 ORDER BY tablename, indexname;
