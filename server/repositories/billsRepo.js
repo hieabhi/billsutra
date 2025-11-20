@@ -289,5 +289,33 @@ export const billsRepo = {
         averageBillAmount: 0
       };
     }
+  },
+
+  async dashboardStats() {
+    try {
+      // Return simple stats for dashboard (no tenant filtering needed)
+      const { data, error } = await supabase
+        .from('bills')
+        .select('total_amount, payment_status');
+      
+      if (error) throw error;
+      
+      const bills = data || [];
+      const totalRevenue = bills.reduce((sum, bill) => sum + (Number(bill.total_amount) || 0), 0);
+      const paidBills = bills.filter(b => b.payment_status === 'PAID' || b.payment_status === 'Paid');
+      
+      return {
+        totalRevenue: Number(totalRevenue.toFixed(2)),
+        totalBills: bills.length,
+        paidBills: paidBills.length
+      };
+    } catch (error) {
+      console.error('[ERROR] Dashboard stats:', error);
+      return {
+        totalRevenue: 0,
+        totalBills: 0,
+        paidBills: 0
+      };
+    }
   }
 };

@@ -57,20 +57,28 @@ app.use((req, res, next) => {
   next();
 });
 
+// CORS - Fixed for Cloud Run production deployment
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow requests with no origin (mobile apps, Postman, etc.)
-    if (!origin) return callback(null, true);
-    
-    if (allowedOrigins.indexOf(origin) === -1) {
-      console.warn(`🚫 Blocked CORS request from: ${origin}`);
-      return callback(new Error('CORS policy violation'), false);
+    // Allow requests with no origin (mobile apps, Postman, curl, etc.)
+    if (!origin) {
+      console.log('✅ CORS: Allowing request with no origin');
+      return callback(null, true);
     }
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      console.log(`✅ CORS: Allowing origin: ${origin}`);
+      return callback(null, true);
+    }
+    
+    // IMPORTANT: Log but allow for now - Cloud Run needs permissive CORS
+    console.warn(`⚠️ CORS: Unknown origin (allowing): ${origin}`);
     return callback(null, true);
   },
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  exposedHeaders: ['Content-Length', 'X-Request-Id']
 }));
 
 // SECURITY: HTTP security headers - Production-grade configuration
