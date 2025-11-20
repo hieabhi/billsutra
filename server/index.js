@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import helmet from 'helmet';
+import compression from 'compression';
 import rateLimit from 'express-rate-limit';
 import billRoutes from './routes/bills.js';
 import customerRoutes from './routes/customers.js';
@@ -22,12 +23,18 @@ import { createClient } from '@supabase/supabase-js';
 // INDUSTRY STANDARD: Dual-Status Sync (Opera PMS, Maestro, Cloudbeds, Mews)
 import { runDualStatusSync, startPeriodicDualStatusSync } from './utils/dualStatusSync.js';
 
+// PRODUCTION SAFETY: Environment validation
+import { validateEnvironment } from './utils/validateEnv.js';
+
 dotenv.config();
+
+// Validate environment variables before proceeding
+validateEnvironment();
 
 const app = express();
 const PORT = process.env.PORT || 5051;
 
-// CORS Configuration - Updated for production
+// CORS Configuration - Production-ready with strict origin control
 const allowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
@@ -42,14 +49,62 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-  origin: true, // Allow all origins
-  credentials: true
+  origin: function (origin, callback) {
+    // Allow requests with no origin (mobile apps, Postman, etc.)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) === -1) {
+      console.warn(`🚫 Blocked CORS request from: ${origin}`);
+      return callback(new Error('CORS policy violation'), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-// SECURITY: HTTP security headers
+// SECURITY: HTTP security headers - Production-grade configuration
 app.use(helmet({
-  contentSecurityPolicy: false, // Disable for development
-  crossOriginEmbedderPolicy: false
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      scriptSrc: ["'self'"],
+      imgSrc: ["'self'", "data:", "https:"],
+      connectSrc: ["'self'", "https://billsutra-backend-119258942950.us-central1.run.app"],
+      fontSrc: ["'self'", "data:"],
+      objectSrc: ["'none'"],
+      mediaSrc: ["'self'"],
+      frameSrc: ["'none'"],
+    },
+  },
+  crossOriginEmbedderPolicy: true,
+  crossOriginOpenerPolicy: { policy: "same-origin" },
+  crossOriginResourcePolicy: { policy: "same-origin" },
+  dnsPrefetchControl: { allow: false },
+  frameguard: { action: "deny" },
+  hidePoweredBy: true,
+  hsts: {
+    maxAge: 31536000,
+    includeSubDomains: true,
+    preload: true
+  },
+  ieNoOpen: true,
+  noSniff: true,
+  referrerPolicy: { policy: "strict-origin-when-cross-origin" },
+  xssFilter: true
+}));
+
+// PERFORMANCE: Gzip compression for responses
+app.use(compression({
+  filter: (req, res) => {
+    if (req.headers['x-no-compression']) {
+      return false;
+    }
+    return compression.filter(req, res);
+  },
+  level: 6 // Balance between compression ratio and speed
 }));
 
 // SECURITY: Rate limiting to prevent DDoS
@@ -128,28 +183,44 @@ app.get('/api/debug/status', authenticate, async (req, res) => {
   });
 });
 
-// Public health check with DB connectivity test
+// Public health check with DB connectivity test and metrics
 app.get('/api/public-health-check', async (req, res) => {
+  const startTime = Date.now();
+  
   try {
     const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_KEY);
     
     // Try to fetch 1 room just to check connection
+    const dbStart = Date.now();
     const { data, error } = await supabase
       .from('rooms')
       .select('count')
       .limit(1);
+    const dbLatency = Date.now() - dbStart;
+
+    const totalLatency = Date.now() - startTime;
 
     res.json({
       status: 'ok',
+      timestamp: new Date().toISOString(),
+      uptime: process.uptime(),
       db_connected: !error,
-      db_error: error ? error.message : null,
-      env_check: {
-        has_url: !!process.env.SUPABASE_URL,
-        has_key: !!process.env.SUPABASE_SERVICE_KEY
-      }
+      db_latency_ms: dbLatency,
+      total_latency_ms: totalLatency,
+      memory_usage: {
+        rss: `${Math.round(process.memoryUsage().rss / 1024 / 1024)}MB`,
+        heap_used: `${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)}MB`,
+        heap_total: `${Math.round(process.memoryUsage().heapTotal / 1024 / 1024)}MB`
+      },
+      node_version: process.version,
+      env: process.env.NODE_ENV || 'development'
     });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ 
+      status: 'error',
+      error: error.message,
+      timestamp: new Date().toISOString()
+    });
   }
 });
 

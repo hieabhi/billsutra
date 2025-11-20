@@ -30,9 +30,14 @@ const api = axios.create({
 // Add token to requests if available
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('authToken') || localStorage.getItem('token');
-  console.log('🔑 API Request:', config.method?.toUpperCase(), config.url);
-  console.log('🔑 Token present:', !!token);
-  console.log('🔑 Base URL:', config.baseURL);
+  
+  // Only log in development
+  if (import.meta.env.DEV) {
+    console.log('🔑 API Request:', config.method?.toUpperCase(), config.url);
+    console.log('🔑 Token present:', !!token);
+    console.log('🔑 Base URL:', config.baseURL);
+  }
+  
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
@@ -42,10 +47,13 @@ api.interceptors.request.use((config) => {
 // Add response interceptor for error logging
 api.interceptors.response.use(
   (response) => {
-    console.log('✅ API Response:', response.config.url, response.status);
+    if (import.meta.env.DEV) {
+      console.log('✅ API Response:', response.config.url, response.status);
+    }
     return response;
   },
   (error) => {
+    // Always log errors, even in production
     console.error('❌ API Error:', error.config?.url);
     console.error('Status:', error.response?.status);
     console.error('Message:', error.response?.data?.message || error.message);
