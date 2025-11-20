@@ -24,9 +24,10 @@ WHERE status IN ('Reserved', 'CheckedIn');
 -- ROOMS TABLE INDEXES
 -- =====================================================
 
--- Index for room availability queries
-CREATE INDEX IF NOT EXISTS idx_rooms_status_type 
-ON rooms(status, type, tenant_id);
+-- Index for room availability by status
+CREATE INDEX IF NOT EXISTS idx_rooms_status_tenant 
+ON rooms(status, tenant_id) 
+WHERE status IN ('AVAILABLE', 'OCCUPIED', 'RESERVED');
 
 -- Index for housekeeping status
 CREATE INDEX IF NOT EXISTS idx_rooms_housekeeping 
