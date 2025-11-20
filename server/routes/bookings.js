@@ -165,8 +165,16 @@ router.post('/:id/payments', async (req,res)=>{
 });
 
 router.delete('/:id', async (req,res)=>{
-  try { const b = await bookingsRepo.remove(req.params.id); if(!b) return res.status(404).json({message:'Booking not found'}); res.json({message:'Booking deleted'});} 
-  catch (e){ res.status(500).json({message:e.message}); }
+  try { 
+    console.log(`[ROUTE] Delete booking ${req.params.id} for hotel ${req.user?.hotelId}`);
+    const b = await bookingsRepo.remove(req.params.id, req.user?.hotelId); 
+    if(!b) return res.status(404).json({message:'Booking not found'}); 
+    res.json({message:'Booking deleted'});
+  } 
+  catch (e){ 
+    console.error(`[ROUTE ERROR] Delete failed:`, e.message);
+    res.status(500).json({message:e.message}); 
+  }
 });
 
 export default router;
