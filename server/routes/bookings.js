@@ -24,13 +24,26 @@ router.get('/:id', async (req,res)=>{
 
 router.post('/', validateBookingInput, async (req,res)=>{
   try { 
+    // Debug: Log authentication context
+    console.log('[CREATE BOOKING] User:', req.user?.id, 'HotelId:', req.user?.hotelId);
+    
+    if (!req.user?.hotelId) {
+      console.error('[CREATE BOOKING] ❌ Missing hotelId - Auth context:', JSON.stringify(req.user));
+      return res.status(401).json({
+        message: 'Authentication error: Missing hotel/tenant context. Please sign in again.'
+      });
+    }
+    
     // Inject hotelId from authenticated user
-    const bookingData = { ...req.body, hotelId: req.user?.hotelId };
+    const bookingData = { ...req.body, hotelId: req.user.hotelId };
+    console.log('[CREATE BOOKING] Creating with tenant_id:', bookingData.hotelId);
+    
     const saved = await bookingsRepo.create(bookingData); 
     res.status(201).json(saved);
   } 
   catch (e){ 
     console.error('[CREATE BOOKING ERROR]:', e.message);
+    console.error('[CREATE BOOKING ERROR] Stack:', e.stack);
     res.status(400).json({message:e.message}); 
   }
 });
