@@ -3,6 +3,9 @@ import supabase, { mapCustomerFromDB } from '../config/supabase.js';
 console.log('🚀 LOADING SUPABASE CUSTOMERSREPO');
 
 function getTenantId(hotelId) {
+  if (!hotelId) {
+    throw new Error('hotelId is required for all customer operations. This indicates a missing authentication context.');
+  }
   return hotelId;
 }
 

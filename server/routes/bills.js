@@ -44,9 +44,11 @@ router.get('/:id', async (req, res) => {
 // Create new bill
 router.post('/', async (req, res) => {
   try {
-    const savedBill = await billsRepo.create(req.body);
+    const billData = { ...req.body, hotelId: req.user?.hotelId };
+    const savedBill = await billsRepo.create(billData);
     res.status(201).json(savedBill);
   } catch (error) {
+    console.error('[CREATE BILL ERROR]:', error.message);
     res.status(400).json({ message: error.message });
   }
 });
@@ -54,12 +56,14 @@ router.post('/', async (req, res) => {
 // Update bill
 router.put('/:id', async (req, res) => {
   try {
-    const bill = await billsRepo.update(req.params.id, req.body);
+    const updates = { ...req.body, hotelId: req.user?.hotelId };
+    const bill = await billsRepo.update(req.params.id, updates);
     if (!bill) {
       return res.status(404).json({ message: 'Bill not found' });
     }
     res.json(bill);
   } catch (error) {
+    console.error('[UPDATE BILL ERROR]:', error.message);
     res.status(400).json({ message: error.message });
   }
 });
@@ -67,12 +71,13 @@ router.put('/:id', async (req, res) => {
 // Delete bill
 router.delete('/:id', async (req, res) => {
   try {
-    const bill = await billsRepo.remove(req.params.id);
+    const bill = await billsRepo.remove(req.params.id, req.user?.hotelId);
     if (!bill) {
       return res.status(404).json({ message: 'Bill not found' });
     }
     res.json({ message: 'Bill deleted successfully' });
   } catch (error) {
+    console.error('[DELETE BILL ERROR]:', error.message);
     res.status(500).json({ message: error.message });
   }
 });

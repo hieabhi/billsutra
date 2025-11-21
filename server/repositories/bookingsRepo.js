@@ -5,6 +5,9 @@ import { syncRoomStatusWithBooking, validateBookingOperation } from '../utils/ro
 console.log('🚀 LOADING SUPABASE BOOKINGSREPO');
 
 function getTenantId(hotelId) {
+  if (!hotelId) {
+    throw new Error('hotelId is required for all booking operations. This indicates a missing authentication context.');
+  }
   return hotelId;
 }
 

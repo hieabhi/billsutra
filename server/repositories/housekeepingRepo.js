@@ -4,6 +4,9 @@ import { HousekeepingTask, TASK_STATUS, TASK_PRIORITY, TASK_TYPE } from '../mode
 console.log('🚀 LOADING SUPABASE HOUSEKEEPINGREPO');
 
 function getTenantId(hotelId) {
+  if (!hotelId) {
+    throw new Error('hotelId is required for all housekeeping operations. This indicates a missing authentication context.');
+  }
   return hotelId;
 }
 

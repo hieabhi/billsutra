@@ -6,6 +6,9 @@ console.log('🚀 LOADING SUPABASE ROOMSREPO - NOT JSON VERSION!');
 
 // hotelId is actually the tenant_id from req.user.hotelId
 function getTenantId(hotelId) {
+  if (!hotelId) {
+    throw new Error('hotelId is required for all room operations. This indicates a missing authentication context.');
+  }
   return hotelId; // Already is tenant_id
 }
 

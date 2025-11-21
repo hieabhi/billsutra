@@ -23,13 +23,30 @@ router.get('/:id', async (req,res)=>{
 });
 
 router.post('/', validateBookingInput, async (req,res)=>{
-  try { const saved = await bookingsRepo.create(req.body); res.status(201).json(saved);} 
-  catch (e){ res.status(400).json({message:e.message}); }
+  try { 
+    // Inject hotelId from authenticated user
+    const bookingData = { ...req.body, hotelId: req.user?.hotelId };
+    const saved = await bookingsRepo.create(bookingData); 
+    res.status(201).json(saved);
+  } 
+  catch (e){ 
+    console.error('[CREATE BOOKING ERROR]:', e.message);
+    res.status(400).json({message:e.message}); 
+  }
 });
 
 router.put('/:id', async (req,res)=>{
-  try { const b = await bookingsRepo.update(req.params.id, req.body); if(!b) return res.status(404).json({message:'Booking not found'}); res.json(b);} 
-  catch (e){ res.status(400).json({message:e.message}); }
+  try { 
+    // Inject hotelId from authenticated user
+    const updates = { ...req.body, hotelId: req.user?.hotelId };
+    const b = await bookingsRepo.update(req.params.id, updates); 
+    if(!b) return res.status(404).json({message:'Booking not found'}); 
+    res.json(b);
+  } 
+  catch (e){ 
+    console.error('[UPDATE BOOKING ERROR]:', e.message);
+    res.status(400).json({message:e.message}); 
+  }
 });
 
 router.post('/:id/check-in', async (req,res)=>{

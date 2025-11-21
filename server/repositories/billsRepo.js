@@ -4,6 +4,9 @@ import supabase, { mapBillFromDBComplete, mapBillToDB } from '../config/supabase
 console.log('🚀 LOADING SUPABASE BILLSREPO');
 
 function getTenantId(hotelId) {
+  if (!hotelId) {
+    throw new Error('hotelId is required for all bill operations. This indicates a missing authentication context.');
+  }
   return hotelId;
 }
 

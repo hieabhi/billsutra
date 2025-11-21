@@ -3,6 +3,9 @@ import supabase, { mapItemFromDB } from '../config/supabase.js';
 console.log('🚀 LOADING SUPABASE ITEMSREPO');
 
 function getTenantId(hotelId) {
+  if (!hotelId) {
+    throw new Error('hotelId is required for all item operations. This indicates a missing authentication context.');
+  }
   return hotelId;
 }
 
