@@ -16,6 +16,7 @@ out/
 dist/
 build/
 release/
+dist-electron/
 
 # IDE
 .vscode/
@@ -61,3 +62,7 @@ old_files/
 backups/
 debug/
 *.md (except README.md, CONTRIBUTING.md, LICENSE.md)
+
+# Large installer files (managed separately)
+billsutra-website/public/downloads/*.exe
+
