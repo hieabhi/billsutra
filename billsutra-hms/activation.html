@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activate BillSutra</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      padding: 20px;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    h1 { 
+      font-size: 28px; 
+      margin-bottom: 10px; 
+      font-weight: 600;
+      text-align: center;
+    }
+    p { 
+      opacity: 0.9; 
+      margin-bottom: 25px; 
+      font-size: 14px;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      font-size: 14px;
+      font-family: monospace;
+      resize: vertical;
+      min-height: 100px;
+      line-height: 1.5;
+    }
+    textarea:focus {
+      outline: none;
+      border-color: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    textarea::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: white;
+      color: #667eea;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .machine-id {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 12px;
+    }
+    .machine-id strong {
+      display: block;
+      margin-bottom: 5px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .machine-id code {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 11px;
+      word-break: break-all;
+    }
+    .message {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      text-align: center;
+      display: none;
+    }
+    .message.success {
+      background: rgba(76, 175, 80, 0.3);
+      border: 1px solid rgba(76, 175, 80, 0.5);
+    }
+    .message.error {
+      background: rgba(244, 67, 54, 0.3);
+      border: 1px solid rgba(244, 67, 54, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔐 Activate BillSutra</h1>
+    <p>Enter your license key to unlock BillSutra</p>
+    
+    <div class="machine-id">
+      <strong>Your Machine ID:</strong>
+      <code id="machineId">Loading...</code>
+    </div>
+    
+    <div class="form-group">
+      <label for="licenseKey">License Key</label>
+      <textarea 
+        id="licenseKey" 
+        placeholder="Paste your license key here..."
+        rows="4"
+      ></textarea>
+    </div>
+    
+    <button id="activateBtn" onclick="activateLicense()">
+      Activate License
+    </button>
+    
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    // Load machine ID
+    window.electronAPI.getMachineId().then(id => {
+      document.getElementById('machineId').textContent = id;
+    });
+
+    async function activateLicense() {
+      const licenseKey = document.getElementById('licenseKey').value.trim();
+      const messageEl = document.getElementById('message');
+      const btnEl = document.getElementById('activateBtn');
+      
+      if (!licenseKey) {
+        showMessage('Please enter a license key', 'error');
+        return;
+      }
+      
+      btnEl.disabled = true;
+      btnEl.textContent = 'Activating...';
+      
+      try {
+        const result = await window.electronAPI.activateLicense(licenseKey);
+        
+        if (result.success) {
+          showMessage('✓ License activated successfully!', 'success');
+          setTimeout(() => {
+            window.close();
+          }, 1500);
+        } else {
+          showMessage('✗ ' + result.message, 'error');
+          btnEl.disabled = false;
+          btnEl.textContent = 'Activate License';
+        }
+      } catch (error) {
+        showMessage('✗ Activation failed: ' + error.message, 'error');
+        btnEl.disabled = false;
+        btnEl.textContent = 'Activate License';
+      }
+    }
+    
+    function showMessage(text, type) {
+      const messageEl = document.getElementById('message');
+      messageEl.textContent = text;
+      messageEl.className = 'message ' + type;
+      messageEl.style.display = 'block';
+    }
+    
+    // Allow Enter key to submit
+    document.getElementById('licenseKey').addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key === 'Enter') {
+        activateLicense();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,58 +1,63 @@
 # Dependencies
 node_modules/
-client/node_modules/
-server/node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # Environment variables
 .env
 .env.local
-.env.production
+.env.*.local
+.env.example
 
-# Build outputs
-client/dist/
-client/build/
+# Build and dist
+.next/
+out/
+dist/
+build/
+release/
 
 # IDE
 .vscode/
 .idea/
-
-# OS
+*.swp
+*.swo
+*.swn
 .DS_Store
-Thumbs.db
 
 # Logs
+logs/
 *.log
 npm-debug.log*
-server/logs/
-logs/
+yarn-debug.log*
 
-# Test data (don't commit to production)
-server/data/rooms.json
-server/data/bookings.json
-server/data/customers.json
-server/data/housekeeping.json
-server/data/bills.json
-server/data/items.json
-server/data/room_types.json
-server/data/rate_plans.json
-server/data/settings.json
-server/data/*.json
+# Electron build artifacts
+electron-builder/
+*.dmg
+*.exe
+*.deb
+*.rpm
 
-# Security - Never commit these!
-*.pem
-*.key
-*.cert
-*.p12
-.env
-.env.*
-!.env.example
-
-# Firebase
-.firebase/
-firebase-debug.log
-serviceAccountKey.json
-firebase-adminsdk*.json
+# Testing
+coverage/
+.nyc_output/
 
 # Temporary files
+tmp/
+temp/
 *.tmp
-*.temp
+
+# Database
+*.db
+*.sqlite3
+
+# OS specific
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Project specific
+old_files/
+backups/
+debug/
+*.md (except README.md, CONTRIBUTING.md, LICENSE.md)

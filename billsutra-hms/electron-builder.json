@@ -1,0 +1,65 @@
+{
+  "appId": "com.billsutra.hotel",
+  "productName": "BillSutra Hotel Management",
+  "copyright": "Copyright © 2025 BillSutra",
+  "directories": {
+    "output": "dist-electron"
+  },
+  "files": [
+    "server/**/*",
+    "client/dist/**/*",
+    "electron-main.js",
+    "electron-preload.js",
+    "electron-server.js",
+    "assets/**/*",
+    "package.json",
+    ".env",
+    "!node_modules/**/*",
+    "node_modules/express/**/*",
+    "node_modules/cors/**/*",
+    "node_modules/dotenv/**/*",
+    "node_modules/mongoose/**/*",
+    "node_modules/bcryptjs/**/*",
+    "node_modules/jsonwebtoken/**/*",
+    "node_modules/uuid/**/*",
+    "node_modules/date-fns/**/*"
+  ],
+  "extraResources": [
+    {
+      "from": "server/data",
+      "to": "data",
+      "filter": ["**/*"]
+    }
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ],
+    "artifactName": "BillSutra-Setup-${version}.${ext}",
+    "signAndEditExecutable": false,
+    "verifyUpdateCodeSignature": false
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "BillSutra Hotel Management",
+    "license": "LICENSE.txt",
+    "warningsAsErrors": false,
+    "installerHeaderIcon": "assets/icon.ico",
+    "deleteAppDataOnUninstall": false
+  },
+  "mac": {
+    "target": ["dmg"],
+    "category": "public.app-category.business"
+  },
+  "linux": {
+    "target": ["AppImage"],
+    "category": "Office"
+  },
+  "publish": null
+}

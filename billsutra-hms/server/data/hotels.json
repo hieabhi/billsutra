@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "hotel-001",
+    "name": "Demo Hotel",
+    "code": "DEMO",
+    "email": "demo@hotel.com",
+    "phone": "+91-1234567890",
+    "address": "123 Main Street",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "country": "India",
+    "pincode": "400001",
+    "gstNumber": "27AABCU9603R1ZM",
+    "status": "active",
+    "subscription": {
+      "plan": "professional",
+      "startDate": "2024-11-01T00:00:00.000Z",
+      "endDate": "2025-11-01T00:00:00.000Z",
+      "active": true
+    },
+    "settings": {
+      "checkInTime": "14:00",
+      "checkOutTime": "11:00",
+      "currency": "INR",
+      "timezone": "Asia/Kolkata"
+    },
+    "createdAt": "2024-11-01T00:00:00.000Z",
+    "updatedAt": "2024-11-01T00:00:00.000Z"
+  }
+]

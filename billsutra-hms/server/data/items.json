@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "d20d42a7-2638-485b-882e-e27ece830a78",
+    "name": "Hey",
+    "category": "Food",
+    "hsn": "",
+    "rate": 800,
+    "cgst": 2.5,
+    "sgst": 2.5,
+    "igst": 0,
+    "description": "",
+    "isActive": true,
+    "createdAt": "2025-11-22T08:32:02.532Z",
+    "updatedAt": "2025-11-22T08:32:02.532Z"
+  }
+]

@@ -1,0 +1,5147 @@
+[
+  {
+    "_id": "7aed5aaa-d8e2-42d1-9ca5-c5ec487d0f60",
+    "reservationNumber": "RES00008",
+    "guest": {
+      "name": "Test Guest 1"
+    },
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 3000,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-17",
+    "nights": 2,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "amount": 6000,
+    "balance": 6000,
+    "notes": "Test booking - valid",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 6000,
+      "balance": 6000
+    },
+    "createdAt": "2025-11-14T08:20:31.048Z",
+    "updatedAt": "2025-11-14T09:18:22.892Z",
+    "billId": "93c20349-418d-439a-8525-4f821f00712e",
+    "billNumber": "INV00012"
+  },
+  {
+    "_id": "81af882f-498a-4e26-9b41-eff74c866828",
+    "reservationNumber": "RES00015",
+    "guest": {
+      "name": "Payal"
+    },
+    "roomId": "room-301",
+    "roomNumber": "301",
+    "rate": 2000,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-15",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "amount": 2000,
+    "balance": 2000,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 2000,
+      "balance": 2000
+    },
+    "createdAt": "2025-11-14T09:19:10.647Z",
+    "updatedAt": "2025-11-14T09:25:07.971Z",
+    "billId": "0558e80e-f9bd-46bf-9fcb-59ea45e5b6a8",
+    "billNumber": "INV00013"
+  },
+  {
+    "_id": "4ff1f724-7772-45a8-a56a-ad8269d8cada",
+    "reservationNumber": "RES00016",
+    "guest": {
+      "name": "Mahek Sharma"
+    },
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 0,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-15",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "amount": 0,
+    "balance": 0,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 0,
+      "balance": 0
+    },
+    "createdAt": "2025-11-14T09:25:45.753Z",
+    "updatedAt": "2025-11-14T09:33:07.686Z",
+    "billId": "50443d72-1236-4411-94ff-0ebfa2d67a9f",
+    "billNumber": "INV00015"
+  },
+  {
+    "_id": "8f96720d-16c4-40cc-b5d0-891417fddb25",
+    "reservationNumber": "RES00017",
+    "guest": {
+      "name": "Manasa"
+    },
+    "roomId": "room-302",
+    "roomNumber": "302",
+    "rate": 0,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-15",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "amount": 0,
+    "balance": 0,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 0,
+      "balance": 0
+    },
+    "createdAt": "2025-11-14T09:26:23.366Z",
+    "updatedAt": "2025-11-14T09:28:46.501Z",
+    "billId": "5509e614-3624-490c-aaf4-b505074bb78f",
+    "billNumber": "INV00014"
+  },
+  {
+    "_id": "d212d1ef-5c75-42c2-be17-ffccd7a2fc3a",
+    "reservationNumber": "RES00019",
+    "guest": {
+      "name": "Mrinal"
+    },
+    "roomId": "room-201",
+    "roomNumber": "201",
+    "rate": 0,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-15",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "amount": 0,
+    "balance": 0,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 0,
+      "balance": 0
+    },
+    "createdAt": "2025-11-14T09:34:28.443Z",
+    "updatedAt": "2025-11-14T09:34:49.930Z",
+    "billId": "a99f0ec7-83d0-46cd-bbb3-5027b5346d68",
+    "billNumber": "INV00016"
+  },
+  {
+    "_id": "8c3ab4a2-f8df-410b-bf97-4cf3b72a5146",
+    "reservationNumber": "RES00021",
+    "guest": {
+      "name": "Manasvi"
+    },
+    "roomId": "room-201",
+    "roomNumber": "201",
+    "rate": 0,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-15",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "amount": 0,
+    "balance": 0,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 0,
+      "balance": 0
+    },
+    "createdAt": "2025-11-14T09:47:58.841Z",
+    "updatedAt": "2025-11-14T09:48:17.219Z",
+    "billId": "0f2a93dc-6fb7-4b62-9459-0a16f35d2c40",
+    "billNumber": "INV00017"
+  },
+  {
+    "_id": "60b1d678-26e2-4499-8431-ebd7a1ea032b",
+    "reservationNumber": "RES00022",
+    "guest": {
+      "name": "Abhijit"
+    },
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 1000,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-15",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "amount": 1000,
+    "balance": 1000,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 1000,
+      "balance": 1000
+    },
+    "createdAt": "2025-11-14T10:00:13.506Z",
+    "updatedAt": "2025-11-14T10:02:15.595Z",
+    "billId": "20af30a1-098c-4e4d-af2b-3ed91f5e2d7b",
+    "billNumber": "INV00018"
+  },
+  {
+    "_id": "f7e291c8-9ed8-46e9-851e-f4077ea90329",
+    "reservationNumber": "RES00025",
+    "guest": {
+      "name": "Jaideep Seth"
+    },
+    "roomId": "room-301",
+    "roomNumber": "301",
+    "rate": 1000,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-15",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "amount": 1000,
+    "balance": 1000,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 1000,
+      "balance": 1000
+    },
+    "createdAt": "2025-11-14T10:49:59.658Z",
+    "updatedAt": "2025-11-14T10:51:05.877Z",
+    "billId": "249c8444-18a5-4c02-a9b7-f706a2450b17",
+    "billNumber": "INV00019"
+  },
+  {
+    "_id": "b18ef6d1-2a18-44a5-a498-24662e8774fa",
+    "reservationNumber": "RES00026",
+    "guest": {
+      "name": "Mayur Padhye"
+    },
+    "roomId": "room-301",
+    "roomNumber": "301",
+    "rate": 1000,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "Reserved",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "amount": 1000,
+    "balance": 1000,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 1000,
+      "balance": 1000
+    },
+    "createdAt": "2025-11-14T10:50:29.655Z",
+    "updatedAt": "2025-11-14T10:50:29.655Z"
+  },
+  {
+    "_id": "42ad2efe-9fa3-4382-adb7-42d47fe536fa",
+    "reservationNumber": "RES00027",
+    "guest": {
+      "name": "Abhijit",
+      "phone": "9898989898",
+      "email": "aa@gmail.com",
+      "idProof": "98789",
+      "address": "nanded"
+    },
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 900,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-16",
+    "nights": 2,
+    "status": "CheckedOut",
+    "guestsCount": 4,
+    "paymentMethod": "Cash",
+    "amount": 1800,
+    "balance": 1800,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 1800,
+      "balance": 1800
+    },
+    "createdAt": "2025-11-14T11:18:03.954Z",
+    "updatedAt": "2025-11-14T11:18:48.203Z",
+    "billId": "61a34bdf-d565-408f-950f-44856aabd0fa",
+    "billNumber": "INV00020"
+  },
+  {
+    "_id": "a8f552b0-e850-4211-98e9-3926232bc53d",
+    "reservationNumber": "RES00028",
+    "guest": {
+      "name": "John Doe",
+      "phone": "8765432109",
+      "email": "john@example.com",
+      "idProof": "PASSPORT987654",
+      "address": "Delhi, India"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 1
+    },
+    "additionalGuests": [
+      {
+        "name": "Jane Doe",
+        "age": 28,
+        "ageCategory": "Adult",
+        "idProof": "PASSPORT123456"
+      },
+      {
+        "name": "Baby Doe",
+        "age": 0.5,
+        "ageCategory": "Infant",
+        "idProof": ""
+      }
+    ],
+    "totalGuests": 2,
+    "roomId": "room-101",
+    "roomNumber": "",
+    "rate": 2000,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-17",
+    "nights": 2,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Credit Card",
+    "bookingSource": "Online",
+    "amount": 4000,
+    "balance": 4000,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 4000,
+      "balance": 4000
+    },
+    "createdAt": "2025-11-14T11:44:42.297Z",
+    "updatedAt": "2025-11-14T11:44:42.297Z"
+  },
+  {
+    "_id": "7d2e58d8-9b06-4bb4-b8c9-f9582276f322",
+    "reservationNumber": "RES00029",
+    "guest": {
+      "name": "Perfect Fit",
+      "phone": "3210987654",
+      "email": "perfect@example.com",
+      "idProof": "PERFECT123",
+      "address": "Test City"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomId": "room-101",
+    "roomNumber": "",
+    "rate": 2000,
+    "checkInDate": "2025-11-25",
+    "checkOutDate": "2025-11-27",
+    "nights": 2,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 4000,
+    "balance": 4000,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 4000,
+      "balance": 4000
+    },
+    "createdAt": "2025-11-14T11:44:42.356Z",
+    "updatedAt": "2025-11-14T11:44:42.356Z"
+  },
+  {
+    "_id": "3edae9e4-8aa5-4147-bab8-4b67abeb79ab",
+    "reservationNumber": "RES00030",
+    "guest": {
+      "name": "John Doe",
+      "phone": "8765432109",
+      "email": "john@example.com",
+      "idProof": "PASSPORT987654",
+      "address": "Delhi, India"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 1
+    },
+    "additionalGuests": [
+      {
+        "name": "Jane Doe",
+        "age": 28,
+        "ageCategory": "Adult",
+        "idProof": "PASSPORT123456"
+      },
+      {
+        "name": "Baby Doe",
+        "age": 0.5,
+        "ageCategory": "Infant",
+        "idProof": ""
+      }
+    ],
+    "totalGuests": 2,
+    "roomId": "room-103",
+    "roomNumber": "",
+    "rate": 2000,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-17",
+    "nights": 2,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Credit Card",
+    "bookingSource": "Online",
+    "amount": 4000,
+    "balance": 4000,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 4000,
+      "balance": 4000
+    },
+    "createdAt": "2025-11-14T11:45:24.864Z",
+    "updatedAt": "2025-11-14T11:45:24.864Z"
+  },
+  {
+    "_id": "b01b60bf-cfa4-466f-b7f1-84e69df7ad83",
+    "reservationNumber": "RES00031",
+    "guest": {
+      "name": "Perfect Fit",
+      "phone": "3210987654",
+      "email": "perfect@example.com",
+      "idProof": "PERFECT123",
+      "address": "Test City"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomId": "room-103",
+    "roomNumber": "",
+    "rate": 2000,
+    "checkInDate": "2025-11-25",
+    "checkOutDate": "2025-11-27",
+    "nights": 2,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 4000,
+    "balance": 4000,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 4000,
+      "balance": 4000
+    },
+    "createdAt": "2025-11-14T11:45:24.911Z",
+    "updatedAt": "2025-11-14T11:45:24.911Z"
+  },
+  {
+    "_id": "1a02dd96-4dee-43ce-a5b8-eb42db17ac0d",
+    "reservationNumber": "RES00032",
+    "guest": {
+      "name": "John Doe",
+      "phone": "8765432109",
+      "email": "john@example.com",
+      "idProof": "PASSPORT987654",
+      "address": "Delhi, India"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 1
+    },
+    "additionalGuests": [
+      {
+        "name": "Jane Doe",
+        "age": 28,
+        "ageCategory": "Adult",
+        "idProof": "PASSPORT123456"
+      },
+      {
+        "name": "Baby Doe",
+        "age": 0.5,
+        "ageCategory": "Infant",
+        "idProof": ""
+      }
+    ],
+    "totalGuests": 2,
+    "roomId": "room-201",
+    "roomNumber": "201",
+    "rate": 2000,
+    "checkInDate": "2025-11-16",
+    "checkOutDate": "2025-11-18",
+    "nights": 2,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Credit Card",
+    "bookingSource": "Online",
+    "amount": 4000,
+    "balance": 4000,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 4000,
+      "balance": 4000
+    },
+    "createdAt": "2025-11-14T11:46:50.031Z",
+    "updatedAt": "2025-11-14T11:46:50.031Z"
+  },
+  {
+    "_id": "fefdf3b0-82ea-4700-bff9-4c436224e9f3",
+    "reservationNumber": "RES00033",
+    "guest": {
+      "name": "Amit Singh",
+      "phone": "7654321098",
+      "email": "amit@example.com",
+      "idProof": "DL456789",
+      "address": "Bangalore, India"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomId": "room-201",
+    "roomNumber": "201",
+    "rate": 1500,
+    "checkInDate": "2025-11-21",
+    "checkOutDate": "2025-11-23",
+    "nights": 2,
+    "status": "Reserved",
+    "guestsCount": 1,
+    "paymentMethod": "UPI",
+    "bookingSource": "Phone",
+    "amount": 3000,
+    "balance": 3000,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 3000,
+      "balance": 3000
+    },
+    "createdAt": "2025-11-14T11:46:50.048Z",
+    "updatedAt": "2025-11-14T11:46:50.048Z"
+  },
+  {
+    "_id": "b93ca725-96bc-4ad2-a95d-8fd29e6b505a",
+    "reservationNumber": "RES00034",
+    "guest": {
+      "name": "Perfect Fit",
+      "phone": "3210987654",
+      "email": "perfect@example.com",
+      "idProof": "PERFECT123",
+      "address": "Test City"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomId": "room-201",
+    "roomNumber": "201",
+    "rate": 2000,
+    "checkInDate": "2025-12-06",
+    "checkOutDate": "2025-12-08",
+    "nights": 2,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 4000,
+    "balance": 4000,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 4000,
+      "balance": 4000
+    },
+    "createdAt": "2025-11-14T11:46:50.078Z",
+    "updatedAt": "2025-11-27T09:53:04.875Z",
+    "actualCheckOutDate": "2025-11-27T09:53:04.856Z",
+    "actualCheckOutTime": "2025-11-27T09:53:04.856Z",
+    "billId": "abe3ebbc-a890-49b5-97fe-941913d1b7c3",
+    "billNumber": "INV00060"
+  },
+  {
+    "_id": "1ed9e805-dfc7-46e8-8f53-39bbeb433360",
+    "reservationNumber": "RES00035",
+    "guest": {
+      "name": "Daycare Group",
+      "phone": "2109876543",
+      "email": "daycare@example.com",
+      "idProof": "DAYCARE123",
+      "address": "Test City"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 5
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomId": "room-201",
+    "roomNumber": "201",
+    "rate": 2000,
+    "checkInDate": "2025-12-11",
+    "checkOutDate": "2025-12-13",
+    "nights": 2,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 4000,
+    "balance": 4000,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 4000,
+      "balance": 4000
+    },
+    "createdAt": "2025-11-14T11:46:50.089Z",
+    "updatedAt": "2025-11-14T12:07:10.251Z",
+    "billId": "f7401d9e-8298-4d8e-8514-379430b6b2fe",
+    "billNumber": "INV00022"
+  },
+  {
+    "_id": "31719db7-51f6-4bff-b731-5529575ee8ad",
+    "reservationNumber": "RES00036",
+    "guest": {
+      "name": "Priyanka ",
+      "phone": "7878986567",
+      "email": "aa@gmail.com",
+      "idProof": "98789",
+      "address": ""
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 1,
+      "infants": 1
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomId": "room-301",
+    "roomNumber": "301",
+    "rate": 0,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-15",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": 0,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 0,
+      "balance": 0
+    },
+    "createdAt": "2025-11-14T11:52:56.928Z",
+    "updatedAt": "2025-11-14T12:06:45.045Z",
+    "billId": "b0042e22-1929-47e3-b6e1-44f2171f364d",
+    "billNumber": "INV00021"
+  },
+  {
+    "_id": "76d47b93-e8b3-47b4-844c-2e3ad384664e",
+    "reservationNumber": "RES00037",
+    "guest": {
+      "name": "Priyal",
+      "phone": "87873846789",
+      "email": "ss@gmail.com",
+      "idProof": "898736748736373",
+      "address": ""
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 1,
+      "infants": 1
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomId": "room-302",
+    "roomNumber": "302",
+    "rate": 1000,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-15",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 1000,
+    "balance": 600,
+    "advancePayment": 400,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "adv-priyal-001",
+          "date": "2025-11-14T12:39:28.014Z",
+          "method": "Cash",
+          "amount": 400,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 1000,
+      "balance": 600
+    },
+    "createdAt": "2025-11-14T12:39:28.014Z",
+    "updatedAt": "2025-11-14T12:55:57.697Z",
+    "billId": "bc748317-5800-4761-9d9b-fc615b347ee1",
+    "billNumber": "INV00023"
+  },
+  {
+    "_id": "56a3185e-1659-4514-95de-f40ffcb54ed2",
+    "reservationNumber": "RES00038",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763131975376@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "qgryiwp4en",
+          "date": "2025-11-15T08:33:38.635Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Test Breakfast",
+          "itemId": null,
+          "quantity": 2,
+          "rate": 500,
+          "amount": 1000,
+          "taxRate": 18,
+          "cgst": 90,
+          "sgst": 90,
+          "igst": 0,
+          "totalAmount": 1180,
+          "postedBy": "system",
+          "remarks": "API Test"
+        }
+      ],
+      "payments": [
+        {
+          "_id": "4105d2d1-9202-4de0-adbd-aa9553330694",
+          "date": "2025-11-14T14:52:55.384Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 1180,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T14:52:55.384Z",
+    "updatedAt": "2025-11-15T08:33:38.640Z",
+    "billId": "3aa6e8ee-1be0-4609-bf97-e1c8e4feb5f8",
+    "billNumber": "INV00039"
+  },
+  {
+    "_id": "8422b093-3c14-40b4-ae77-90c9a98be224",
+    "reservationNumber": "RES00039",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763131999779@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "53777fb5-16e5-4f5d-9b07-4c3ac84506a4",
+          "date": "2025-11-14T14:53:19.788Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T14:53:19.788Z",
+    "updatedAt": "2025-11-14T17:39:54.215Z",
+    "billId": "50fd049f-a083-43c7-aa17-f28c05e9b2c6",
+    "billNumber": "INV00038"
+  },
+  {
+    "_id": "76a92469-8fc6-4103-bf3b-65467b998e0f",
+    "reservationNumber": "RES00040",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763132040127@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "05e8e56b-ab04-4b5c-87ef-cfc4958536db",
+          "date": "2025-11-14T14:54:00.138Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T14:54:00.138Z",
+    "updatedAt": "2025-11-14T14:54:00.185Z",
+    "billId": "bc57c237-5a43-46f4-9cee-da59f3a14be8",
+    "billNumber": "INV00024"
+  },
+  {
+    "_id": "3105e6d3-8e66-4208-b2c1-aab32e9dfe98",
+    "reservationNumber": "RES00041",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763132057980@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "08f96208-a15d-4d0e-930e-9b7110ef2281",
+          "date": "2025-11-14T14:54:17.993Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T14:54:17.993Z",
+    "updatedAt": "2025-11-14T14:54:18.038Z",
+    "billId": "d76d9e4d-e7bc-4f96-8392-25bcc581aa59",
+    "billNumber": "INV00025"
+  },
+  {
+    "_id": "a59c5a8b-0390-4fed-af1a-0ed248f2ea6e",
+    "reservationNumber": "RES00042",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763132311623@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "9a489d88-2d3b-4590-89fd-2ecc978ea7aa",
+          "date": "2025-11-14T14:58:31.629Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T14:58:31.629Z",
+    "updatedAt": "2025-11-14T14:58:31.647Z",
+    "billId": "2ca4f82e-3390-4efe-8a24-45d040707627",
+    "billNumber": "INV00026"
+  },
+  {
+    "_id": "f8cc717a-34bf-416f-9fc9-96a721a15157",
+    "reservationNumber": "RES00043",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763132379821@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 1000,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 1000,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "7fcbc222-6a74-4a4c-8a26-a5123d7520ae",
+          "date": "2025-11-14T14:59:39.835Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 1000,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T14:59:39.835Z",
+    "updatedAt": "2025-11-15T11:06:34.372Z"
+  },
+  {
+    "_id": "8f35c55c-378e-45fe-ab08-fd9598eb7567",
+    "reservationNumber": "RES00044",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763132417005@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-001",
+    "roomId": "room-102",
+    "roomNumber": "102",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "fddea12b-eeb4-413a-bf4f-b04eb42d8d03",
+          "date": "2025-11-14T15:00:17.012Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T15:00:17.012Z",
+    "updatedAt": "2025-11-14T15:00:17.038Z",
+    "billId": "e8c72d72-fac9-4b68-8020-70fa512a8823",
+    "billNumber": "INV00027"
+  },
+  {
+    "_id": "1632ccd8-43d4-4e8c-b74e-9fd9ba399bad",
+    "reservationNumber": "RES00045",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763132745233@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-001",
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 1000,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 1000,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "8119d5ba-68e6-4c06-b22b-d58e64ec1ffb",
+          "date": "2025-11-14T15:05:45.240Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 1000,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T15:05:45.240Z",
+    "updatedAt": "2025-11-15T11:06:34.338Z"
+  },
+  {
+    "_id": "be72a557-2d34-4791-bae0-4841bd3b50c7",
+    "reservationNumber": "RES00046",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763132834135@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-001",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "f038c68d-d8f9-4dc0-8998-413968bf12e9",
+          "date": "2025-11-14T15:07:14.146Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T15:07:14.146Z",
+    "updatedAt": "2025-11-14T15:07:14.250Z",
+    "billId": "244b4d17-e55e-42d3-958d-6bff9ae90a59",
+    "billNumber": "INV00028"
+  },
+  {
+    "_id": "274bb872-2fb7-493d-9298-036d1f67b96d",
+    "reservationNumber": "RES00047",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763132885902@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-001",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "046c02db-f70c-40a5-a44b-a27690213c93",
+          "date": "2025-11-14T15:08:05.910Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T15:08:05.910Z",
+    "updatedAt": "2025-11-14T15:08:05.952Z",
+    "billId": "b6c13f8f-a51d-40d3-953f-d25470ff4f25",
+    "billNumber": "INV00029"
+  },
+  {
+    "_id": "b7621bf0-4a38-4861-b65a-656d7265cf63",
+    "reservationNumber": "RES00048",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763134110535@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-001",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "7b74e17f-7cb0-40f0-bbd2-e2b82b25757a",
+          "date": "2025-11-14T15:28:30.547Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T15:28:30.547Z",
+    "updatedAt": "2025-11-14T15:28:30.628Z",
+    "billId": "8465e06a-ebdc-4b7c-95d4-04e93b7963bb",
+    "billNumber": "INV00030"
+  },
+  {
+    "_id": "693e6fbd-878f-462c-8800-3c6a9434a8a0",
+    "reservationNumber": "RES00049",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763134195537@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-001",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "c3e91118-e4ff-4b2b-9fb7-64fac1f72103",
+          "date": "2025-11-14T15:29:55.557Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T15:29:55.557Z",
+    "updatedAt": "2025-11-14T15:29:55.727Z",
+    "billId": "e631bed1-8b48-4a08-9a6b-62f783b55ae4",
+    "billNumber": "INV00031"
+  },
+  {
+    "_id": "81c3f183-d934-4597-8fec-20ca4f5fdbb3",
+    "reservationNumber": "RES00050",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763134269853@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-001",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "03db1fda-9484-4f31-b861-ebee28d61a94",
+          "date": "2025-11-14T15:31:09.871Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T15:31:09.871Z",
+    "updatedAt": "2025-11-14T15:31:09.958Z",
+    "billId": "7cfaa499-bfca-40c9-8e69-d2c061edcf19",
+    "billNumber": "INV00032"
+  },
+  {
+    "_id": "c138a1d0-f2df-45ce-9a67-854af9a4a1be",
+    "reservationNumber": "RES00051",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763135127450@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-001",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "796f9e51-e732-45a8-b818-a226e9be0b79",
+          "date": "2025-11-14T15:45:27.477Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T15:45:27.477Z",
+    "updatedAt": "2025-11-14T15:45:27.670Z",
+    "billId": "d12c9d65-b169-4b67-950c-2e6c264cc360",
+    "billNumber": "INV00033"
+  },
+  {
+    "_id": "6052c957-5cfa-4462-bcc6-efa75fa0d8ee",
+    "reservationNumber": "RES00052",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763135325239@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-001",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "21b076a8-f095-4c6b-abbd-f8715de7ba12",
+          "date": "2025-11-14T15:48:45.249Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T15:48:45.249Z",
+    "updatedAt": "2025-11-14T15:48:45.307Z",
+    "billId": "b09880b5-a5a2-43c4-a2fa-b86d11cfbd2f",
+    "billNumber": "INV00034"
+  },
+  {
+    "_id": "81bc5696-3c00-4673-97fe-dc04e9109708",
+    "reservationNumber": "RES00053",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763135947280@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-001",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "bc326529-4bc2-43ed-9f81-0374d822f2b0",
+          "date": "2025-11-14T15:59:07.286Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T15:59:07.286Z",
+    "updatedAt": "2025-11-14T15:59:07.320Z",
+    "billId": "52e98ef1-a642-492a-9260-4b6f10eaf06d",
+    "billNumber": "INV00035"
+  },
+  {
+    "_id": "fa1931d5-16fd-4ed2-babf-eef4cf02e4b1",
+    "reservationNumber": "RES00054",
+    "guest": {
+      "name": "Test Guest",
+      "email": "testguest1763136045347@hotel.com",
+      "phone": "+91-9999999999"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-001",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "8521dd7a-c911-4729-be96-b8099c09af1f",
+          "date": "2025-11-14T16:00:45.351Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1000
+    },
+    "createdAt": "2025-11-14T16:00:45.351Z",
+    "updatedAt": "2025-11-14T16:00:45.387Z",
+    "billId": "80ea309f-24ca-43fc-bfe5-bd5fb654c1c4",
+    "billNumber": "INV00036"
+  },
+  {
+    "_id": "ae5b3c29-987a-4d3b-b0c8-b2ab0e8f29a2",
+    "reservationNumber": "RES00055",
+    "guest": {
+      "name": "Rajesh Kumar",
+      "email": "rajesh.kumar@email.com",
+      "phone": "+91-9876543210"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 1,
+      "infants": 0
+    },
+    "additionalGuests": [
+      {
+        "name": "Sunita Kumar",
+        "age": 35,
+        "relation": "Spouse"
+      },
+      {
+        "name": "Rohan Kumar",
+        "age": 8,
+        "relation": "Child"
+      }
+    ],
+    "totalGuests": 3,
+    "roomTypeId": "roomtype-001",
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 1000,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-15",
+    "nights": 1,
+    "status": "Reserved",
+    "guestsCount": 3,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 1000,
+    "balance": -1500,
+    "advancePayment": 1500,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "4f40e6b1-37b0-4dbe-ba3a-7fa4acbf2cd2",
+          "date": "2025-11-14T17:10:50.765Z",
+          "method": "Cash",
+          "amount": 1500,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 1000,
+      "balance": -1500
+    },
+    "createdAt": "2025-11-14T17:10:50.765Z",
+    "updatedAt": "2025-11-15T11:06:34.308Z"
+  },
+  {
+    "_id": "89f33b18-527f-433e-aba5-f890f3ebebc7",
+    "reservationNumber": "RES00056",
+    "guest": {
+      "name": "Priya Sharma",
+      "email": "priya.sharma@email.com",
+      "phone": "+91-9876543211"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "roomtype-002",
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 1000,
+    "checkInDate": "2025-11-21",
+    "checkOutDate": "2025-11-24",
+    "nights": 3,
+    "status": "Reserved",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 3000,
+    "balance": -2500,
+    "advancePayment": 2500,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "cbec06d9-1dc5-4f01-9902-1037a5699cb2",
+          "date": "2025-11-14T17:10:50.774Z",
+          "method": "Cash",
+          "amount": 2500,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 3000,
+      "balance": -2500
+    },
+    "createdAt": "2025-11-14T17:10:50.774Z",
+    "updatedAt": "2025-11-15T11:06:34.279Z"
+  },
+  {
+    "_id": "6ccfd5c5-fb2c-4c4b-9e4e-b7d4d70e7093",
+    "reservationNumber": "RES00057",
+    "guest": {
+      "name": "Amit Patel",
+      "email": "amit.patel@email.com",
+      "phone": "+91-9876543212"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [
+      {
+        "name": "Neha Patel",
+        "age": 32,
+        "relation": "Colleague"
+      }
+    ],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-003",
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 1000,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 1000,
+    "balance": -5000,
+    "advancePayment": 5000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "316d76ab-e885-4251-aba6-bdbe1dea009e",
+          "date": "2025-11-14T17:10:50.781Z",
+          "method": "Cash",
+          "amount": 5000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 1000,
+      "balance": -5000
+    },
+    "createdAt": "2025-11-14T17:10:50.781Z",
+    "updatedAt": "2025-11-15T11:06:34.239Z"
+  },
+  {
+    "_id": "2c30617e-edfe-4b74-bbfb-bbb0928b446d",
+    "reservationNumber": "RES00058",
+    "guest": {
+      "name": "Rajesh Kumar",
+      "email": "rajesh.kumar@email.com",
+      "phone": "+91-9876543210"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 1,
+      "infants": 0
+    },
+    "additionalGuests": [
+      {
+        "name": "Sunita Kumar",
+        "age": 35,
+        "relation": "Spouse"
+      },
+      {
+        "name": "Rohan Kumar",
+        "age": 8,
+        "relation": "Child"
+      }
+    ],
+    "totalGuests": 3,
+    "roomTypeId": "roomtype-001",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 0,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-15",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 3,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1500,
+    "advancePayment": 1500,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "53faa0f0-158c-4119-bb15-37f3d1112fce",
+          "date": "2025-11-14T17:13:22.898Z",
+          "method": "Cash",
+          "amount": 1500,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1500
+    },
+    "createdAt": "2025-11-14T17:13:22.898Z",
+    "updatedAt": "2025-11-14T17:13:23.046Z",
+    "billId": "cfb33d9b-ba41-44f6-bc14-f857d2855158",
+    "billNumber": "INV00037"
+  },
+  {
+    "_id": "78061af2-d2c3-474c-84e6-bb4b82e8975d",
+    "reservationNumber": "RES00059",
+    "guest": {
+      "name": "Priya Sharma",
+      "email": "priya.sharma@email.com",
+      "phone": "+91-9876543211"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "roomtype-002",
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 1000,
+    "checkInDate": "2025-11-21",
+    "checkOutDate": "2025-11-24",
+    "nights": 3,
+    "status": "Reserved",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 3000,
+    "balance": -2500,
+    "advancePayment": 2500,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "eeb83cf5-6afc-4e15-aab4-e775645b2a54",
+          "date": "2025-11-14T17:13:22.908Z",
+          "method": "Cash",
+          "amount": 2500,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 3000,
+      "balance": -2500
+    },
+    "createdAt": "2025-11-14T17:13:22.908Z",
+    "updatedAt": "2025-11-15T11:06:34.205Z"
+  },
+  {
+    "_id": "8b0a9651-debc-43ae-9b48-ce6f8f75e4ad",
+    "reservationNumber": "RES00060",
+    "guest": {
+      "name": "Amit Patel",
+      "email": "amit.patel@email.com",
+      "phone": "+91-9876543212"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [
+      {
+        "name": "Neha Patel",
+        "age": 32,
+        "relation": "Colleague"
+      }
+    ],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-003",
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 1000,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 1000,
+    "balance": -5000,
+    "advancePayment": 5000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "e72826ed-f4e1-4f5e-90ea-e91887d9fef7",
+          "date": "2025-11-14T17:13:22.916Z",
+          "method": "Cash",
+          "amount": 5000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 1000,
+      "balance": -5000
+    },
+    "createdAt": "2025-11-14T17:13:22.916Z",
+    "updatedAt": "2025-11-15T11:06:34.172Z"
+  },
+  {
+    "_id": "75862b56-a01a-463e-a824-034d30f8172d",
+    "reservationNumber": "RES00061",
+    "guest": {
+      "name": "Sarah Johnson",
+      "email": "sarah.j@email.com",
+      "phone": "+1-5550123456"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "roomtype-001",
+    "roomId": "room-102",
+    "roomNumber": "102",
+    "rate": 1000,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-16",
+    "nights": 2,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 2000,
+    "balance": -3000,
+    "advancePayment": 3000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "9cea2747-8344-4040-856f-6bf1ad2ace66",
+          "date": "2025-11-14T17:13:22.925Z",
+          "method": "Cash",
+          "amount": 3000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 2000,
+      "balance": -3000
+    },
+    "createdAt": "2025-11-14T17:13:22.925Z",
+    "updatedAt": "2025-11-22T09:18:45.368Z",
+    "actualCheckOutDate": "2025-11-22T09:18:45.266Z",
+    "actualCheckOutTime": "2025-11-22T09:18:45.266Z",
+    "billId": "dd135f5c-7971-4e93-acac-821dfae723b4",
+    "billNumber": "INV00055"
+  },
+  {
+    "_id": "f03708a0-aee3-4d42-a684-33334b331c2e",
+    "reservationNumber": "RES00062",
+    "guest": {
+      "name": "Tanaya Parate",
+      "phone": "8982403865",
+      "email": "tana@gmail.com",
+      "idProof": "9898987656789",
+      "address": "Pune"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 1,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "",
+    "roomId": "room-302",
+    "roomNumber": "302",
+    "rate": 999,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-15",
+    "nights": 1,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 999,
+    "balance": -1,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "34187633-7dc2-419b-b469-e8587ae8b350",
+          "date": "2025-11-14T17:41:58.303Z",
+          "method": "Cash",
+          "amount": 1000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 999,
+      "balance": -1
+    },
+    "createdAt": "2025-11-14T17:41:58.303Z",
+    "updatedAt": "2025-11-14T17:41:58.303Z"
+  },
+  {
+    "_id": "5ac59d90-74a8-4ae6-803d-7b21cb78a1f5",
+    "reservationNumber": "RES00063",
+    "guest": {
+      "name": "Rajesh Kumar",
+      "email": "rajesh.kumar@email.com",
+      "phone": "+91-9876543210"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 1,
+      "infants": 0
+    },
+    "additionalGuests": [
+      {
+        "name": "Sunita Kumar",
+        "age": 35,
+        "relation": "Spouse"
+      },
+      {
+        "name": "Rohan Kumar",
+        "age": 8,
+        "relation": "Child"
+      }
+    ],
+    "totalGuests": 3,
+    "roomTypeId": "roomtype-001",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 0,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-15",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 3,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -1500,
+    "advancePayment": 1500,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "9f6c4a2b-7ecd-4cf7-8974-0b6d2ce56638",
+          "date": "2025-11-14T18:04:12.805Z",
+          "method": "Cash",
+          "amount": 1500,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -1500
+    },
+    "createdAt": "2025-11-14T18:04:12.805Z",
+    "updatedAt": "2025-11-14T20:09:20.002Z",
+    "billId": "3771a490-972a-43b4-9aa1-752265d1597a",
+    "billNumber": "INV00040"
+  },
+  {
+    "_id": "078298d0-12a6-4d40-a51c-751a24e69bbd",
+    "reservationNumber": "RES00064",
+    "guest": {
+      "name": "Priya Sharma",
+      "email": "priya.sharma@email.com",
+      "phone": "+91-9876543211"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "roomtype-002",
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 1000,
+    "checkInDate": "2025-11-21",
+    "checkOutDate": "2025-11-24",
+    "nights": 3,
+    "status": "Reserved",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 3000,
+    "balance": -2500,
+    "advancePayment": 2500,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "c4f864d2-b1f4-4a1b-bfb5-e87663049022",
+          "date": "2025-11-14T18:04:12.822Z",
+          "method": "Cash",
+          "amount": 2500,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 3000,
+      "balance": -2500
+    },
+    "createdAt": "2025-11-14T18:04:12.822Z",
+    "updatedAt": "2025-11-15T11:06:34.083Z"
+  },
+  {
+    "_id": "3b35f886-491b-4380-b97b-ee5e63d6c6a5",
+    "reservationNumber": "RES00065",
+    "guest": {
+      "name": "Amit Patel",
+      "email": "amit.patel@email.com",
+      "phone": "+91-9876543212"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [
+      {
+        "name": "Neha Patel",
+        "age": 32,
+        "relation": "Colleague"
+      }
+    ],
+    "totalGuests": 2,
+    "roomTypeId": "roomtype-003",
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 1000,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 1000,
+    "balance": -5000,
+    "advancePayment": 5000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "40938d93-f6d2-45a9-9202-7eb9002a640a",
+          "date": "2025-11-14T18:04:12.830Z",
+          "method": "Cash",
+          "amount": 5000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 1000,
+      "balance": -5000
+    },
+    "createdAt": "2025-11-14T18:04:12.830Z",
+    "updatedAt": "2025-11-15T11:06:34.052Z"
+  },
+  {
+    "_id": "11ae2cd0-77dc-4c6c-a953-15afdb93c715",
+    "reservationNumber": "RES00066",
+    "guest": {
+      "name": "Sarah Johnson",
+      "email": "sarah.j@email.com",
+      "phone": "+1-5550123456"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "roomtype-001",
+    "roomId": "",
+    "roomNumber": "",
+    "rate": 1000,
+    "checkInDate": "2025-11-14",
+    "checkOutDate": "2025-11-16",
+    "nights": 2,
+    "status": "Reserved",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 2000,
+    "balance": -3000,
+    "advancePayment": 3000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "3b400e5a-1e2d-48ac-948f-67c4e10dee0f",
+          "date": "2025-11-14T18:04:12.839Z",
+          "method": "Cash",
+          "amount": 3000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 2000,
+      "balance": -3000
+    },
+    "createdAt": "2025-11-14T18:04:12.839Z",
+    "updatedAt": "2025-11-15T11:06:34.018Z"
+  },
+  {
+    "_id": "f12cc490-f404-4bd2-8975-7ee3f32da0ee",
+    "reservationNumber": "RES00067",
+    "guest": {
+      "name": "Sarah V",
+      "phone": "9876567890",
+      "email": "kjb@gmail.com",
+      "idProof": "9876543456789",
+      "address": "Nanded"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "room-202",
+    "roomNumber": "202",
+    "rate": 999,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-29",
+    "nights": 14,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 13986,
+    "balance": 11986,
+    "advancePayment": 2000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "7qsx3fb3802",
+          "description": "Breakfast Buffet",
+          "remarks": "Test charge from item master",
+          "itemId": null,
+          "quantity": 2,
+          "taxRate": 5,
+          "rate": 350,
+          "category": "FOOD_BEVERAGE",
+          "amount": 0
+        },
+        {
+          "_id": "56e3ao68n9a",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "remarks": "Express service - Table 5",
+          "quantity": 1,
+          "taxRate": 18,
+          "rate": 400,
+          "category": "LAUNDRY",
+          "amount": 0
+        },
+        {
+          "_id": "rzknyrpix1",
+          "description": "Soft Drinks",
+          "remarks": "Test 12% GST",
+          "quantity": 3,
+          "taxRate": 12,
+          "rate": 50,
+          "category": "MINIBAR",
+          "amount": 0
+        },
+        {
+          "_id": "nsifg2f5bq",
+          "description": "Premium Massage",
+          "remarks": "Test 28% GST",
+          "quantity": 1,
+          "taxRate": 28,
+          "rate": 2000,
+          "category": "SPA",
+          "amount": 0
+        },
+        {
+          "_id": "cvkm8wl8zk4",
+          "quantity": 1,
+          "category": "FOOD_BEVERAGE",
+          "amount": 0
+        },
+        {
+          "_id": "1tb561g4xlb",
+          "category": "FOOD_BEVERAGE",
+          "description": "Test Breakfast",
+          "quantity": 2,
+          "rate": 350,
+          "taxRate": 5,
+          "remarks": "API Test",
+          "amount": 0
+        },
+        {
+          "_id": "cj88ssyk074",
+          "date": "2025-11-15T08:34:03.001Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": null,
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Test charge from item master"
+        },
+        {
+          "_id": "uuse4bpoh9",
+          "date": "2025-11-15T08:34:03.057Z",
+          "category": "LAUNDRY",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 400,
+          "amount": 400,
+          "taxRate": 18,
+          "cgst": 36,
+          "sgst": 36,
+          "igst": 0,
+          "totalAmount": 472,
+          "postedBy": "system",
+          "remarks": "Express service - Table 5"
+        },
+        {
+          "_id": "jzed6bn3ej8",
+          "date": "2025-11-15T08:34:03.080Z",
+          "category": "MINIBAR",
+          "description": "Soft Drinks",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 50,
+          "amount": 150,
+          "taxRate": 12,
+          "cgst": 9,
+          "sgst": 9,
+          "igst": 0,
+          "totalAmount": 168,
+          "postedBy": "system",
+          "remarks": "Test 12% GST"
+        },
+        {
+          "_id": "1etircj6mik",
+          "date": "2025-11-15T08:34:03.096Z",
+          "category": "SPA",
+          "description": "Premium Massage",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000,
+          "taxRate": 28,
+          "cgst": 280,
+          "sgst": 280,
+          "igst": 0,
+          "totalAmount": 2560,
+          "postedBy": "system",
+          "remarks": "Test 28% GST"
+        },
+        {
+          "_id": "o389aobeg5",
+          "date": "2025-11-15T08:34:03.315Z",
+          "category": "FOOD_BEVERAGE",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 0,
+          "amount": 0,
+          "taxRate": 0,
+          "cgst": 0,
+          "sgst": 0,
+          "igst": 0,
+          "totalAmount": 0,
+          "postedBy": "system",
+          "remarks": ""
+        },
+        {
+          "_id": "0a49csenh9vv",
+          "date": "2025-11-15T08:34:37.974Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": null,
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Test charge from item master"
+        },
+        {
+          "_id": "hoivv4zuchs",
+          "date": "2025-11-15T08:34:37.998Z",
+          "category": "LAUNDRY",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 400,
+          "amount": 400,
+          "taxRate": 18,
+          "cgst": 36,
+          "sgst": 36,
+          "igst": 0,
+          "totalAmount": 472,
+          "postedBy": "system",
+          "remarks": "Express service - Table 5"
+        },
+        {
+          "_id": "7cipwuskc1o",
+          "date": "2025-11-15T08:34:38.024Z",
+          "category": "MINIBAR",
+          "description": "Soft Drinks",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 50,
+          "amount": 150,
+          "taxRate": 12,
+          "cgst": 9,
+          "sgst": 9,
+          "igst": 0,
+          "totalAmount": 168,
+          "postedBy": "system",
+          "remarks": "Test 12% GST"
+        },
+        {
+          "_id": "ehczxasobq5",
+          "date": "2025-11-15T08:34:38.035Z",
+          "category": "SPA",
+          "description": "Premium Massage",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000,
+          "taxRate": 28,
+          "cgst": 280,
+          "sgst": 280,
+          "igst": 0,
+          "totalAmount": 2560,
+          "postedBy": "system",
+          "remarks": "Test 28% GST"
+        },
+        {
+          "_id": "k2wmzuuxlj8",
+          "date": "2025-11-15T08:34:38.210Z",
+          "category": "FOOD_BEVERAGE",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 0,
+          "amount": 0,
+          "taxRate": 0,
+          "cgst": 0,
+          "sgst": 0,
+          "igst": 0,
+          "totalAmount": 0,
+          "postedBy": "system",
+          "remarks": ""
+        },
+        {
+          "_id": "zayjd9uglri",
+          "date": "2025-11-15T08:35:22.528Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": null,
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Test charge from item master"
+        },
+        {
+          "_id": "dh4vwko7miw",
+          "date": "2025-11-15T08:35:22.563Z",
+          "category": "LAUNDRY",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 400,
+          "amount": 400,
+          "taxRate": 18,
+          "cgst": 36,
+          "sgst": 36,
+          "igst": 0,
+          "totalAmount": 472,
+          "postedBy": "system",
+          "remarks": "Express service - Table 5"
+        },
+        {
+          "_id": "zp13mvas91i",
+          "date": "2025-11-15T08:35:22.587Z",
+          "category": "MINIBAR",
+          "description": "Soft Drinks",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 50,
+          "amount": 150,
+          "taxRate": 12,
+          "cgst": 9,
+          "sgst": 9,
+          "igst": 0,
+          "totalAmount": 168,
+          "postedBy": "system",
+          "remarks": "Test 12% GST"
+        },
+        {
+          "_id": "kwaqhxufmv",
+          "date": "2025-11-15T08:35:22.597Z",
+          "category": "SPA",
+          "description": "Premium Massage",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000,
+          "taxRate": 28,
+          "cgst": 280,
+          "sgst": 280,
+          "igst": 0,
+          "totalAmount": 2560,
+          "postedBy": "system",
+          "remarks": "Test 28% GST"
+        },
+        {
+          "_id": "45hwssh40h7",
+          "date": "2025-11-15T08:35:22.744Z",
+          "category": "FOOD_BEVERAGE",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 0,
+          "amount": 0,
+          "taxRate": 0,
+          "cgst": 0,
+          "sgst": 0,
+          "igst": 0,
+          "totalAmount": 0,
+          "postedBy": "system",
+          "remarks": ""
+        },
+        {
+          "_id": "5cpmvth6pd5",
+          "date": "2025-11-15T08:44:45.776Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": null,
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Test charge from item master"
+        },
+        {
+          "_id": "yjv1s0mtwao",
+          "date": "2025-11-15T08:44:45.830Z",
+          "category": "LAUNDRY",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 400,
+          "amount": 400,
+          "taxRate": 18,
+          "cgst": 36,
+          "sgst": 36,
+          "igst": 0,
+          "totalAmount": 472,
+          "postedBy": "system",
+          "remarks": "Express service - Table 5"
+        },
+        {
+          "_id": "27mjkaqd77j",
+          "date": "2025-11-15T08:44:45.855Z",
+          "category": "MINIBAR",
+          "description": "Soft Drinks",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 50,
+          "amount": 150,
+          "taxRate": 12,
+          "cgst": 9,
+          "sgst": 9,
+          "igst": 0,
+          "totalAmount": 168,
+          "postedBy": "system",
+          "remarks": "Test 12% GST"
+        },
+        {
+          "_id": "4uioguwsd7m",
+          "date": "2025-11-15T08:44:45.869Z",
+          "category": "SPA",
+          "description": "Premium Massage",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000,
+          "taxRate": 28,
+          "cgst": 280,
+          "sgst": 280,
+          "igst": 0,
+          "totalAmount": 2560,
+          "postedBy": "system",
+          "remarks": "Test 28% GST"
+        },
+        {
+          "_id": "39nw2j3m532",
+          "date": "2025-11-15T08:44:57.482Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": null,
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Test charge from item master"
+        },
+        {
+          "_id": "jm2udbjhmw9",
+          "date": "2025-11-15T08:44:57.508Z",
+          "category": "LAUNDRY",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 400,
+          "amount": 400,
+          "taxRate": 18,
+          "cgst": 36,
+          "sgst": 36,
+          "igst": 0,
+          "totalAmount": 472,
+          "postedBy": "system",
+          "remarks": "Express service - Table 5"
+        },
+        {
+          "_id": "dzp0nxc5mz4",
+          "date": "2025-11-15T08:44:57.532Z",
+          "category": "MINIBAR",
+          "description": "Soft Drinks",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 50,
+          "amount": 150,
+          "taxRate": 12,
+          "cgst": 9,
+          "sgst": 9,
+          "igst": 0,
+          "totalAmount": 168,
+          "postedBy": "system",
+          "remarks": "Test 12% GST"
+        },
+        {
+          "_id": "wgsenwahvi",
+          "date": "2025-11-15T08:44:57.544Z",
+          "category": "SPA",
+          "description": "Premium Massage",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000,
+          "taxRate": 28,
+          "cgst": 280,
+          "sgst": 280,
+          "igst": 0,
+          "totalAmount": 2560,
+          "postedBy": "system",
+          "remarks": "Test 28% GST"
+        },
+        {
+          "_id": "69a2z1r32vb",
+          "date": "2025-11-15T08:47:17.665Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": null,
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Test charge from item master"
+        },
+        {
+          "_id": "zahvjj4qsyc",
+          "date": "2025-11-15T08:47:17.699Z",
+          "category": "LAUNDRY",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 400,
+          "amount": 400,
+          "taxRate": 18,
+          "cgst": 36,
+          "sgst": 36,
+          "igst": 0,
+          "totalAmount": 472,
+          "postedBy": "system",
+          "remarks": "Express service - Table 5"
+        },
+        {
+          "_id": "5pv5bfku2m8",
+          "date": "2025-11-15T08:47:17.724Z",
+          "category": "MINIBAR",
+          "description": "Soft Drinks",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 50,
+          "amount": 150,
+          "taxRate": 12,
+          "cgst": 9,
+          "sgst": 9,
+          "igst": 0,
+          "totalAmount": 168,
+          "postedBy": "system",
+          "remarks": "Test 12% GST"
+        },
+        {
+          "_id": "pwmpqi8ekv",
+          "date": "2025-11-15T08:47:17.741Z",
+          "category": "SPA",
+          "description": "Premium Massage",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000,
+          "taxRate": 28,
+          "cgst": 280,
+          "sgst": 280,
+          "igst": 0,
+          "totalAmount": 2560,
+          "postedBy": "system",
+          "remarks": "Test 28% GST"
+        },
+        {
+          "_id": "mn8r52vv4bj",
+          "date": "2025-11-15T09:25:26.005Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": null,
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Test charge from item master"
+        },
+        {
+          "_id": "m9ky76zdvh8",
+          "date": "2025-11-15T09:25:26.044Z",
+          "category": "LAUNDRY",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 400,
+          "amount": 400,
+          "taxRate": 18,
+          "cgst": 36,
+          "sgst": 36,
+          "igst": 0,
+          "totalAmount": 472,
+          "postedBy": "system",
+          "remarks": "Express service - Table 5"
+        },
+        {
+          "_id": "jkop781uf1n",
+          "date": "2025-11-15T09:25:26.060Z",
+          "category": "MINIBAR",
+          "description": "Soft Drinks",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 50,
+          "amount": 150,
+          "taxRate": 12,
+          "cgst": 9,
+          "sgst": 9,
+          "igst": 0,
+          "totalAmount": 168,
+          "postedBy": "system",
+          "remarks": "Test 12% GST"
+        },
+        {
+          "_id": "oe6klw8hup8",
+          "date": "2025-11-15T09:25:26.071Z",
+          "category": "SPA",
+          "description": "Premium Massage",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000,
+          "taxRate": 28,
+          "cgst": 280,
+          "sgst": 280,
+          "igst": 0,
+          "totalAmount": 2560,
+          "postedBy": "system",
+          "remarks": "Test 28% GST"
+        },
+        {
+          "_id": "qqf0aroy6sk",
+          "date": "2025-11-15T09:25:57.993Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": null,
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Test charge from item master"
+        },
+        {
+          "_id": "a03px862d2o",
+          "date": "2025-11-15T09:25:58.019Z",
+          "category": "LAUNDRY",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 400,
+          "amount": 400,
+          "taxRate": 18,
+          "cgst": 36,
+          "sgst": 36,
+          "igst": 0,
+          "totalAmount": 472,
+          "postedBy": "system",
+          "remarks": "Express service - Table 5"
+        },
+        {
+          "_id": "9848erbg305",
+          "date": "2025-11-15T09:25:58.040Z",
+          "category": "MINIBAR",
+          "description": "Soft Drinks",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 50,
+          "amount": 150,
+          "taxRate": 12,
+          "cgst": 9,
+          "sgst": 9,
+          "igst": 0,
+          "totalAmount": 168,
+          "postedBy": "system",
+          "remarks": "Test 12% GST"
+        },
+        {
+          "_id": "9fwki3ko54r",
+          "date": "2025-11-15T09:25:58.050Z",
+          "category": "SPA",
+          "description": "Premium Massage",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000,
+          "taxRate": 28,
+          "cgst": 280,
+          "sgst": 280,
+          "igst": 0,
+          "totalAmount": 2560,
+          "postedBy": "system",
+          "remarks": "Test 28% GST"
+        },
+        {
+          "_id": "d1a0m8cfqyw",
+          "date": "2025-11-15T09:28:19.380Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": null,
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Test charge from item master"
+        },
+        {
+          "_id": "t36idtt74e",
+          "date": "2025-11-15T09:28:19.427Z",
+          "category": "LAUNDRY",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 400,
+          "amount": 400,
+          "taxRate": 18,
+          "cgst": 36,
+          "sgst": 36,
+          "igst": 0,
+          "totalAmount": 472,
+          "postedBy": "system",
+          "remarks": "Express service - Table 5"
+        },
+        {
+          "_id": "tazbci1uqro",
+          "date": "2025-11-15T09:28:19.448Z",
+          "category": "MINIBAR",
+          "description": "Soft Drinks",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 50,
+          "amount": 150,
+          "taxRate": 12,
+          "cgst": 9,
+          "sgst": 9,
+          "igst": 0,
+          "totalAmount": 168,
+          "postedBy": "system",
+          "remarks": "Test 12% GST"
+        },
+        {
+          "_id": "n139gbiwck",
+          "date": "2025-11-15T09:28:19.459Z",
+          "category": "SPA",
+          "description": "Premium Massage",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000,
+          "taxRate": 28,
+          "cgst": 280,
+          "sgst": 280,
+          "igst": 0,
+          "totalAmount": 2560,
+          "postedBy": "system",
+          "remarks": "Test 28% GST"
+        },
+        {
+          "_id": "qeeck8j5p4",
+          "date": "2025-11-15T09:29:14.009Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": null,
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Test charge from item master"
+        },
+        {
+          "_id": "ibd0ohk2q6",
+          "date": "2025-11-15T09:29:14.035Z",
+          "category": "LAUNDRY",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 400,
+          "amount": 400,
+          "taxRate": 18,
+          "cgst": 36,
+          "sgst": 36,
+          "igst": 0,
+          "totalAmount": 472,
+          "postedBy": "system",
+          "remarks": "Express service - Table 5"
+        },
+        {
+          "_id": "926phoft24v",
+          "date": "2025-11-15T09:29:14.052Z",
+          "category": "MINIBAR",
+          "description": "Soft Drinks",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 50,
+          "amount": 150,
+          "taxRate": 12,
+          "cgst": 9,
+          "sgst": 9,
+          "igst": 0,
+          "totalAmount": 168,
+          "postedBy": "system",
+          "remarks": "Test 12% GST"
+        },
+        {
+          "_id": "9s7njmmok1p",
+          "date": "2025-11-15T09:29:14.061Z",
+          "category": "SPA",
+          "description": "Premium Massage",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000,
+          "taxRate": 28,
+          "cgst": 280,
+          "sgst": 280,
+          "igst": 0,
+          "totalAmount": 2560,
+          "postedBy": "system",
+          "remarks": "Test 28% GST"
+        },
+        {
+          "_id": "j53kzo3xdpa",
+          "date": "2025-11-15T09:29:55.418Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": null,
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Test charge from item master"
+        },
+        {
+          "_id": "g0w5279x93",
+          "date": "2025-11-15T09:29:55.439Z",
+          "category": "LAUNDRY",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 400,
+          "amount": 400,
+          "taxRate": 18,
+          "cgst": 36,
+          "sgst": 36,
+          "igst": 0,
+          "totalAmount": 472,
+          "postedBy": "system",
+          "remarks": "Express service - Table 5"
+        },
+        {
+          "_id": "bo61ayuxl5t",
+          "date": "2025-11-15T09:29:55.458Z",
+          "category": "MINIBAR",
+          "description": "Soft Drinks",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 50,
+          "amount": 150,
+          "taxRate": 12,
+          "cgst": 9,
+          "sgst": 9,
+          "igst": 0,
+          "totalAmount": 168,
+          "postedBy": "system",
+          "remarks": "Test 12% GST"
+        },
+        {
+          "_id": "dlq3p4jlc9i",
+          "date": "2025-11-15T09:29:55.470Z",
+          "category": "SPA",
+          "description": "Premium Massage",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000,
+          "taxRate": 28,
+          "cgst": 280,
+          "sgst": 280,
+          "igst": 0,
+          "totalAmount": 2560,
+          "postedBy": "system",
+          "remarks": "Test 28% GST"
+        },
+        {
+          "_id": "ppz1l03xc3",
+          "date": "2025-11-15T09:30:10.580Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": null,
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Test charge from item master"
+        },
+        {
+          "_id": "sl4wakteut",
+          "date": "2025-11-15T09:30:10.614Z",
+          "category": "LAUNDRY",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 400,
+          "amount": 400,
+          "taxRate": 18,
+          "cgst": 36,
+          "sgst": 36,
+          "igst": 0,
+          "totalAmount": 472,
+          "postedBy": "system",
+          "remarks": "Express service - Table 5"
+        },
+        {
+          "_id": "uffprd7lokn",
+          "date": "2025-11-15T09:30:10.643Z",
+          "category": "MINIBAR",
+          "description": "Soft Drinks",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 50,
+          "amount": 150,
+          "taxRate": 12,
+          "cgst": 9,
+          "sgst": 9,
+          "igst": 0,
+          "totalAmount": 168,
+          "postedBy": "system",
+          "remarks": "Test 12% GST"
+        },
+        {
+          "_id": "pxlae2g7eco",
+          "date": "2025-11-15T09:30:10.660Z",
+          "category": "SPA",
+          "description": "Premium Massage",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000,
+          "taxRate": 28,
+          "cgst": 280,
+          "sgst": 280,
+          "igst": 0,
+          "totalAmount": 2560,
+          "postedBy": "system",
+          "remarks": "Test 28% GST"
+        },
+        {
+          "_id": "ky91vhgsbm",
+          "date": "2025-11-15T09:37:01.112Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": "item-001",
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Test charge from item master"
+        },
+        {
+          "_id": "iyy9l70le4r",
+          "date": "2025-11-15T09:37:01.163Z",
+          "category": "LAUNDRY",
+          "description": "Wash & Iron - 5 shirts, 2 pants",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 400,
+          "amount": 400,
+          "taxRate": 18,
+          "cgst": 36,
+          "sgst": 36,
+          "igst": 0,
+          "totalAmount": 472,
+          "postedBy": "system",
+          "remarks": "Express service - Table 5"
+        },
+        {
+          "_id": "s847gh78m7m",
+          "date": "2025-11-15T09:37:01.192Z",
+          "category": "MINIBAR",
+          "description": "Soft Drinks",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 50,
+          "amount": 150,
+          "taxRate": 12,
+          "cgst": 9,
+          "sgst": 9,
+          "igst": 0,
+          "totalAmount": 168,
+          "postedBy": "system",
+          "remarks": "Test 12% GST"
+        },
+        {
+          "_id": "cmvfbhia17n",
+          "date": "2025-11-15T09:37:01.218Z",
+          "category": "SPA",
+          "description": "Premium Massage",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 2000,
+          "amount": 2000,
+          "taxRate": 28,
+          "cgst": 280,
+          "sgst": 280,
+          "igst": 0,
+          "totalAmount": 2560,
+          "postedBy": "system",
+          "remarks": "Test 28% GST"
+        }
+      ],
+      "payments": [
+        {
+          "_id": "67fd01de-811a-44bd-8270-2ec9731dbf23",
+          "date": "2025-11-14T20:01:53.499Z",
+          "method": "Cash",
+          "amount": 2000,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        },
+        {
+          "_id": "g6dqwnfj0ct",
+          "method": "Cash",
+          "amount": 5000,
+          "date": "2025-11-15T08:20:20.284Z"
+        },
+        {
+          "_id": "wc4avjry4h8",
+          "method": "UPI",
+          "amount": 3000,
+          "date": "2025-11-15T08:20:20.310Z"
+        },
+        {
+          "_id": "lenahkktlcq",
+          "method": "Card",
+          "amount": 2000,
+          "date": "2025-11-15T08:20:20.324Z"
+        },
+        {
+          "_id": "twxnsyoqqs",
+          "method": "Cash",
+          "amount": 0,
+          "date": "2025-11-15T08:20:20.425Z"
+        },
+        {
+          "_id": "196852e4yil",
+          "date": "2025-11-15T08:34:03.156Z",
+          "method": "Cash",
+          "amount": 5000,
+          "reference": "CASH-001",
+          "remarks": "Partial payment - Cash",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "qnkl6l8bptk",
+          "date": "2025-11-15T08:34:03.181Z",
+          "method": "UPI",
+          "amount": 3000,
+          "reference": "TXN123456789",
+          "remarks": "Google Pay payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "4k5bgerg8fp",
+          "date": "2025-11-15T08:34:03.199Z",
+          "method": "Card",
+          "amount": 2000,
+          "reference": "AUTH456789",
+          "remarks": "Credit card payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "cri213hisgt",
+          "date": "2025-11-15T08:34:03.336Z",
+          "method": "Cash",
+          "amount": 0,
+          "reference": "",
+          "remarks": "",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "44pffi77fpq",
+          "date": "2025-11-15T08:34:38.070Z",
+          "method": "Cash",
+          "amount": 5000,
+          "reference": "CASH-001",
+          "remarks": "Partial payment - Cash",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "y22kagkioy",
+          "date": "2025-11-15T08:34:38.092Z",
+          "method": "UPI",
+          "amount": 3000,
+          "reference": "TXN123456789",
+          "remarks": "Google Pay payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "zwlnn7z0tgp",
+          "date": "2025-11-15T08:34:38.107Z",
+          "method": "Card",
+          "amount": 2000,
+          "reference": "AUTH456789",
+          "remarks": "Credit card payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "9knc0uwhm1i",
+          "date": "2025-11-15T08:34:38.224Z",
+          "method": "Cash",
+          "amount": 0,
+          "reference": "",
+          "remarks": "",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "z7o2i2sbj8h",
+          "date": "2025-11-15T08:35:22.634Z",
+          "method": "Cash",
+          "amount": 5000,
+          "reference": "CASH-001",
+          "remarks": "Partial payment - Cash",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "wo36ts7erw",
+          "date": "2025-11-15T08:35:22.653Z",
+          "method": "UPI",
+          "amount": 3000,
+          "reference": "TXN123456789",
+          "remarks": "Google Pay payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "nxbudf80l7",
+          "date": "2025-11-15T08:35:22.664Z",
+          "method": "Card",
+          "amount": 2000,
+          "reference": "AUTH456789",
+          "remarks": "Credit card payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "bds463ccwv",
+          "date": "2025-11-15T08:35:22.758Z",
+          "method": "Cash",
+          "amount": 0,
+          "reference": "",
+          "remarks": "",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "xnaxqywt95s",
+          "date": "2025-11-15T08:44:45.916Z",
+          "method": "Cash",
+          "amount": 5000,
+          "reference": "CASH-001",
+          "remarks": "Partial payment - Cash",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "88zwbm3xmho",
+          "date": "2025-11-15T08:44:45.950Z",
+          "method": "UPI",
+          "amount": 3000,
+          "reference": "TXN123456789",
+          "remarks": "Google Pay payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "mqockn45fs",
+          "date": "2025-11-15T08:44:45.976Z",
+          "method": "Card",
+          "amount": 2000,
+          "reference": "AUTH456789",
+          "remarks": "Credit card payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "m8y9s0odwp",
+          "date": "2025-11-15T08:44:46.078Z",
+          "method": "Cash",
+          "amount": 0,
+          "reference": "",
+          "remarks": "",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "bv2x1gjynnk",
+          "date": "2025-11-15T08:44:57.583Z",
+          "method": "Cash",
+          "amount": 5000,
+          "reference": "CASH-001",
+          "remarks": "Partial payment - Cash",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "491rnfx5onb",
+          "date": "2025-11-15T08:44:57.602Z",
+          "method": "UPI",
+          "amount": 3000,
+          "reference": "TXN123456789",
+          "remarks": "Google Pay payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "1n4lvp30tuk",
+          "date": "2025-11-15T08:44:57.617Z",
+          "method": "Card",
+          "amount": 2000,
+          "reference": "AUTH456789",
+          "remarks": "Credit card payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "4k49xta6co",
+          "date": "2025-11-15T08:44:57.704Z",
+          "method": "Cash",
+          "amount": 0,
+          "reference": "",
+          "remarks": "",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "z6vgb3xnfaf",
+          "date": "2025-11-15T08:47:17.775Z",
+          "method": "Cash",
+          "amount": 5000,
+          "reference": "CASH-001",
+          "remarks": "Partial payment - Cash",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "r7by7x5xr5l",
+          "date": "2025-11-15T08:47:17.807Z",
+          "method": "UPI",
+          "amount": 3000,
+          "reference": "TXN123456789",
+          "remarks": "Google Pay payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "cxkwttkgldv",
+          "date": "2025-11-15T08:47:17.821Z",
+          "method": "Card",
+          "amount": 2000,
+          "reference": "AUTH456789",
+          "remarks": "Credit card payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "tt1q5u0qbkg",
+          "date": "2025-11-15T08:47:17.914Z",
+          "method": "Cash",
+          "amount": 0,
+          "reference": "",
+          "remarks": "",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "91rtgygq7o4",
+          "date": "2025-11-15T09:25:26.111Z",
+          "method": "Cash",
+          "amount": 5000,
+          "reference": "CASH-001",
+          "remarks": "Partial payment - Cash",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "fxksjbp3ume",
+          "date": "2025-11-15T09:25:26.140Z",
+          "method": "UPI",
+          "amount": 3000,
+          "reference": "TXN123456789",
+          "remarks": "Google Pay payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "zb0suhwxdvj",
+          "date": "2025-11-15T09:25:26.153Z",
+          "method": "Card",
+          "amount": 2000,
+          "reference": "AUTH456789",
+          "remarks": "Credit card payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "gkr5oxnkjjv",
+          "date": "2025-11-15T09:25:26.241Z",
+          "method": "Cash",
+          "amount": 0,
+          "reference": "",
+          "remarks": "",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "jd5acj0pvy9",
+          "date": "2025-11-15T09:25:58.090Z",
+          "method": "Cash",
+          "amount": 5000,
+          "reference": "CASH-001",
+          "remarks": "Partial payment - Cash",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "f2mnawbhfww",
+          "date": "2025-11-15T09:25:58.110Z",
+          "method": "UPI",
+          "amount": 3000,
+          "reference": "TXN123456789",
+          "remarks": "Google Pay payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "vuorjo3tr8b",
+          "date": "2025-11-15T09:25:58.122Z",
+          "method": "Card",
+          "amount": 2000,
+          "reference": "AUTH456789",
+          "remarks": "Credit card payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "8o4wecx77mf",
+          "date": "2025-11-15T09:25:58.211Z",
+          "method": "Cash",
+          "amount": 0,
+          "reference": "",
+          "remarks": "",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "l43jfpvb1cf",
+          "date": "2025-11-15T09:28:19.529Z",
+          "method": "Cash",
+          "amount": 5000,
+          "reference": "CASH-001",
+          "remarks": "Partial payment - Cash",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "gszye8uzsq",
+          "date": "2025-11-15T09:28:19.552Z",
+          "method": "UPI",
+          "amount": 3000,
+          "reference": "TXN123456789",
+          "remarks": "Google Pay payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "x85po4ahnzs",
+          "date": "2025-11-15T09:28:19.567Z",
+          "method": "Card",
+          "amount": 2000,
+          "reference": "AUTH456789",
+          "remarks": "Credit card payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "nuqjha2z3a",
+          "date": "2025-11-15T09:28:19.676Z",
+          "method": "Cash",
+          "amount": 0,
+          "reference": "",
+          "remarks": "",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "9bchfwte4v9",
+          "date": "2025-11-15T09:29:14.091Z",
+          "method": "Cash",
+          "amount": 5000,
+          "reference": "CASH-001",
+          "remarks": "Partial payment - Cash",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "qe59lp3qh4",
+          "date": "2025-11-15T09:29:14.122Z",
+          "method": "UPI",
+          "amount": 3000,
+          "reference": "TXN123456789",
+          "remarks": "Google Pay payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "b8dbf6bd2yj",
+          "date": "2025-11-15T09:29:14.132Z",
+          "method": "Card",
+          "amount": 2000,
+          "reference": "AUTH456789",
+          "remarks": "Credit card payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "hcwor9xpvg",
+          "date": "2025-11-15T09:29:14.209Z",
+          "method": "Cash",
+          "amount": 0,
+          "reference": "",
+          "remarks": "",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "rt0i05e3qt",
+          "date": "2025-11-15T09:29:55.499Z",
+          "method": "Cash",
+          "amount": 5000,
+          "reference": "CASH-001",
+          "remarks": "Partial payment - Cash",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "3md6b21oyn1",
+          "date": "2025-11-15T09:29:55.515Z",
+          "method": "UPI",
+          "amount": 3000,
+          "reference": "TXN123456789",
+          "remarks": "Google Pay payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "qxl0jnwrkn",
+          "date": "2025-11-15T09:29:55.539Z",
+          "method": "Card",
+          "amount": 2000,
+          "reference": "AUTH456789",
+          "remarks": "Credit card payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "yxi1lk1ijy",
+          "date": "2025-11-15T09:29:55.604Z",
+          "method": "Cash",
+          "amount": 0,
+          "reference": "",
+          "remarks": "",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "s61rsnmp2sp",
+          "date": "2025-11-15T09:30:10.711Z",
+          "method": "Cash",
+          "amount": 5000,
+          "reference": "CASH-001",
+          "remarks": "Partial payment - Cash",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "dsq0vz4mxi",
+          "date": "2025-11-15T09:30:10.740Z",
+          "method": "UPI",
+          "amount": 3000,
+          "reference": "TXN123456789",
+          "remarks": "Google Pay payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "gfi0sc242fl",
+          "date": "2025-11-15T09:30:10.777Z",
+          "method": "Card",
+          "amount": 2000,
+          "reference": "AUTH456789",
+          "remarks": "Credit card payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "irfley4exkg",
+          "date": "2025-11-15T09:30:10.885Z",
+          "method": "Cash",
+          "amount": 0,
+          "reference": "",
+          "remarks": "",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "4ryvpjwl0gw",
+          "date": "2025-11-15T09:37:01.269Z",
+          "method": "Cash",
+          "amount": 5000,
+          "reference": "CASH-001",
+          "remarks": "Partial payment - Cash",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "n1ful6cwxc",
+          "date": "2025-11-15T09:37:01.307Z",
+          "method": "UPI",
+          "amount": 3000,
+          "reference": "TXN123456789",
+          "remarks": "Google Pay payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "rj25if8yvvq",
+          "date": "2025-11-15T09:37:01.340Z",
+          "method": "Card",
+          "amount": 2000,
+          "reference": "AUTH456789",
+          "remarks": "Credit card payment",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "zj2ls1djt6",
+          "date": "2025-11-15T09:37:01.467Z",
+          "method": "Cash",
+          "amount": 0,
+          "reference": "",
+          "remarks": "",
+          "collectedBy": "system"
+        }
+      ],
+      "total": 65141,
+      "balance": 11986
+    },
+    "createdAt": "2025-11-14T20:01:53.499Z",
+    "updatedAt": "2025-11-22T08:53:35.680Z",
+    "actualCheckOutDate": "2025-11-22T08:53:35.651Z",
+    "actualCheckOutTime": "2025-11-22T08:53:35.651Z",
+    "billId": "165403ad-8afe-46ea-bd6d-a9b78b1c34f5",
+    "billNumber": "INV00054"
+  },
+  {
+    "_id": "3e55eec7-f5be-407a-b6ed-97d2ea2a3fb0",
+    "reservationNumber": "RES00068",
+    "guest": {
+      "email": "test904@hotel.com",
+      "name": "Test Guest 939",
+      "phone": "9876577446"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "",
+    "roomId": "room-103",
+    "roomNumber": "103",
+    "rate": 1000,
+    "checkInDate": "2025-11-20",
+    "checkOutDate": "2025-11-22",
+    "nights": 2,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 2000,
+    "balance": null,
+    "advancePayment": null,
+    "advancePaymentMethod": null,
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 2000,
+      "balance": null
+    },
+    "createdAt": "2025-11-15T09:44:31.445Z",
+    "updatedAt": "2025-11-15T11:06:33.974Z"
+  },
+  {
+    "_id": "d89e2fe9-f52e-4922-bb71-79ea77a74515",
+    "reservationNumber": "RES00069",
+    "guest": {
+      "email": "test709@hotel.com",
+      "name": "Test Guest 382",
+      "phone": "9876517727"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "",
+    "roomId": "room-203",
+    "roomNumber": "203",
+    "rate": 1500,
+    "checkInDate": "2025-11-20",
+    "checkOutDate": "2025-11-22",
+    "nights": 2,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 3000,
+    "balance": null,
+    "advancePayment": null,
+    "advancePaymentMethod": null,
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "59pbj2p7lbp",
+          "date": "2025-11-15T09:44:59.354Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": "item-001",
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Breakfast for 2"
+        },
+        {
+          "_id": "y2cgi5zayu",
+          "date": "2025-11-15T09:44:59.381Z",
+          "category": "LAUNDRY",
+          "description": "Laundry Service",
+          "itemId": null,
+          "quantity": 5,
+          "rate": 150,
+          "amount": 750,
+          "taxRate": 18,
+          "cgst": 67.5,
+          "sgst": 67.5,
+          "igst": 0,
+          "totalAmount": 885,
+          "postedBy": "system",
+          "remarks": "Express service"
+        },
+        {
+          "_id": "btmf8wymsb",
+          "date": "2025-11-15T09:44:59.402Z",
+          "category": "MINIBAR",
+          "description": "Mini Bar",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 80,
+          "amount": 240,
+          "taxRate": 12,
+          "cgst": 14.4,
+          "sgst": 14.4,
+          "igst": 0,
+          "totalAmount": 268.8,
+          "postedBy": "system",
+          "remarks": "Soft drinks"
+        }
+      ],
+      "payments": [],
+      "total": 1888.8,
+      "balance": 1888.8
+    },
+    "createdAt": "2025-11-15T09:44:59.296Z",
+    "updatedAt": "2025-11-15T11:06:44.442Z"
+  },
+  {
+    "_id": "08db1bff-26d6-4c8e-93af-87e7d1691f03",
+    "reservationNumber": "RES00070",
+    "guest": {
+      "email": "test119@hotel.com",
+      "name": "Test Guest 988",
+      "phone": "9876590060"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "",
+    "roomId": "c9d3fdb2-a178-4bc0-8402-272fadc7f8b0",
+    "roomNumber": "901",
+    "rate": 2000,
+    "checkInDate": "2025-11-20",
+    "checkOutDate": "2025-11-22",
+    "nights": 2,
+    "status": "Reserved",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 4000,
+    "balance": null,
+    "advancePayment": null,
+    "advancePaymentMethod": null,
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "6o25eqj8p1f",
+          "date": "2025-11-15T09:45:26.118Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": "item-001",
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Breakfast for 2"
+        },
+        {
+          "_id": "7fxcp4h2jo3",
+          "date": "2025-11-15T09:45:26.143Z",
+          "category": "LAUNDRY",
+          "description": "Laundry Service",
+          "itemId": null,
+          "quantity": 5,
+          "rate": 150,
+          "amount": 750,
+          "taxRate": 18,
+          "cgst": 67.5,
+          "sgst": 67.5,
+          "igst": 0,
+          "totalAmount": 885,
+          "postedBy": "system",
+          "remarks": "Express service"
+        },
+        {
+          "_id": "hsg3mzyh4ob",
+          "date": "2025-11-15T09:45:26.171Z",
+          "category": "MINIBAR",
+          "description": "Mini Bar",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 80,
+          "amount": 240,
+          "taxRate": 12,
+          "cgst": 14.4,
+          "sgst": 14.4,
+          "igst": 0,
+          "totalAmount": 268.8,
+          "postedBy": "system",
+          "remarks": "Soft drinks"
+        }
+      ],
+      "payments": [
+        {
+          "_id": "pnbk8p8ahxl",
+          "date": "2025-11-15T09:45:26.195Z",
+          "method": "Cash",
+          "amount": 1500,
+          "reference": "Cash-FD",
+          "remarks": "Front desk",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "358babsv0ye",
+          "date": "2025-11-15T09:45:26.217Z",
+          "method": "UPI",
+          "amount": 2000,
+          "reference": "GPay-123456",
+          "remarks": "Google Pay",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "vep8oe17tap",
+          "date": "2025-11-15T09:45:26.236Z",
+          "method": "Card",
+          "amount": 2500,
+          "reference": "VISA-4532",
+          "remarks": "Credit card",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "4opizkyiivd",
+          "date": "2025-11-15T09:45:26.284Z",
+          "method": "Cash",
+          "amount": 15000,
+          "reference": "Overpayment",
+          "remarks": "Testing credit",
+          "collectedBy": "system"
+        }
+      ],
+      "total": 1888.8,
+      "balance": -19111.2
+    },
+    "createdAt": "2025-11-15T09:45:26.065Z",
+    "updatedAt": "2025-11-15T11:23:50.774Z"
+  },
+  {
+    "_id": "2706939f-cd54-4cad-92f3-9c509ec8b13b",
+    "reservationNumber": "RES00071",
+    "guest": {
+      "email": "test633@hotel.com",
+      "name": "Test Guest 99",
+      "phone": "9876544614"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 2,
+    "roomTypeId": "",
+    "roomId": "1619716a-f9e1-48db-8cbb-2225269d591e",
+    "roomNumber": "PATCH-TEST",
+    "rate": 0,
+    "checkInDate": "2025-11-20",
+    "checkOutDate": "2025-11-22",
+    "nights": 2,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": null,
+    "advancePayment": null,
+    "advancePaymentMethod": null,
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "ypbakb74udb",
+          "date": "2025-11-15T09:45:47.368Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Breakfast Buffet",
+          "itemId": "item-001",
+          "quantity": 2,
+          "rate": 350,
+          "amount": 700,
+          "taxRate": 5,
+          "cgst": 17.5,
+          "sgst": 17.5,
+          "igst": 0,
+          "totalAmount": 735,
+          "postedBy": "system",
+          "remarks": "Breakfast for 2"
+        },
+        {
+          "_id": "u91naf7pdy",
+          "date": "2025-11-15T09:45:47.398Z",
+          "category": "LAUNDRY",
+          "description": "Laundry Service",
+          "itemId": null,
+          "quantity": 5,
+          "rate": 150,
+          "amount": 750,
+          "taxRate": 18,
+          "cgst": 67.5,
+          "sgst": 67.5,
+          "igst": 0,
+          "totalAmount": 885,
+          "postedBy": "system",
+          "remarks": "Express service"
+        },
+        {
+          "_id": "bg7m89d6h9u",
+          "date": "2025-11-15T09:45:47.424Z",
+          "category": "MINIBAR",
+          "description": "Mini Bar",
+          "itemId": null,
+          "quantity": 3,
+          "rate": 80,
+          "amount": 240,
+          "taxRate": 12,
+          "cgst": 14.4,
+          "sgst": 14.4,
+          "igst": 0,
+          "totalAmount": 268.8,
+          "postedBy": "system",
+          "remarks": "Soft drinks"
+        }
+      ],
+      "payments": [
+        {
+          "_id": "0zkaa9r2d67i",
+          "date": "2025-11-15T09:45:47.444Z",
+          "method": "Cash",
+          "amount": 1500,
+          "reference": "Cash-FD",
+          "remarks": "Front desk",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "cw06uz79q2j",
+          "date": "2025-11-15T09:45:47.461Z",
+          "method": "UPI",
+          "amount": 2000,
+          "reference": "GPay-123456",
+          "remarks": "Google Pay",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "hbb551ssy2g",
+          "date": "2025-11-15T09:45:47.482Z",
+          "method": "Card",
+          "amount": 2500,
+          "reference": "VISA-4532",
+          "remarks": "Credit card",
+          "collectedBy": "system"
+        },
+        {
+          "_id": "b4j5yfz58xa",
+          "date": "2025-11-15T09:45:47.517Z",
+          "method": "Cash",
+          "amount": 15000,
+          "reference": "Overpayment",
+          "remarks": "Testing credit",
+          "collectedBy": "system"
+        }
+      ],
+      "total": 1888.8,
+      "balance": -19111.2
+    },
+    "createdAt": "2025-11-15T09:45:47.324Z",
+    "updatedAt": "2025-11-15T09:45:48.656Z",
+    "billId": "9bd05960-1914-4917-8fbf-2d62d4685a9f",
+    "billNumber": "INV00041"
+  },
+  {
+    "_id": "91f1fb0d-dfd5-4c2e-a220-0f6fce207f9f",
+    "reservationNumber": "RES00072",
+    "guest": {
+      "email": "rajesh.kumar@example.com",
+      "name": "Mr. Rajesh Kumar",
+      "phone": "9876543210"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "1619716a-f9e1-48db-8cbb-2225269d591e",
+    "roomNumber": "PATCH-TEST",
+    "rate": 0,
+    "checkInDate": "2025-12-15",
+    "checkOutDate": "2025-12-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": null,
+    "advancePayment": null,
+    "advancePaymentMethod": null,
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "qnrzfvwltk",
+          "date": "2025-11-15T09:53:48.622Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Lunch Order - Veg Thali, Paneer Tikka, Beverages",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 1037,
+          "amount": 1037,
+          "taxRate": 5,
+          "cgst": 25.93,
+          "sgst": 25.93,
+          "igst": 0,
+          "totalAmount": 1088.85,
+          "postedBy": "system",
+          "remarks": "Room service order"
+        }
+      ],
+      "payments": [],
+      "total": 1088.85,
+      "balance": 1088.85
+    },
+    "createdAt": "2025-11-15T09:53:48.554Z",
+    "updatedAt": "2025-11-15T10:11:29.382Z",
+    "billId": "53a5665a-828d-42b0-98fd-f1706a4ec192",
+    "billNumber": "INV00044"
+  },
+  {
+    "_id": "a2d14a14-1800-420a-8110-78b1248a53db",
+    "reservationNumber": "RES00073",
+    "guest": {
+      "email": "rajesh.kumar@example.com",
+      "name": "Mr. Rajesh Kumar",
+      "phone": "9876543210"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "room-302",
+    "roomNumber": "302",
+    "rate": 0,
+    "checkInDate": "2025-12-15",
+    "checkOutDate": "2025-12-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": null,
+    "advancePayment": null,
+    "advancePaymentMethod": null,
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "0m241bg2fds",
+          "date": "2025-11-15T09:55:29.345Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Lunch Order - Veg Thali, Paneer Tikka, Beverages",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 1037,
+          "amount": 1037,
+          "taxRate": 5,
+          "cgst": 25.93,
+          "sgst": 25.93,
+          "igst": 0,
+          "totalAmount": 1088.85,
+          "postedBy": "system",
+          "remarks": "Room service order"
+        }
+      ],
+      "payments": [],
+      "total": 1088.85,
+      "balance": 1088.85
+    },
+    "createdAt": "2025-11-15T09:55:29.280Z",
+    "updatedAt": "2025-11-15T09:55:29.466Z",
+    "billId": "7187ec18-f983-4867-a5eb-e53656f75c66",
+    "billNumber": "INV00042"
+  },
+  {
+    "_id": "797e8055-5f09-4e29-a852-1ae361e73274",
+    "reservationNumber": "RES00074",
+    "guest": {
+      "name": "Tanvi",
+      "phone": "7876789878",
+      "email": "ghfh@outlook.com",
+      "idProof": "8790875436865",
+      "address": "Dubai"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "room-302",
+    "roomNumber": "302",
+    "rate": 1000,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 1000,
+    "balance": 600,
+    "advancePayment": 400,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "lkne9yn3bwc",
+          "date": "2025-11-15T10:07:27.231Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Lunch Order - Veg Thali, Dal, Rice, Roti",
+          "itemId": null,
+          "quantity": 1,
+          "rate": 450,
+          "amount": 450,
+          "taxRate": 5,
+          "cgst": 11.25,
+          "sgst": 11.25,
+          "igst": 0,
+          "totalAmount": 472.5,
+          "postedBy": "system",
+          "remarks": "Room service - Room 302"
+        },
+        {
+          "_id": "0lpuv6gnlezk",
+          "date": "2025-11-15T10:10:49.728Z",
+          "category": "FOOD_BEVERAGE",
+          "description": "Paneer Masala",
+          "itemId": "0c968610-a880-4259-9d93-b1a2149ea64b",
+          "quantity": 1,
+          "rate": 179.99,
+          "amount": 179.99,
+          "taxRate": 18,
+          "cgst": 16.2,
+          "sgst": 16.2,
+          "igst": 0,
+          "totalAmount": 212.39,
+          "postedBy": "system",
+          "remarks": ""
+        }
+      ],
+      "payments": [
+        {
+          "_id": "683b7943-652f-4c9d-8181-99eb8f5a3bae",
+          "date": "2025-11-15T10:04:03.327Z",
+          "method": "Cash",
+          "amount": 400,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 1684.8899999999999,
+      "balance": 600
+    },
+    "createdAt": "2025-11-15T10:04:03.327Z",
+    "updatedAt": "2025-11-15T10:11:22.287Z",
+    "billId": "6796d85f-0407-4392-abdf-1441c51f3086",
+    "billNumber": "INV00043"
+  },
+  {
+    "_id": "c8f4c5de-cd28-47ea-a952-88efac586103",
+    "reservationNumber": "RES00075",
+    "guest": {
+      "name": "Tanaya Parate ",
+      "phone": "8982403865",
+      "email": "tana@mota.com",
+      "idProof": "98673765343",
+      "address": "Pune"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "room-302",
+    "roomNumber": "302",
+    "rate": 998,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 998,
+    "balance": 698,
+    "advancePayment": 300,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "bw0tvhodopo",
+          "date": "2025-11-15T11:29:55.112Z",
+          "category": "SERVICE",
+          "description": "Laundry Service",
+          "itemId": "item-002",
+          "quantity": 1,
+          "rate": 200,
+          "amount": 200,
+          "taxRate": 18,
+          "cgst": 18,
+          "sgst": 18,
+          "igst": 0,
+          "totalAmount": 236,
+          "postedBy": "system",
+          "remarks": ""
+        }
+      ],
+      "payments": [
+        {
+          "_id": "0a007b36-c9df-49ef-b034-59ae46445d2e",
+          "date": "2025-11-15T11:28:43.537Z",
+          "method": "Cash",
+          "amount": 300,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 1234,
+      "balance": 698
+    },
+    "createdAt": "2025-11-15T11:28:43.537Z",
+    "updatedAt": "2025-11-15T11:30:49.097Z",
+    "billId": "2332b8f3-8622-4730-bd2e-42641af7249a",
+    "billNumber": "INV00045"
+  },
+  {
+    "_id": "fd6bdb9c-b51c-4937-a831-286d2e99c72e",
+    "reservationNumber": "RES00076",
+    "guest": {
+      "name": "Abhijit Vibhute",
+      "phone": "989886773888",
+      "email": "msnbdkjsbd@gmail.com",
+      "idProof": "98929",
+      "address": ""
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "room-302",
+    "roomNumber": "302",
+    "rate": 0,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 0,
+    "balance": -300,
+    "advancePayment": 300,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [
+        {
+          "_id": "c8e15b68-7949-4db5-9b51-64074d4f0d78",
+          "date": "2025-11-15T11:36:41.498Z",
+          "method": "Cash",
+          "amount": 300,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 0,
+      "balance": -300
+    },
+    "createdAt": "2025-11-15T11:36:41.498Z",
+    "updatedAt": "2025-11-15T11:58:56.368Z",
+    "billId": "f99799dd-d320-4b24-b2bd-85c2acc61c83",
+    "billNumber": "INV00047"
+  },
+  {
+    "_id": "73709afe-1eb3-4029-be86-cf51dc3f8c45",
+    "reservationNumber": "RES00077",
+    "guest": {
+      "name": "Trisha Krishnan",
+      "phone": "9898909876",
+      "email": "aa@ss.com",
+      "idProof": "9877",
+      "address": "Kerala"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "8a1f7344-b3f0-46d6-9d6d-19642afd9ed0",
+    "roomNumber": "905",
+    "rate": 890,
+    "checkInDate": "2025-11-15",
+    "checkOutDate": "2025-11-16",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 890,
+    "balance": 110,
+    "advancePayment": 780,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "8c75984aa6n",
+          "date": "2025-11-15T18:27:21.007Z",
+          "category": "FOOD",
+          "description": "Breakfast Buffet",
+          "itemId": "item-001",
+          "quantity": 1,
+          "rate": 350,
+          "amount": 350,
+          "taxRate": 5,
+          "cgst": 8.75,
+          "sgst": 8.75,
+          "igst": 0,
+          "totalAmount": 367.5,
+          "postedBy": "system",
+          "remarks": ""
+        }
+      ],
+      "payments": [
+        {
+          "_id": "d9baf368-283d-418b-b0b4-6c362f661d06",
+          "date": "2025-11-15T18:26:18.656Z",
+          "method": "Cash",
+          "amount": 780,
+          "description": "Advance payment at booking",
+          "type": "advance"
+        }
+      ],
+      "total": 1257.5,
+      "balance": 110
+    },
+    "createdAt": "2025-11-15T18:26:18.656Z",
+    "updatedAt": "2025-11-16T19:00:36.852Z",
+    "actualCheckOutDate": "2025-11-16T19:00:36.787Z",
+    "actualCheckOutTime": "2025-11-16T19:00:36.787Z",
+    "billId": "47d541cd-b203-4e61-af04-351a9c92ec88",
+    "billNumber": "INV00050"
+  },
+  {
+    "_id": "1c32fa16-20be-4859-b0e1-1987435672fd",
+    "reservationNumber": "RES00078",
+    "guest": {
+      "name": "Trisha Krishnan",
+      "phone": "+91-9876543210",
+      "email": "trisha@test.com"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "1619716a-f9e1-48db-8cbb-2225269d591e",
+    "roomNumber": "PATCH-TEST",
+    "rate": 890,
+    "checkInDate": "2025-11-17",
+    "checkOutDate": "2025-11-18",
+    "nights": 1,
+    "status": "Reserved",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 890,
+    "balance": 110,
+    "advancePayment": 780,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 890,
+      "balance": 110
+    },
+    "createdAt": "2025-11-15T18:35:18.644Z",
+    "updatedAt": "2025-11-15T18:35:18.644Z"
+  },
+  {
+    "_id": "4804b77e-0fe2-493b-a12b-fb4c7fea5693",
+    "reservationNumber": "RES00079",
+    "guest": {
+      "name": "Prisha",
+      "phone": "8989898989",
+      "email": "gfdf@gmail.com",
+      "idProof": "09876545676878",
+      "address": ""
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "room-302",
+    "roomNumber": "302",
+    "rate": 900,
+    "checkInDate": "2025-11-16",
+    "checkOutDate": "2025-11-17",
+    "nights": 1,
+    "status": "Reserved",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 900,
+    "balance": 100,
+    "advancePayment": 800,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 900,
+      "balance": 100
+    },
+    "createdAt": "2025-11-15T18:38:29.277Z",
+    "updatedAt": "2025-11-15T18:38:29.277Z"
+  },
+  {
+    "_id": "233c57e7-a7c4-4a2d-8834-70a56708beab",
+    "reservationNumber": "RES00080",
+    "guest": {
+      "name": "Jaideep",
+      "phone": "9898765678",
+      "email": "yhrgtewq@gmail.com",
+      "idProof": "8667",
+      "address": ""
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "room-301",
+    "roomNumber": "301",
+    "rate": 1000,
+    "checkInDate": "2025-11-16",
+    "checkOutDate": "2025-11-17",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 1000,
+    "balance": 500,
+    "advancePayment": 500,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "26k9vzqwt57",
+          "date": "2025-11-16T17:20:33.226Z",
+          "category": "FOOD",
+          "description": "Breakfast Buffet",
+          "itemId": "item-001",
+          "quantity": 1,
+          "rate": 350,
+          "amount": 350,
+          "taxRate": 5,
+          "cgst": 8.75,
+          "sgst": 8.75,
+          "igst": 0,
+          "totalAmount": 367.5,
+          "postedBy": "system",
+          "remarks": ""
+        }
+      ],
+      "payments": [],
+      "total": 1367.5,
+      "balance": 500
+    },
+    "createdAt": "2025-11-16T17:19:50.130Z",
+    "updatedAt": "2025-11-16T17:20:59.300Z",
+    "billId": "bcc46287-8b15-43b5-93ec-5cb43340ea3f",
+    "billNumber": "INV00048"
+  },
+  {
+    "_id": "951e42e8-12fb-4ffb-bbcf-ef49c558b028",
+    "reservationNumber": "RES00081",
+    "guest": {
+      "name": "Tamanna Bhatia",
+      "phone": "9876546898",
+      "email": "hjsdjhads@gmail.com",
+      "idProof": "09876543876",
+      "address": "Mumbai"
+    },
+    "guestCounts": {
+      "adults": 2,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [
+      {
+        "name": "Abhijit Vibhute",
+        "age": "",
+        "ageCategory": "Adult",
+        "idProof": ""
+      }
+    ],
+    "totalGuests": 2,
+    "roomTypeId": "",
+    "roomId": "room-301",
+    "roomNumber": "301",
+    "rate": 1000,
+    "checkInDate": "2025-11-17",
+    "checkOutDate": "2025-11-18",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 2,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 1000,
+    "balance": 400,
+    "advancePayment": 600,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 1000,
+      "balance": 400
+    },
+    "createdAt": "2025-11-16T19:43:58.759Z",
+    "updatedAt": "2025-11-16T19:44:47.608Z",
+    "actualCheckOutDate": "2025-11-16T19:44:47.559Z",
+    "actualCheckOutTime": "2025-11-16T19:44:47.559Z",
+    "billId": "48a55c0b-dd84-4158-ab9c-712be6ced169",
+    "billNumber": "INV00051"
+  },
+  {
+    "_id": "e2ad088a-d3fb-498f-8ec7-b2405f4e38cc",
+    "reservationNumber": "RES00082",
+    "guest": {
+      "name": "Katrina Kaif",
+      "phone": "8787655788",
+      "email": "asdvjng@jsgad.com",
+      "idProof": "hsdabsavd",
+      "address": ""
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 400,
+    "checkInDate": "2025-11-17",
+    "checkOutDate": "2025-11-18",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 400,
+    "balance": 201,
+    "advancePayment": 199,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 400,
+      "balance": 201
+    },
+    "createdAt": "2025-11-16T19:54:54.250Z",
+    "updatedAt": "2025-11-16T19:55:30.492Z",
+    "actualCheckOutDate": "2025-11-16T19:55:30.225Z",
+    "actualCheckOutTime": "2025-11-16T19:55:30.225Z",
+    "billId": "b2130202-68f3-427c-995d-98642ff037cf",
+    "billNumber": "INV00052"
+  },
+  {
+    "_id": "78f420e7-c687-48f5-a18d-e930c871e357",
+    "reservationNumber": "RES00083",
+    "guest": {
+      "name": "Abhijit",
+      "phone": "9898989876",
+      "email": "snkbd@gmail.com",
+      "idProof": "9876543",
+      "address": "Life Republic, Pune"
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 990,
+    "checkInDate": "2025-11-22",
+    "checkOutDate": "2025-11-23",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 990,
+    "balance": 901,
+    "advancePayment": 89,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "kqyuzctjcoc",
+          "date": "2025-11-22T08:44:00.043Z",
+          "category": "FOOD",
+          "description": "Hey",
+          "itemId": "d20d42a7-2638-485b-882e-e27ece830a78",
+          "quantity": 1,
+          "rate": 800,
+          "amount": 800,
+          "taxRate": 5,
+          "cgst": 20,
+          "sgst": 20,
+          "igst": 0,
+          "totalAmount": 840,
+          "postedBy": "system",
+          "remarks": ""
+        }
+      ],
+      "payments": [],
+      "total": 1830,
+      "balance": 901
+    },
+    "createdAt": "2025-11-22T08:08:44.289Z",
+    "updatedAt": "2025-11-22T08:44:33.494Z",
+    "actualCheckOutDate": "2025-11-22T08:44:33.408Z",
+    "actualCheckOutTime": "2025-11-22T08:44:33.408Z",
+    "billId": "456b8631-71a9-4c00-adf8-4a5170839b64",
+    "billNumber": "INV00053"
+  },
+  {
+    "_id": "57b606f7-ec98-4ae7-98b9-59bd0ddf413b",
+    "reservationNumber": "RES00084",
+    "guest": {
+      "name": "Sara",
+      "phone": "9767876544",
+      "email": "hgfds@gamai.com",
+      "idProof": "jhgf567",
+      "address": ""
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "room-301",
+    "roomNumber": "301",
+    "rate": 900,
+    "checkInDate": "2025-11-22",
+    "checkOutDate": "2025-11-23",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 900,
+    "balance": 800,
+    "advancePayment": 100,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "w0rgyavpv2r",
+          "date": "2025-11-22T09:22:02.929Z",
+          "category": "FOOD",
+          "description": "Hey",
+          "itemId": "d20d42a7-2638-485b-882e-e27ece830a78",
+          "quantity": 1,
+          "rate": 800,
+          "amount": 800,
+          "taxRate": 5,
+          "cgst": 20,
+          "sgst": 20,
+          "igst": 0,
+          "totalAmount": 840,
+          "postedBy": "system",
+          "remarks": ""
+        }
+      ],
+      "payments": [],
+      "total": 1740,
+      "balance": 800
+    },
+    "createdAt": "2025-11-22T09:21:26.046Z",
+    "updatedAt": "2025-11-22T09:22:23.040Z",
+    "actualCheckOutDate": "2025-11-22T09:22:22.946Z",
+    "actualCheckOutTime": "2025-11-22T09:22:22.946Z",
+    "billId": "3a908815-b922-4a81-ab19-366d1674ad5c",
+    "billNumber": "INV00056"
+  },
+  {
+    "_id": "bfa94428-02c3-4fa7-b4d8-d07fe60da3d0",
+    "reservationNumber": "RES00085",
+    "guest": {
+      "name": "Abhi",
+      "phone": "8767688765",
+      "email": "sjbd@ghc.com",
+      "idProof": "987654",
+      "address": ""
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "room-101",
+    "roomNumber": "101",
+    "rate": 1000,
+    "checkInDate": "2025-11-27",
+    "checkOutDate": "2025-11-28",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 1000,
+    "balance": 500,
+    "advancePayment": 500,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "ur76p50xbz",
+          "date": "2025-11-27T09:23:45.253Z",
+          "category": "FOOD",
+          "description": "Hey",
+          "itemId": "d20d42a7-2638-485b-882e-e27ece830a78",
+          "quantity": 1,
+          "rate": 800,
+          "amount": 800,
+          "taxRate": 5,
+          "cgst": 20,
+          "sgst": 20,
+          "igst": 0,
+          "totalAmount": 840,
+          "postedBy": "system",
+          "remarks": ""
+        }
+      ],
+      "payments": [],
+      "total": 1840,
+      "balance": 500
+    },
+    "createdAt": "2025-11-27T09:23:15.173Z",
+    "updatedAt": "2025-11-27T09:24:08.672Z",
+    "actualCheckOutDate": "2025-11-27T09:24:08.656Z",
+    "actualCheckOutTime": "2025-11-27T09:24:08.656Z",
+    "billId": "fbd67f57-1e66-4822-b8db-42ba35d2e016",
+    "billNumber": "INV00057"
+  },
+  {
+    "_id": "547403d6-3d56-4dbb-9454-6ff5b6459f4a",
+    "reservationNumber": "RES00086",
+    "guest": {
+      "name": "Mini",
+      "phone": "8767666666",
+      "email": "gf@dfg.com",
+      "idProof": "98765",
+      "address": ""
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "room-102",
+    "roomNumber": "102",
+    "rate": 2000,
+    "checkInDate": "2025-11-27",
+    "checkOutDate": "2025-11-28",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 2000,
+    "balance": 1,
+    "advancePayment": 1999,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [
+        {
+          "_id": "352jwtwm0q6",
+          "date": "2025-11-27T09:30:20.160Z",
+          "category": "FOOD",
+          "description": "Hey",
+          "itemId": "d20d42a7-2638-485b-882e-e27ece830a78",
+          "quantity": 1,
+          "rate": 800,
+          "amount": 800,
+          "taxRate": 5,
+          "cgst": 20,
+          "sgst": 20,
+          "igst": 0,
+          "totalAmount": 840,
+          "postedBy": "system",
+          "remarks": ""
+        }
+      ],
+      "payments": [],
+      "total": 2840,
+      "balance": 1
+    },
+    "createdAt": "2025-11-27T09:29:59.359Z",
+    "updatedAt": "2025-11-27T09:30:33.095Z",
+    "actualCheckOutDate": "2025-11-27T09:30:33.072Z",
+    "actualCheckOutTime": "2025-11-27T09:30:33.072Z",
+    "billId": "340e6e23-9fa3-474a-ba7f-a20913b0dc6a",
+    "billNumber": "INV00058"
+  },
+  {
+    "_id": "6171820f-31dd-4e25-8eed-366ffbeff0b8",
+    "reservationNumber": "RES00087",
+    "guest": {
+      "name": "Kiara",
+      "phone": "9876578999",
+      "email": "mnbv@fgh.com",
+      "idProof": "0987654",
+      "address": ""
+    },
+    "guestCounts": {
+      "adults": 1,
+      "children": 0,
+      "infants": 0
+    },
+    "additionalGuests": [],
+    "totalGuests": 1,
+    "roomTypeId": "",
+    "roomId": "room-201",
+    "roomNumber": "201",
+    "rate": 2000,
+    "checkInDate": "2025-11-27",
+    "checkOutDate": "2025-11-28",
+    "nights": 1,
+    "status": "CheckedOut",
+    "guestsCount": 1,
+    "paymentMethod": "Cash",
+    "bookingSource": "Walk-in",
+    "amount": 2000,
+    "balance": 1000,
+    "advancePayment": 1000,
+    "advancePaymentMethod": "Cash",
+    "notes": "",
+    "folio": {
+      "lines": [],
+      "payments": [],
+      "total": 2000,
+      "balance": 1000
+    },
+    "createdAt": "2025-11-27T09:45:59.984Z",
+    "updatedAt": "2025-11-27T09:46:08.723Z",
+    "actualCheckOutDate": "2025-11-27T09:46:08.690Z",
+    "actualCheckOutTime": "2025-11-27T09:46:08.690Z",
+    "billId": "a761dd36-53e1-4e4b-8f6d-b1af8045bf26",
+    "billNumber": "INV00059"
+  }
+]

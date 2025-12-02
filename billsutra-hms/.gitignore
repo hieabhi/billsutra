@@ -1,0 +1,23 @@
+node_modules/
+dist/
+.env
+.env.local
+*.log
+.DS_Store
+client/node_modules/
+client/dist/
+
+# CRITICAL SECURITY - NEVER COMMIT THESE FILES
+GENERATE_MASTER_KEYS.js
+master-keys.txt
+master-keys.json
+customer-database.xlsx
+customer-database.csv
+private-key.pem
+*.dat
+license.dat
+
+# Electron build artifacts
+dist-electron/
+out/
+release/
