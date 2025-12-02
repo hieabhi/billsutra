@@ -307,6 +307,13 @@ export default function HMSPage() {
                 <Sparkles className="w-5 h-5" />
                 Try Interactive Demo
               </Link>
+              <a
+                href="/downloads/BillSutra-HMS-Setup.exe"
+                download
+                className="px-8 py-4 rounded-2xl glass-strong font-semibold text-lg hover:scale-105 transition-all hover:glass-strong inline-flex items-center justify-center gap-3 cursor-pointer"
+              >
+                Download for Windows
+              </a>
               <Link
                 href="mailto:contact@billsutra.com"
                 className="px-8 py-4 rounded-2xl glass-strong font-semibold text-lg hover:scale-105 transition-all"

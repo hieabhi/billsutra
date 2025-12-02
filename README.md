@@ -1,326 +1,224 @@
-# BillSutra - Hotel GST Billing Software
+# BillSutra - Complete Business Management Solutions
 
-A beautiful, modern, and fully-featured web-based GST billing application designed specifically for hotels. Built with React, Node.js, Express, and MongoDB.
+BillSutra is an all-in-one platform for hotel management, restaurant POS, pharmacy management, and GST-compliant billing.
 
-## ✨ Features
+## 🌟 Key Features
 
-### 🧾 Billing & Invoicing
-- **Create GST-Compliant Invoices** - Generate tax invoices with CGST, SGST, and IGST calculations
-- **Professional Invoice Templates** - Beautiful, printable invoices with hotel branding
-- **Auto Bill Numbering** - Automatic sequential invoice numbering with custom prefix
-- **Multiple Payment Methods** - Support for Cash, Card, UPI, and other payment modes
-- **Amount in Words** - Automatic conversion of totals to words for Indian currency
+### Hotel Management System (HMS)
+- **Online Booking Engine** - Integrated reservations with real-time availability
+- **Room Management** - Visual floor plans with 8-state workflow (Available, Occupied, Dirty, Clean, Inspected, Maintenance)
+- **Front Desk Operations** - Quick check-in/check-out, guest management, group bookings
+- **Housekeeping Automation** - Auto-task generation, priority scoring, staff tracking
+- **Smart Billing** - GST-compliant invoicing, multiple payment methods, folio management
+- **Advanced Analytics** - Real-time KPIs (Occupancy Rate, ADR, RevPAR), 30-day trends
 
-### 📊 GST Calculations
-- **Accurate Tax Calculations** - Automatic CGST, SGST, and IGST computation
-- **HSN/SAC Code Support** - Full support for HSN and SAC codes
-- **Item-wise Tax Breakdown** - Detailed tax calculations for each line item
-- **Tax Reports** - Comprehensive GST summaries and reports
+### Restaurant Management System
+- Complete POS with table management
+- Kitchen display system
+- Inventory tracking
+- Online ordering integration
+- GST-compliant billing
 
-### 📦 Inventory Management
-- **Item/Menu Catalog** - Manage your products and services
-- **Category Management** - Organize items by Food, Beverage, Room Service, etc.
-- **Rate Management** - Easy price updates
-- **Tax Configuration** - Set custom GST rates per item
+### Pharmacy Management System  
+- Inventory management with expiry alerts
+- Prescription tracking
+- Stock control
+- Compliance management
+- POS integration
 
-### 👥 Customer Management
-- **Customer Database** - Store customer information for quick billing
-- **GST Details** - Maintain customer GST numbers
-- **Customer Types** - Categorize as Walk-in, Regular, or Corporate
-- **Quick Search** - Auto-complete customer selection
-
-### 📈 Reports & Analytics
-- **Dashboard** - Real-time sales overview with today's and monthly revenue
-- **Sales Reports** - Date-wise sales summaries
-- **GST Reports** - Tax collection reports with CGST/SGST/IGST breakdown
-- **Export Functionality** - Download reports as CSV files
-
-### ⚙️ Settings & Configuration
-- **Hotel Profile** - Configure hotel name, address, GST number
-- **Bank Details** - Add bank account information for invoices
-- **Custom Terms** - Set invoice terms and conditions
-- **Invoice Customization** - Custom invoice prefix and numbering
-
-## 🚀 Tech Stack
-
-### Frontend
-- **React** - Modern UI library
-- **React Router** - Client-side routing
-- **Axios** - HTTP client
-- **Lucide React** - Beautiful icons
-- **CSS3** - Custom styling with modern design
-
-### Backend
-- **Node.js** - JavaScript runtime
-- **Express** - Web application framework
-- **MongoDB** - NoSQL database
-- **Mongoose** - MongoDB ODM
-
-## 📋 Prerequisites
-
-Before you begin, ensure you have the following installed:
-- **Node.js** (v16 or higher) - [Download](https://nodejs.org/)
-- **MongoDB** (v4.4 or higher) - [Download](https://www.mongodb.com/try/download/community)
-- **npm** or **yarn** - Comes with Node.js
-
-## 🛠️ Installation
-
-### 1. Clone or Navigate to the Project
-
-```bash
-cd "c:\Users\AbhijitVibhute\Desktop\BillSutra"
-```
-
-### 2. Install Backend Dependencies
-
-```bash
-npm install
-```
-
-### 3. Install Frontend Dependencies
-
-```bash
-cd client
-npm install
-cd ..
-```
-
-### 4. Configure Environment Variables
-
-The `.env` file is already created with default values. You can modify it as needed:
-
-```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/billsutra
-JWT_SECRET=your-secret-key-change-in-production
-NODE_ENV=development
-```
-
-### 5. Start MongoDB
-
-Make sure MongoDB is running on your system:
-
-**Windows:**
-```bash
-# If MongoDB is installed as a service, it should start automatically
-# Otherwise, run:
-mongod
-```
-
-**Mac/Linux:**
-```bash
-sudo systemctl start mongod
-# or
-brew services start mongodb-community
-```
-
-### 6. Migrate Checkout History (One-time)
-
-If you have existing checked-out bookings, run this migration to populate room histories:
-
-```bash
-node server/migrate-checkout-history.js
-```
-
-This will:
-- Scan all CheckedOut/Cancelled/NoShow bookings
-- Add them to respective room's checkout history
-- Safe to run multiple times (skips duplicates)
-- Keeps last 100 entries per room
-
-**Note:** All future checkouts automatically add to room history. This migration is only needed once for existing data.
-
-### 7. Run the Application
-
-#### Development Mode (Recommended)
-
-Run both frontend and backend concurrently:
-
-```bash
-npm run dev
-```
-
-This will start:
-- Backend server on `http://localhost:5000`
-- Frontend development server on `http://localhost:5173`
-
-#### Production Mode
-
-Build the frontend and run the server:
-
-```bash
-npm run build
-npm start
-```
-
-## 📱 Usage
-
-### First Time Setup
-
-1. **Access the Application**
-   - Open your browser and navigate to `http://localhost:5173`
-
-2. **Login**
-   - Username: `admin`
-   - Password: `admin123`
-
-3. **Configure Settings**
-   - Go to Settings page
-   - Enter your hotel details (name, address, GST number)
-   - Add bank details (optional)
-   - Set invoice terms and conditions
-
-4. **Add Items**
-   - Navigate to Items page
-   - Click "Add Item"
-   - Add your menu items/services with rates and GST rates
-
-5. **Add Customers** (Optional)
-   - Go to Customers page
-   - Add regular customers for quick billing
-
-### Creating a Bill
-
-1. Click "New Bill" from the sidebar
-2. Enter customer details (or select from existing customers)
-3. Add line items:
-   - Select item from catalog or type manually
-   - Set quantity and rate
-   - GST rates auto-populate from item master
-4. Review totals (automatically calculated)
-5. Select payment method
-6. Add notes (optional)
-7. Click "Save & Generate Invoice"
-8. Print or save the invoice
-
-### Viewing Reports
-
-1. Navigate to Reports page
-2. Select date range
-3. View sales summary and GST breakdown
-4. Export to CSV if needed
-
-## 🎨 Features Breakdown
-
-### Dashboard
-- Today's revenue and bill count
-- Monthly revenue statistics
-- Recent bills list
-- Quick overview cards
-
-### Billing
-- Multi-item billing
-- Real-time GST calculations
-- Customer auto-complete
-- Item auto-complete from catalog
-- Print-ready invoices
-
-### Invoice Format
-- Hotel header with logo space
-- Customer billing details
-- Itemized list with HSN codes
-- Tax breakdown (CGST/SGST/IGST)
-- Amount in words
-- Bank details
-- Terms & conditions
-- Signature sections
-
-### Reports
-- Date-wise filtering
-- Revenue summaries
-- Tax collection reports
-- CSV export functionality
-
-## 🔐 Security Note
-
-⚠️ **Important for Production:**
-- Change the default admin credentials
-- Update `JWT_SECRET` in `.env` file
-- Implement proper authentication
-- Use HTTPS in production
-- Secure MongoDB with authentication
-- Never commit `.env` file to version control
-
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```
 BillSutra/
-├── client/                 # Frontend React app
+├── billsutra-website/          # Next.js marketing website
 │   ├── src/
-│   │   ├── components/    # Reusable components
-│   │   ├── pages/         # Page components
-│   │   ├── api.js         # API configuration
-│   │   ├── utils.js       # Utility functions
-│   │   ├── App.jsx        # Main app component
-│   │   └── index.css      # Global styles
+│   │   ├── app/
+│   │   │   ├── page.tsx        # Homepage
+│   │   │   ├── products/       # Product pages (HMS, POS, Pharmacy)
+│   │   │   ├── demo/           # Demo page with video & download links
+│   │   │   ├── hms-demo/       # Interactive HMS demo
+│   │   │   └── ...
+│   │   ├── components/         # Reusable components
+│   │   └── styles/             # Global styles & animations
+│   └── public/
+│       └── downloads/          # HMS desktop app installer
+│
+├── billsutra-hms/              # Electron desktop application
+│   ├── client/                 # React Vite frontend
+│   │   ├── src/
+│   │   │   ├── pages/         # Dashboard, Rooms, Bookings, etc.
+│   │   │   ├── components/    # Folio, Invoice, Modals
+│   │   │   └── api.js         # API integration
+│   │   └── vite.config.js
+│   │
+│   ├── server/                 # Node.js Express backend
+│   │   ├── routes/            # API endpoints
+│   │   ├── models/            # Data models
+│   │   ├── repositories/      # File-based data storage
+│   │   └── index.js           # Express server
+│   │
+│   ├── electron-main.js       # Electron main process
+│   ├── electron-builder.json  # Installer configuration
 │   └── package.json
-├── server/                 # Backend Express app
-│   ├── models/            # Mongoose models
-│   ├── routes/            # API routes
-│   └── index.js           # Server entry point
-├── .env                    # Environment variables
-├── .gitignore
-├── package.json
-└── README.md
+│
+└── README.md                    # This file
 ```
 
-## 🛠️ Customization
+## 🚀 Quick Start
 
-### Adding New Item Categories
-Edit `server/models/Item.js` and add to the enum array:
-```javascript
-category: {
-  type: String,
-  enum: ['Food', 'Beverage', 'Your Category', ...],
-}
+### Prerequisites
+- Node.js 16+ 
+- npm or yarn
+- Windows 10+ (for desktop app)
+
+### Option 1: Download Desktop App (Easiest)
+
+1. Visit the [demo page](https://billsutra.com/demo)
+2. Click **"Download Desktop App"**
+3. Run the installer: `BillSutra-HMS-Setup.exe`
+4. Launch the application
+
+**Demo Credentials:**
+- Username: `admin`
+- Password: `admin123`
+
+### Option 2: Run Website Locally
+
+```bash
+# Navigate to website directory
+cd billsutra-website
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Open http://localhost:3000
 ```
 
-### Changing GST Rates
-Default GST rates can be modified in the Item model or per-item basis through the UI.
+### Option 3: Run HMS App from Source
 
-### Invoice Customization
-Edit `client/src/components/InvoicePreview.jsx` and corresponding CSS for custom invoice layouts.
+```bash
+# Install root dependencies
+npm install
 
-## 🐛 Troubleshooting
+# Install client dependencies
+cd client
+npm install
 
-### MongoDB Connection Error
-- Ensure MongoDB is running
-- Check `MONGODB_URI` in `.env` file
-- Verify MongoDB service status
+# Install server dependencies
+cd ../server
+npm install
+cd ..
 
-### Port Already in Use
-- Change `PORT` in `.env` file
-- Or kill the process using the port
+# Start server and client
+npm run dev
 
-### Frontend Not Loading
-- Clear browser cache
-- Check if backend is running
-- Verify proxy settings in `vite.config.js`
+# For Electron desktop app
+npm run electron:dev
+```
 
-## 📝 License
+## 📦 Building the Desktop App
 
-MIT License - Free to use for personal and commercial projects
+```bash
+# Build client
+npm run build:client
+
+# Build Windows installer
+npm run dist:win
+
+# Build for macOS
+npm run dist:mac
+
+# Build for Linux
+npm run dist:linux
+```
+
+The installer will be created in `dist-electron/` folder.
+
+## 🌐 Website Tech Stack
+
+- **Framework**: Next.js 16.0.5 with Turbopack
+- **UI Library**: React 19
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion v12
+- **Icons**: Lucide React
+- **Typography**: Inter font
+- **Deployment**: Vercel-ready
+
+### Design System
+- **Dark Mode**: Premium dark theme (#030712)
+- **Colors**: Aurora gradients (blue, indigo, purple)
+- **Effects**: Glassmorphism, mesh gradients, 3D transforms
+- **Animations**: Smooth parallax, micro-interactions, entrance effects
+
+## 💻 Desktop App Tech Stack
+
+- **Frontend**: React 18 with Vite
+- **Backend**: Node.js Express
+- **Desktop**: Electron 39
+- **Database**: File-based JSON storage
+- **Security**: JWT authentication, BCrypt hashing
+- **License**: Machine ID binding with master keys
+
+## 🔐 Features
+
+### Authentication
+- Secure login with JWT tokens
+- Master license keys system
+- Machine ID binding for license validation
+- Role-based access control (SuperAdmin, HotelAdmin, Staff)
+
+### Data Management
+- Real-time synchronization
+- Backup and restore functionality
+- Multi-property support
+- Guest history tracking
+
+### Reporting & Analytics
+- GST-compliant invoicing
+- Revenue analytics
+- Occupancy trends
+- Guest statistics
+- Customizable reports
+
+## 📄 Documentation
+
+- [API Reference](./billsutra-hms/API_REFERENCE.md) - Complete API documentation
+- [Features Guide](./billsutra-hms/FEATURES_GUIDE.md) - Detailed feature overview
+- [Quick Start Guide](./billsutra-hms/QUICKSTART.md) - Get started in 5 minutes
+- [Manual Testing Guide](./billsutra-hms/MANUAL_TESTING_GUIDE.md) - Testing procedures
+
+## 🎯 Pricing
+
+### Hotel Management System
+- **Basic**: ₹9,999/year (20 rooms)
+- **Professional**: ₹19,999/year (50 rooms)  
+- **Enterprise**: ₹39,999/year (unlimited rooms)
+
+All plans include 14-day free trial with no credit card required.
 
 ## 🤝 Support
 
-For issues and questions:
-- Check the documentation
-- Review error logs in console
-- Ensure all dependencies are installed
+- **Email**: support@billsutra.com
+- **Website**: https://billsutra.com
+- **Demo Page**: https://billsutra.com/demo
+- **Interactive Demo**: https://billsutra.com/hms-demo
 
-## 🎯 Roadmap
+## 📄 License
 
-Future enhancements:
-- Multi-user support with roles
-- Inventory stock management
-- SMS/Email invoice delivery
-- Payment gateway integration
-- Mobile app version
-- Multi-language support
-- Cloud deployment guide
+BillSutra uses a master key licensing system. See LICENSE.txt for details.
+
+## 🔗 Links
+
+- **Website**: [billsutra.com](https://billsutra.com)
+- **Download**: [Get Desktop App](https://billsutra.com/demo)
+- **API Docs**: [billsutra.com/api](https://billsutra.com)
+- **Support**: [contact@billsutra.com](mailto:contact@billsutra.com)
 
 ---
 
-**Made with ❤️ for Hotels**
+**Made with ❤️ for business owners who want better solutions.**
 
-Enjoy using BillSutra for your hotel billing needs!
+*Last Updated: January 2025*

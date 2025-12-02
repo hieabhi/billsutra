@@ -117,10 +117,14 @@ export default function DemoPage() {
                   Launch Interactive Demo
                 </Link>
                 
-                <button className="px-8 py-4 rounded-2xl glass-strong font-semibold text-lg hover:scale-105 transition-all flex items-center justify-center gap-3">
-                  <Download className="w-5 h-5" />
+                <a
+                  href="/downloads/BillSutra-HMS-Setup.exe"
+                  download
+                  className="px-8 py-4 rounded-2xl glass-strong font-semibold text-lg hover:scale-105 transition-all flex items-center justify-center gap-3 hover:glass-strong group cursor-pointer"
+                >
+                  <Download className="w-5 h-5 group-hover:animate-bounce transition-all" />
                   Download Desktop App
-                </button>
+                </a>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-500">
