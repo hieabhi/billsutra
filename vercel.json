@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd billsutra-website && npm run build",
+  "installCommand": "cd billsutra-website && npm install",
+  "outputDirectory": "billsutra-website/.next/standalone"
+}
